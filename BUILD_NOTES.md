@@ -250,6 +250,21 @@ tamper-proofing requires server-side scoring (Cloud Function, paid
 Blaze plan) — step 3 of the fix path — and stays out of scope under
 the owner's free-only rule.
 
+### 4. Teacher toggle for student answer review (v1.1.1)
+
+Each test now has a `showAnswers` setting (test editor switch "Show
+correct answers after submit", ON by default). When ON, the student
+result screen shows the full per-question review after submitting, as
+before; when OFF, the review is replaced by a short note and the
+student sees only their score/result card. The default is `true` both
+in the `TestModel` constructor and in `fromMap` when the field is
+missing from a Firestore doc, so every test created before this
+setting existed keeps showing reviews exactly as before — no data
+migration is needed. Only the DISPLAY is gated: scoring is unchanged
+(the student client still fetches the answers internally at submit
+time to compute the score), and teacher screens (attempt detail,
+results) always show the full review regardless of the setting.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing

@@ -93,21 +93,34 @@ class _StudentResultScreenState extends State<StudentResultScreen> {
             label: const Text('Share result'),
           ),
           const SizedBox(height: 18),
-          Text(
-            'Review Answers',
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 10),
-          for (var i = 0; i < attempt.answers.length; i++)
-            if (byId[attempt.questionIds[i]] != null)
-              QuestionReviewCard(
-                number: i + 1,
-                question: byId[attempt.questionIds[i]]!,
-                selectedIndex: attempt.answers[i],
+          // The per-question review is shown only when the teacher left
+          // this test's "show correct answers" setting on. Scoring is
+          // unaffected either way; only this display is gated.
+          if (test.showAnswers) ...[
+            Text(
+              'Review Answers',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            for (var i = 0; i < attempt.answers.length; i++)
+              if (byId[attempt.questionIds[i]] != null)
+                QuestionReviewCard(
+                  number: i + 1,
+                  question: byId[attempt.questionIds[i]]!,
+                  selectedIndex: attempt.answers[i],
+                ),
+          ] else
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: Text(
+                'Answer review is off for this test. Your teacher can '
+                'show you the correct answers.',
+                textAlign: TextAlign.center,
               ),
+            ),
           const SizedBox(height: 8),
           FilledButton.icon(
             onPressed: () => Get.offAllNamed(AppRoutes.home),

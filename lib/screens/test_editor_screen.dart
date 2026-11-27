@@ -94,6 +94,17 @@ class TestEditorScreen extends GetView<TestEditorController> {
                       contentPadding: EdgeInsets.zero,
                     ),
                   ),
+                  Obx(
+                    () => SwitchListTile(
+                      title: const Text('Show correct answers after submit'),
+                      subtitle: const Text(
+                        'Students can check which answers were right or wrong',
+                      ),
+                      value: controller.showAnswers.value,
+                      onChanged: (v) => controller.showAnswers.value = v,
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                  ),
                   const SizedBox(height: 8),
                   const Text(
                     'Status',

@@ -46,6 +46,10 @@ class TestModel {
   /// Whether question order is shuffled for each student.
   final bool shuffle;
 
+  /// Whether students may review the correct answers after submitting.
+  /// When false, the result screen shows only the score card.
+  final bool showAnswers;
+
   final TestStatus status;
 
   /// Denormalized count, kept in sync by TestService.
@@ -63,6 +67,7 @@ class TestModel {
     this.marksPerQuestion = 1,
     this.negativeMarks = 0,
     this.shuffle = false,
+    this.showAnswers = true,
     this.status = TestStatus.draft,
     this.questionCount = 0,
     this.createdAt,
@@ -82,6 +87,9 @@ class TestModel {
       marksPerQuestion: (map['marksPerQuestion'] as num?)?.toDouble() ?? 1,
       negativeMarks: (map['negativeMarks'] as num?)?.toDouble() ?? 0,
       shuffle: (map['shuffle'] ?? false) as bool,
+      // Missing in tests created before this setting existed: default to
+      // true so those tests keep showing the answer review.
+      showAnswers: (map['showAnswers'] ?? true) as bool,
       status: TestStatusX.fromString(map['status'] as String?),
       questionCount: (map['questionCount'] as num?)?.toInt() ?? 0,
       createdAt: (map['createdAt'] as Timestamp?)?.toDate(),
@@ -105,6 +113,7 @@ class TestModel {
       'marksPerQuestion': marksPerQuestion,
       'negativeMarks': negativeMarks,
       'shuffle': shuffle,
+      'showAnswers': showAnswers,
       'status': status.name,
       'questionCount': questionCount,
     };
@@ -120,6 +129,7 @@ class TestModel {
     double? marksPerQuestion,
     double? negativeMarks,
     bool? shuffle,
+    bool? showAnswers,
     TestStatus? status,
     int? questionCount,
     DateTime? createdAt,
@@ -134,6 +144,7 @@ class TestModel {
       marksPerQuestion: marksPerQuestion ?? this.marksPerQuestion,
       negativeMarks: negativeMarks ?? this.negativeMarks,
       shuffle: shuffle ?? this.shuffle,
+      showAnswers: showAnswers ?? this.showAnswers,
       status: status ?? this.status,
       questionCount: questionCount ?? this.questionCount,
       createdAt: createdAt ?? this.createdAt,

@@ -25,6 +25,7 @@ class TestEditorController extends GetxController {
   final negativeController = TextEditingController(text: '0');
 
   final shuffle = false.obs;
+  final showAnswers = true.obs;
   final status = TestStatus.draft.obs;
   final isSaving = false.obs;
 
@@ -41,6 +42,7 @@ class TestEditorController extends GetxController {
       marksController.text = _plainNumber(test.marksPerQuestion);
       negativeController.text = _plainNumber(test.negativeMarks);
       shuffle.value = test.shuffle;
+      showAnswers.value = test.showAnswers;
       status.value = test.status;
     }
   }
@@ -101,6 +103,7 @@ class TestEditorController extends GetxController {
             marksPerQuestion: marks,
             negativeMarks: negative,
             shuffle: shuffle.value,
+            showAnswers: showAnswers.value,
             status: status.value,
           ),
         );
@@ -118,6 +121,7 @@ class TestEditorController extends GetxController {
           marksPerQuestion: marks,
           negativeMarks: negative,
           shuffle: shuffle.value,
+          showAnswers: showAnswers.value,
           status: status.value,
         );
         await _testService.updateTest(updated);

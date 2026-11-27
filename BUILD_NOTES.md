@@ -744,6 +744,67 @@ version — presentation only.
   MarkerLayer and shows no pins until the reveal, exactly as
   before.
 
+## v2.0 (2026-11-27) — real images everywhere, English 49 lessons
+
+Owner's verdict on v1.6/v1.7 direction: "visuals ka mtlb mra
+images hota ha tm text likh dety sirf" — the text "Visual Guide"
+boxes are BANNED. Every 'Tasveer ka khayal' block now renders as
+a real picture (LessonBlock.image, the v1.5 mechanism) built for
+exactly that section, plus clean one-topic-one-page "Visual
+Notes" pages heading the main topics (the clarity standard he
+showed from PPSC Nexus pages — our own navy/orange design and
+own words). No IDs, progress keys, auth/teacher/student code,
+map screens or theme touched.
+
+- ASSETS: 122 diagram images in assets/learning/diagrams/
+  (computer/, eds/, history/, visual-notes/, geo-maps/), total
+  12.30 MB. PNG masters (in ~/workspace/test-mindset-diagrams/)
+  converted to JPG quality 73, max width 1050 — converted samples
+  (mail-merge, pakistan-overview) verified crisp and legible;
+  tile-stitch JPG snapshots copied as-is. The one unwired master
+  (windows-explorer) is NOT bundled. Pubspec registers the five
+  new asset directories; version 2.0.0+14.
+- GENERATOR WIRING (tools/generate_learning_data.py): VISUAL_MAP
+  keyed by doc stem + exact section heading (from the batch
+  manifests) replaces each visual block with its image block(s);
+  SECTION_INSERTS put timeline/chart/map images at sections that
+  had no visual line (Quran numbers chart, Fatah Makkah / Taif /
+  Tabuk snapshots, Sultanate + Mughal timelines, wars timeline,
+  vitamins overview, Maths geometry pair); TOPIC_LEAD /
+  FEATURE_LEAD / LESSON_LEAD put the visual-notes pages first
+  (Provinces, Rivers, Mountains, Doabs, Dams, Passes, Lakes,
+  Coast, Heritage, Borders, World features, World map-terms,
+  Treaties, Solar System, and 6 grammar charts). The generator
+  FAILS the build on any unmapped visual block or missing
+  diagram asset — text boxes cannot come back silently.
+- NINE NEW SNAPSHOTS: the history batch had not covered the
+  712 / Anglo-Sikh / 1947 / 1965 / 1971 / Siachen / Kargil /
+  WW1 / WW2 sections; their map snapshots (sindh-712,
+  punjab-lahore, kashmir-1947, dhaka-1971, siachen-1984,
+  kargil-1999, europe-ww1, ww2-europe, ww2-pacific) were
+  stitched with the batch's own make_maps.py pipeline
+  (OpenTopoMap, same marker) and view-checked.
+- COVERAGE (generator output, 2026-11-27): 120 visual blocks
+  replaced, 12 section inserts, 20 leading images; zero
+  LessonBlock.visual left in ANY generated data file.
+
+  | Subject | Visual blocks → images | Extra images |
+  |---|---|---|
+  | Computer (6 topics) | 60 | — |
+  | EDS (4 topics) | 36 (37 images; simple-machines = 2) | vitamins overview insert |
+  | History (2 topics) | 17 (18 images; WW2 = 2) | 2 timelines + wars timeline |
+  | Islamiat (2 topics) | 5 | Quran chart, Makkah/Taif/Tabuk snapshots |
+  | Space (Solar System) | 2 | planets page leads the topic |
+  | Maths (Geometry) | 0 (no visual lines) | perimeter-area + triangle-circle inserts |
+  | Visual Notes leads | — | 10 topic/feature pages + 6 grammar charts |
+
+- ENGLISH 49: lessons 47 Punctuation (Part 5), 48 Conditionals
+  (Part 4), 49 Question Tags (Part 5) are parsed by the
+  generator like the other 46 — generator asserts 49 lessons,
+  MCQ min = max = 10. Concept text Roman Urdu, examples English,
+  per the owner's standing rule; grammar-47 opens with its
+  punctuation chart.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing

@@ -65,6 +65,7 @@ const List<GeoTopic> orgsTopics = <GeoTopic>[
     subtitle: "Muahide aur Agreements. Jab mulk kagaz par waada karte hain",
     portion: "orgs",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/treaties.jpg", caption: "Pakistan's Treaties at a Glance"),
       LessonBlock.heading("Ye hissa kyun zaroori hai"),
       LessonBlock.paragraph("Tanzeemon ke sath sath one paper me muahidon par bhi har saal sawal ata hai. Indus Waters Treaty kab hua, Simla Agreement me kya tay hua, Tashkent me kon saalis tha, ye sawal ghuma phira kar ate rehte hain. Muahidon ka mushkil hissa ye hai ke in ke naam, saal aur jagah aapas me mil jate hain. Karachi, Tashkent, Simla, Lahore, ye sheher aur 1960, 1966, 1972, 1999, ye saal student ke zehen me garbar ho jate hain. Is lesson me har muahide ko aik kahani ki tarah parhen ge: pehle ye ke jhagra kya tha, phir muahida kab aur kahan hua, phir us me tay kya hua, aur aakhir me wo baat jo paper poochta hai. Kahani yaad reh jati hai, sirf tareekh ratni nahi parti."),
       LessonBlock.heading("Muahida hota kya hai"),

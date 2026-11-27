@@ -20,7 +20,7 @@ import 'models/learning_models.dart';
 /// Space, Computer, Maths, Urdu, Islamiat, History,
 /// Organizations & Treaties, Everyday Science.
 
-/// All 46 English lessons, in course order (by lesson number).
+/// All 49 English lessons, in course order (by lesson number).
 const List<Lesson> allLessons = <Lesson>[
   ...englishLessonsA,
   ...englishLessonsB,

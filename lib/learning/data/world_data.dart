@@ -11,6 +11,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
     lon: 31.24,
     imageAsset: "assets/learning/maps/world/world-features-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/continents.jpg", caption: "The Seven Continents"),
       LessonBlock.paragraph("Nile ko duniya ka sab se lamba darya mana jata hai, is ki lambai taqreeban 6,650 kilometre hai. Ye Africa me behta hai aur is ki kahani do rangon se banti hai. White Nile mashriqi Africa ki Lake Victoria se ata hai, aur Blue Nile Ethiopia ke paharon se, aur dono Sudan ke darul hukumat Khartoum ke qareeb mil jate hain. Wahan se Nile shimal ko chalta hai, Egypt se guzarta hai, aur Cairo ke aage aik bare delta ki surat me Mediterranean Sea me ja girta hai. Egypt ki tehzeeb isi darya ki den hai, is liye kaha jata hai ke Egypt Nile ka tohfa hai. Aswan Dam isi par bana hai. Lambai wala sawal aye to jawab Nile hai, ye pakka kar lo."),
     ],
   ),
@@ -557,6 +558,7 @@ const List<GeoTopic> worldTopics = <GeoTopic>[
     subtitle: "Har shakal ka asaan matlab, naqshay par pehchan, duniya aur Pakistan ki misaal, aur paper wali baat",
     portion: "world",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/oceans-seas.jpg", caption: "Oceans and Seas — the water words of the map"),
       LessonBlock.heading("Ye topic kyun zaroori hai"),
       LessonBlock.paragraph("Dekho, duniya ke naqshay par pani aur zameen ne ajeeb ajeeb shaklain bana rakhi hain. Kahin pani zameen ke andar ghusa hua hai, kahin zameen pani me nok banaye khari hai, kahin do samandar aik tang gali se juray hain. One paper ka sawal inhi shaklon par banta hai. Sawal poochta hai ke khaleej kise kehte hain, aabnaay aur channel me kya farq hai, falana jagah peninsula hai ya cape. Student ko jagah ka naam yaad hota hai lekin shakal ki pehchan nahi hoti, aur wahi number kat jata hai."),
       LessonBlock.paragraph("Is liye har shakal ko chaar hisso me parho ge. Pehle asaan alfaaz me matlab, jese ustad class me samjhata hai. Phir ye ke naqshay par us shakal ko dekh kar kesay pehchano ge, kyunke paper me pehchan hi asal imtihan hai. Phir duniya ki aik misaal aur jahan mumkin ho Pakistan ki misaal, taake shakal hawa me na rahe. Aur aakhir me wo baat jo paper me sawal banti hai. Bas yehi tartib zehen me bitha lo, phir poora naqsha tum se baatein karega."),

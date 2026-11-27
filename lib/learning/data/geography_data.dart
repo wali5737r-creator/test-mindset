@@ -11,6 +11,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 68.86,
     imageAsset: "assets/learning/maps/pakistan/rivers-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/pakistan-rivers.jpg", caption: "The Indus River System"),
       LessonBlock.paragraph("Sab se pehle wo darya jis ke naam par pura mulk chalta hai. Indus ko Pakistan ki lifeline kehte hain, aur ye paper ka sab se bara aur sab se pasandeeda sawal hai. Is ki lambai taqreeban 3,180 kilometre hai. Kuch kitabon me is se kuch kam ya zyada bhi likha milta hai, lekin aam taur par textbook ka figure 3,180 kilometre hi chalta hai, tum bhi yehi yaad rakho."),
       LessonBlock.paragraph("Indus nikalta kahan se hai? Ye Tibet ke ilaaqe me Lake Mansarovar ke qareeb, Mount Kailash ke paas aik chashme se nikalta hai. Us maqam ko Singi Khamban kehte hain, jis ke matlab hain sher ke munh wala chashma. Wahan se ye pehle shimal maghrib ki taraf behta hai, Ladakh se guzarta hai, phir Gilgit Baltistan me dakhil hota hai. Skardu ke qareeb se guzar kar ye Bunji aur Jaglot ke paas aik bohat mashhoor jagah se guzarta hai jahan teen bare pahari silsile milte hain, Himalaya, Karakoram aur Hindu Kush. Isi ilaaqe me Gilgit River aur Hunza River is ke sath milte hain."),
       LessonBlock.paragraph("Phir Indus Khyber Pakhtunkhwa me ata hai. Besham aur Thakot ke paas se guzarta hai, aur yahin is par Pakistan ka sab se bara bandh Tarbela bana hai. Attock ke qareeb is ke sath Kabul River milta hai, aur mashhoor baat ye hai ke Attock tak Indus ka pani saaf neelay rang ka hota hai aur Kabul River ka gadla, dono rang sangam par alag alag nazar ate hain. Kalabagh ke paas Jinnah Barrage hai. Phir ye Dera Ismail Khan ke kinare se guzarta hai, jahan Gomal River is se milta hai. Punjab me Taunsa Barrage, phir Sindh me Guddu Barrage, Sukkur Barrage aur Kotri Barrage is par bane hain. Sukkur aur Hyderabad jaise sheher is ke kinare abad hain."),
@@ -195,6 +196,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 72.7,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/geo-maps/geo-dams.jpg", caption: "Dams and Barrages — north to south"),
       LessonBlock.paragraph("Tarbela Pakistan ka sab se mashhoor dam hai aur Indus River par bana hai. Ye Khyber Pakhtunkhwa me Haripur ke qareeb hai, jahan Indus paharon se nikal kar medaan ki taraf ata hai. Tarbela ki sab se bari pehchan ye hai ke ye duniya ka sab se bara earth filled dam hai, yani mitti aur pathar se bhara hua sab se bara bandh. Earth filled wala point paper me itni dafa aya hai ke isay dam ki pehchan samajh lo."),
       LessonBlock.paragraph("Tarbela 1974 me mukammal hua tha. Is ka kaam do hain, bijli banana aur pani zakheera karna. Jab ye dam bana tha to is ki bijli ki salahiyat 3,478 megawatt thi. Baad me waqt ke sath naye units lage aur khaas taur par Tarbela ke chauthe tausiyi mansubay ke baad ye salahiyat barh kar ab taqreeban 4,888 megawatt ho gayi hai, jo Pakistan ke kisi bhi aik dam se sab se zyada hai. Paper me dono figure ate hain, is liye farq samajh lo ke 3,478 asal ibtedai salahiyat hai aur 4,888 tausiy ke baad wali. Jab bhi paper me sab se bara dam ya sab se zyada bijli wala dam poocha jaye, jawab Tarbela hota hai."),
     ],
@@ -473,6 +475,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 72.35,
     imageAsset: "assets/learning/maps/pakistan/doabs-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/pakistan-doabs.jpg", caption: "The Five Doabs of Punjab"),
       LessonBlock.paragraph("Ye sab se bara aur sab se maghribi doab hai. Ye darya-e-Sindh, yani Indus, aur darya-e-Jhelum ke darmiyan hai. Isi liye is ke naam me Sindh saaf nazar ata hai, aur Sagar is liye ke ye sab se wasee hai, sagar yani samandar jitna bara. Is ilaqay me Thal ka registani hissa bhi ata hai, is liye ye doab baqi doabon ki nisbat khushk hai. Is ke mashhoor sheher Rawalpindi, Mianwali, Khushab, Bhakkar aur Attock hain. Pothohar ka plateau bhi isi doab ke shumali hisse me hai. Paper me jab Indus aur Jhelum aik sath ayen to jawab hamesha Sindh Sagar hoga, ye wala sawal sab se zyada dohraya jata hai."),
     ],
   ),
@@ -530,6 +533,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 71.1,
     imageAsset: "assets/learning/maps/pakistan/passes-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/geo-maps/geo-passes.jpg", caption: "The Northern Passes"),
       LessonBlock.paragraph("Sab se mashhoor dara hai aur paper ka sab se pyara sawal bhi. Khyber Peshawar ko Afghanistan ke sheher Jalalabad aur phir Kabul se milata hai. Is ki unchai taqreeban 1,070 meter hai, yani ye uncha dara nahi hai, aur yahi is ki taqat hai ke ye saal bhar khula rehta hai. Tareekh me Sikandar-e-Azam se lekar Mughalon tak, jitne bare hamla awar is khitte me aye, un ka rasta yahi tha. Is ke munh par Jamrud ka qila aur Bab-e-Khyber hai. Peshawar se Landi Kotal tak jane wali railway bhi isi daray se guzarti thi. Jab paper me hamla awaron wala dara poocha jaye to jawab hamesha Khyber hoga."),
     ],
   ),
@@ -708,6 +712,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 76.51,
     imageAsset: "assets/learning/maps/pakistan/mountains-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/pakistan-mountains.jpg", caption: "Ranges and Peaks of the North"),
       LessonBlock.paragraph("Karakoram Pakistan ka sab se mashhoor silsila hai aur Gilgit-Baltistan me phaila hai. Is ki lambai taqreeban 500 kilometre hai, jo Pakistan aur China ki sarhad ke sath sath chalti hai. Lambai me ye Himalaya se chhota hai, lekin unchai aur glaciers me ye us ke barabar khara hai. Is ki pehchan ye hai ke duniya ki chaar sab se unchi chotiyon me se zyada tar yahi hain aur yahan duniya ke sab se bare glaciers hain jo qatbi ilaqon ke bahir hain, jin me Siachen aur Baltoro sab se mashhoor hain. Karakoram ki sab se unchi choti K2 hai. Jab paper me sab se zyada 8,000 meter se unchi chotiyon wala silsila poocha jaye to jawab Karakoram hai."),
     ],
   ),
@@ -976,6 +981,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 71.1,
     imageAsset: "assets/learning/maps/pakistan/borders-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/geo-maps/borders.jpg", caption: "Pakistan's Borders and Their Lengths"),
       LessonBlock.paragraph("Pakistan ki dusri sab se lambi zameeni sarhad Afghanistan ke sath hai. Is ki lambai 2,430 kilometre hai. Kuch kitaabon me 2,640 kilometre bhi likha milta hai, lekin one paper ki mashhoor textbook rakam 2,430 kilometre hi hai, isay hi pakka yaad rakho."),
       LessonBlock.paragraph("Is sarhad ka naam Durand Line hai. Ye naam aik Angrez afsar Sir Mortimer Durand ke naam par para. 12 November 1893 ko Kabul me Durand aur Afghanistan ke Amir Abdur Rahman Khan ke darmiyan muahida hua aur ye line khanchi gayi. Us waqt hadaf ye tha ke British India aur Afghanistan ke darmiyan aik buffer wali sarhad ban jaye. Yahi wajah hai ke ye line aik hi qaum, yani Pakhtun qabail, ko do mulkon me baant deti hai. Ye baat aksar sawal banti hai."),
       LessonBlock.paragraph("Ye sarhad Khyber Pakhtunkhwa, purane FATA wale ilaqe aur Balochistan ke shimal maghribi hisse se guzarti hai. Is par mashhoor guzargahen Torkham aur Chaman hain. Torkham Khyber Pass ke qareeb hai aur yehi Pakistan se Jalalabad aur Kabul jane wala sab se bara raasta hai. Chaman Balochistan me hai, us paar Afghanistan ka Spin Boldak hai, aur ye Quetta se Kandahar jane ka raasta hai. Aik aur dilchasp baat yaad rakho. Pakistan aur Tajikistan ke darmiyan koi sarhad nahi lagti, kyunke darmiyan me Afghanistan ki aik patli si patti hai jise Wakhan Corridor kehte hain. Ye bhi paper ka pasandeeda sawal hai."),
@@ -1072,6 +1078,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 68.13,
     imageAsset: "assets/learning/maps/pakistan/heritage-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/geo-maps/geo-heritage.jpg", caption: "Heritage Sites on the Map"),
       LessonBlock.paragraph("Mohenjo-daro Sindh ke zila Larkana me hai, Darya e Sindh ke maghribi kinare ke qareeb. Ye Indus Valley Civilization ka sab se mashhoor aur sab se bara sheher hai. Iski abadi ka zamana taqreeban 2600 qabl maseeh se 1900 qabl maseeh tak mana jata hai, yani ye sheher chaar hazar saal se zyada purana hai. Mohenjo-daro ke maana hain murdon ka teela."),
       LessonBlock.paragraph("Ye jagah is liye duniya bhar me mashhoor hai ke itne purane zamane me yahan pakki eenton ke makaan, seedhi galiyan, dhaki hui naaliyan aur pani ke intezam ka pura nizaam tha. Yahan ka Great Bath, yani bara ghusl khana, aur bara anaaj ghar is ki sab se mashhoor nishaniyan hain. Yahan se Priest King ka mujasma aur nachne wali larki ki murti bhi mili. Iski khudai 1922 me R. D. Banerji ki nigraani me shuru hui."),
       LessonBlock.paragraph("Ye UNESCO ki World Heritage list me hai aur 1980 me shamil hui. Ye Pakistan ki pehli jagah thi jo is list me aayi."),
@@ -1334,6 +1341,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 66.5,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/geo-maps/geo-coast.jpg", caption: "Coast and Ports — west to east"),
       LessonBlock.paragraph("Arabian Sea Hindustan ke bare samandar, yani Indian Ocean, ka shimal maghribi hissa hai. Pakistan ki puri sahel patti isi samandar ke sath hai. Mashriq me India, maghrib me Oman aur Yemen, aur shimal me Pakistan aur Iran is ke kinare par hain."),
       LessonBlock.paragraph("Pakistan ke liye is samandar ki ahemiyat bohat bari hai. Mulk ki tamam bahri tijarat isi se hoti hai. Karachi aur Gwadar dono isi ke kinare hain. Aur aik jughrafiyayi baat yaad rakho, Gwadar se aage maghrib me Hormuz ki aabnaye hai jahan se duniya ke tel ka bara hissa guzarta hai, is liye Pakistan ka sahel duniya ki aham tareen bahri guzargahon ke qareeb hai. Monsoon ki hawaein bhi isi samandar se uth kar Pakistan me barish lati hain."),
       LessonBlock.paragraph("Is ka pin Karachi ke junoob me khule samandar par hai."),
@@ -1526,6 +1534,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 67.67,
     imageAsset: "assets/learning/maps/pakistan/lakes-01.jpg",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/geo-maps/geo-lakes.jpg", caption: "Lakes of Pakistan — north to south"),
       LessonBlock.paragraph("Manchar Pakistan ki sab se bari meethay pani ki jheel hai, aur ise Asia ki bari meethay pani ki jheelon me bhi gina jata hai. Ye Sindh me hai, zila Jamshoro aur Dadu ke ilaqe me, Sehwan Sharif ke qareeb. Is ka raqba mausam ke sath badalta rehta hai, khushk mausam me taqreeban 350 murabba kilometre aur barishon ke baad 500 murabba kilometre se bhi zyada ho jata hai. Ye badalta hua raqba hi is ki pehchan hai."),
       LessonBlock.paragraph("Manchar ko pani do taraf se milta hai. Aik taraf Darya e Sindh se Aral Wah nehr ke zariye pani ata hai, aur dusri taraf Kirthar ke paharon se behne wale barasti naale, jin me Nai Gaj mashhoor hai, is me girte hain. Jheel ke kinare Mohana qabeelay ke log kashtiyon par bane gharoon me rehte hain aur un ka rozgar machli pakarna hai. Ye jheel aalmi ahemiyat wali aabi jagahon ki Ramsar list me shamil hai aur sardiyon me door daraz se aye hue parinday yahan dera dalte hain. Paper ke liye sab se pakki baat ye hai, Pakistan ki sab se bari meethay pani ki jheel Manchar hai, aur ye Sindh me hai, Punjab me nahi. Aksar students ise Punjab se jor dete hain, yahi ghalti number katwati hai."),
     ],
@@ -1888,6 +1897,7 @@ const List<GeoTopic> geoTopics = <GeoTopic>[
     title: "Pakistan ke Sobay aur Zilay",
     subtitle: "Intizami dhancha, har sobay ki pehchan, aur zilon ki taaza tadaad",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/pakistan-overview.jpg", caption: "Pakistan at a Glance — provinces and key facts"),
       LessonBlock.heading("Ye topic kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke paper me Pakistan Studies ke sab se zyada dohraye jane wale sawalon me aik sawal zaroor hota hai ke falan sobay me kitne zilay hain, ya sab se zyada zilay kis sobay me hain, ya falan sobay ka darul hukumat kya hai. Ye sawal mushkil nahi hote, bas tadaad taza honi chahiye kyunke naye zilay bante rehte hain. Is file me hum pehle pura intizami dhancha samjhen ge, phir aik aik sobay ko us ki pehchan ke sath parhen ge. Jo student ye file aik dafa samajh kar parh le, us ke ye number kabhi nahi kat te."),
       LessonBlock.heading("Pehle intizami dhancha samajh lo"),

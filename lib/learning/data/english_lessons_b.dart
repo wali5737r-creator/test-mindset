@@ -11,6 +11,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     partIndex: 9,
     partName: "Parts of Speech — Complete Review",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/parts-of-speech.jpg", caption: "Parts of Speech — the whole family"),
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Level 1 me tum ne har hisse ko alag alag pehchanna seekha tha. Ab Level 2 me paper tum se wohi pehchan aik hi jumle ke andar karwata hai. One paper me is par seedha sawal ata hai ke is jumle me ye lafz kis part of speech hai. Sawal dekhne me chhota lagta hai, lekin phansata bohat hai, kyunke paper wale jan bujh kar wo lafz dete hain jo do hisso ka kaam karta hai. Water kabhi noun hai aur kabhi verb. Fast kabhi adjective hai aur kabhi adverb. Jo student lafz ko nahi, us ke kaam ko pehchanta hai, wo ye number kabhi nahi khota. Ye lesson tumhe wahi nazar dega. Aakhir tak tum kisi bhi jumle ke har lafz ka kaam bata sako ge, aur yehi skill aage narration aur sentence wale lessons ki buniyad hai."),
       LessonBlock.heading("Aath hisse, aik hi khandan"),
@@ -360,6 +361,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     partIndex: 4,
     partName: "Sentences — Questions, Negatives & Commands",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/sentence-types.jpg", caption: "Sentence Types at a Glance"),
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Ab tak tum alfaaz aur un ke kaam parh rahe the. Ab paper tum se poora jumla pehchanne ko kehta hai. Ye jumla simple hai ya compound, complex hai ya sirf aik tukra jo jumla hi nahi. One paper me sentence ki saakht pehchanne ka sawal taqreeban har dafa ata hai, aur narration seekhne se pehle ye pehchan lazmi hai, kyunke narration me jumlo ko jorna aur torna yehi kaam hai. Achi baat ye hai ke is ki pehchan ka aik hi usool hai. Clause gino. Jo student clause ginna seekh jaye, us ke liye ye sawal sab se asaan number ban jata hai."),
       LessonBlock.heading("Pehle clause ko samajh lo"),
@@ -475,6 +477,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     partIndex: 7,
     partName: "Voice & Narration",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/direct-indirect.jpg", caption: "Direct to Indirect — the three changes"),
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("One paper me narration ka sawal na aye, ye taqreeban na mumkin hai. Kabhi direct ko indirect karna hota hai, kabhi indirect ko direct me pehchanna hota hai, aur chaar options me se teen is qanoon ki kisi na kisi bareek ghalti par bane hote hain. Achi khabar ye hai ke narration koi jadoo nahi. Is ke chand pakke qanoon hain. Tense aik kadam peeche jata hai, pronoun bolne aur sunne wale ke hisaab se badalta hai, aur waqt ke alfaaz bhi peeche ho jate hain. Ye teen cheezein samajh lo to narration paper ka sab se pakka number ban jata hai. Is lesson me hum pura qanoon aik sath rakhenge, taake exam hall me koi surat tumhe uljha na sake."),
       LessonBlock.heading("Pehle do shaklein pehchano"),
@@ -601,6 +604,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     partIndex: 7,
     partName: "Voice & Narration",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/active-passive.jpg", caption: "Active to Passive — the swap"),
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me voice change ka sawal taqreeban har dafa ata hai. Kabhi active jumla de kar us ki passive chunni hoti hai aur kabhi passive de kar active. Aur ye sawal un sawalon me se hai jo pura number dete hain, kyunke in ka aik hi formula hai aur jo student wo formula pakka kar le, wo tense koi sa bhi ho, ghalti nahi karta. Lesson 24 me hum ne passive ki buniyad seekhi thi, ke jab kaam aham ho aur karne wala nahi to jumla passive banta hai. Ab is lesson me hum usi buniyad ko mukammal karte hain. Sab tenses ka passive, kis tense ka passive banta hi nahi, by kab lagta hai aur kab chhup jata hai, do object wale jumle aur hukum wale jumlo ka passive. Ye sab is aik lesson me hai. Isay pakka kar lo, voice wala hissa paper me tumhara bank ban jayega."),
       LessonBlock.heading("Pehle buniyad taza karo"),
@@ -716,6 +720,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     partIndex: 3,
     partName: "Verbs & Tenses",
     blocks: <LessonBlock>[
+      LessonBlock.image("assets/learning/diagrams/visual-notes/tenses-timeline.jpg", caption: "All 12 Tenses on One Timeline"),
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me tense ka sawal sab se zyada ane wale sawalon me se hai. Kabhi jumla de kar poocha jata hai ke ye konsa tense hai, kabhi khali jagah me sahi verb lagana hota hai, aur kabhi chaar jumlo me se aik theek jumla chunna hota hai. In teeno soraton me jeet usi ki hoti hai jo tense ko pehchan sakta hai. Masla ye hai ke aksar students barah tenses ko barah alag cheezein samajh kar ratte hain aur paper me sab gadh madh ho jata hai. Is lesson me hum barah tenses ko aik hi kahani par chala kar dekhenge, har tense ki pehchan wali nishani seekhenge, aur Urdu tarjume se tense pehchanne ka wo tareeqa seekhenge jo kabhi dhoka nahi deta. Lesson 18 me hum ne Past Tense ko tafseel se parha tha aur Lesson 19 me continuous wale rang dekhe thay. Ab un sab ko aik jagah jama karke poori tasveer dekhte hain."),
       LessonBlock.heading("Aik kahani, teen waqt"),

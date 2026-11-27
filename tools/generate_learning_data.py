@@ -4,7 +4,7 @@
 Converts the markdown masters in docs/ into const Dart data files under
 lib/learning/data/:
 
-  docs/lessons/grammar-NN.md   -> english_lessons_a/b/c.dart (46 lessons)
+  docs/lessons/grammar-NN.md   -> english_lessons_a/b/c.dart (49 lessons)
   docs/geography/<feature>.md  -> geography_data.dart (MapFeature list)
   docs/geography/terms.md      -> geography_data.dart (GeoTopic list)
   docs/geography/provinces.md  -> geography_data.dart (GeoTopic list)
@@ -41,15 +41,17 @@ GEO_DIR = ROOT / "docs" / "geography"
 OUT_DIR = ROOT / "lib" / "learning" / "data"
 
 # ---------------------------------------------------------------------------
-# English parts (owner's mapping, 2026-11-27). Every lesson 1..46 in exactly
+# English parts (owner's mapping, 2026-11-27). Every lesson 1..49 in exactly
 # one part; lesson numbers keep course order inside each part.
+# v2.0 additions: 47 Punctuation -> Part 5, 48 Conditionals -> Part 4,
+# 49 Question Tags -> Part 5.
 # ---------------------------------------------------------------------------
 PARTS = [
     ("Foundation — Getting Started", [1, 2, 3, 4, 6, 7]),
     ("Nouns & Pronouns in Depth", [13, 14, 26]),
     ("Adjectives, Adverbs & Degrees", [8, 17, 27]),
-    ("Verbs & Tenses", [9, 18, 19, 20, 31]),
-    ("Sentences — Questions, Negatives & Commands", [10, 11, 12, 28]),
+    ("Verbs & Tenses", [9, 18, 19, 20, 31, 48]),
+    ("Sentences — Questions, Negatives & Commands", [10, 11, 12, 28, 47, 49]),
     ("Small Words — Prepositions & Usage", [5, 16, 21, 34]),
     ("Helping Verbs & Modals", [15, 32, 33]),
     ("Voice & Narration", [24, 29, 30]),
@@ -443,6 +445,531 @@ def body_blocks(blocks, tasveer="keep"):
 
 
 # ---------------------------------------------------------------------------
+# v2.0 diagram wiring. The owner banned text "Visual Guide" blocks:
+# every 'Tasveer ka khayal' visual block must become a real IMAGE block
+# (LessonBlock.image) whose picture was built for exactly that section.
+# The mapping follows the batch manifests in
+# ~/workspace/test-mindset-diagrams/v2/*/manifest.md, keyed by source
+# doc stem + the section heading the visual sits under. Any visual
+# block with no mapped diagram is recorded in visual_unmapped and
+# fails the whole generation (see main()).
+#
+# Assets live in assets/learning/diagrams/<batch>/ (PNG masters were
+# converted to JPG q73, max width 1050; tile-stitch JPGs copied as-is).
+# The 9 wars snapshots whose sections the history batch did not cover
+# (sindh-712, punjab-lahore, kashmir-1947, dhaka-1971, siachen-1984,
+# kargil-1999, europe-ww1, ww2-europe, ww2-pacific) were stitched with
+# the batch's own make_maps.py pipeline during the v2.0 build.
+# ---------------------------------------------------------------------------
+
+DIAG = "assets/learning/diagrams"
+C_ = f"{DIAG}/computer"
+E_ = f"{DIAG}/eds"
+H_ = f"{DIAG}/history"
+V_ = f"{DIAG}/visual-notes"
+G_ = f"{DIAG}/geo-maps"
+
+visual_unmapped = []
+diagram_missing = []
+wire_counts = {"visual_replaced": 0, "inserted": 0, "lead": 0}
+visuals_by_stem = {}
+
+
+def require_diagram_image(asset):
+    if not (ROOT / asset).exists():
+        diagram_missing.append(asset)
+        problems.append(f"diagram image missing: {asset}")
+
+
+def _img(asset, caption):
+    require_diagram_image(asset)
+    return {"type": "image", "text": asset, "note": caption}
+
+
+# (stem, heading) -> [(asset, caption), ...] replacing that section's
+# visual block. A block may expand to two images (simple machines).
+VISUAL_MAP = {
+    # --- Computer (manifest: v2/computer, all 60 lines) ---
+    "ms-word": {
+        "Word kya hai aur kis kaam ata hai": [
+            (f"{C_}/word-extensions.jpg", "Word Files — .doc and .docx")],
+        "Word ki window ke hisse": [
+            (f"{C_}/word-window.jpg", "MS Word Window — every part labelled")],
+        "Har tab me kya milta hai": [
+            (f"{C_}/word-ribbon-tabs.jpg", "The Ribbon — what each tab holds")],
+        "Home tab ki tafseel": [
+            (f"{C_}/word-home-formatting.jpg",
+             "Home Tab — Font and Paragraph groups")],
+        "Font size wali khaas tafseel": [
+            (f"{C_}/word-font-size.jpg",
+             "Font Size — the list, and typing up to 1638")],
+        "Page setup ki baatein": [
+            (f"{C_}/page-setup.jpg",
+             "Page Setup — Portrait, Landscape and margins")],
+        "Insert tab aur table ki baatein": [
+            (f"{C_}/word-table.jpg", "Tables — rows, columns and cells")],
+        "Find, Replace, Spelling aur Thesaurus": [
+            (f"{C_}/word-spelling.jpg",
+             "Spelling Check — the red zigzag and F7")],
+        "Mail Merge kya hai": [
+            (f"{C_}/mail-merge.jpg", "Mail Merge — how it works")],
+        "Header, Footer aur Page Number": [
+            (f"{C_}/header-footer.jpg", "Header, Footer and Page Number")],
+        "Zoom aur Views": [
+            (f"{C_}/word-views-zoom.jpg",
+             "Views and Zoom — five ways to see a page")],
+        "Print aur Save": [
+            (f"{C_}/word-save-print.jpg", "Save and Print — Ctrl+S, F12, Ctrl+P")],
+    },
+    "ms-excel": {
+        "Pehle Excel ko samajh lo": [
+            (f"{C_}/excel-register.jpg", "From Paper Register to Excel")],
+        "File ki pehchan, extension aur default naam": [
+            (f"{C_}/word-extensions.jpg", "Excel Files — .xls and .xlsx")],
+        "Workbook aur Worksheet ka farq": [
+            (f"{C_}/excel-workbook.jpg", "Workbook and Worksheets")],
+        "Rows, Columns aur Cell": [
+            (f"{C_}/excel-grid.jpg", "Rows, Columns and Cells")],
+        "Name Box aur Formula Bar": [
+            (f"{C_}/excel-window.jpg",
+             "Excel Window — Name Box and Formula Bar")],
+        "Data ki teen types": [
+            (f"{C_}/excel-data-types.jpg",
+             "Three Data Types — Text, Number, Formula")],
+        "Mashhoor functions": [
+            (f"{C_}/excel-formulas.jpg",
+             "Famous Functions — SUM, AVERAGE, MAX, MIN, IF")],
+        "Cell Reference, relative aur absolute ka farq": [
+            (f"{C_}/excel-formulas.jpg",
+             "Cell References — A1 versus $A$1, and F4")],
+        "Roz ke kaam aur un ke tabs": [
+            (f"{C_}/excel-chart-sort.jpg",
+             "Everyday Jobs — charts, sort and filter")],
+        "Zoom aur screen ka aakhri hissa": [
+            (f"{C_}/excel-finish.jpg", "The Status Bar and Zoom Slider")],
+    },
+    "ms-powerpoint": {
+        "Pehle PowerPoint ko samajh lo": [
+            (f"{C_}/ppt-intro.jpg", "PowerPoint — the stage idea")],
+        "File ki pehchan, extension aur default naam": [
+            (f"{C_}/word-extensions.jpg",
+             "PowerPoint Files — .ppt, .pptx and .ppsx")],
+        "Slide, Layout aur Placeholder": [
+            (f"{C_}/ppt-slides-layout.jpg",
+             "Slides, Layouts and Placeholders")],
+        "Default view, Normal aur baqi views": [
+            (f"{C_}/powerpoint-window.jpg",
+             "PowerPoint Window — the Normal view")],
+        "Tabs ka khulasa": [
+            (f"{C_}/ppt-ribbon.jpg", "PowerPoint Tabs at a Glance")],
+        "Transitions aur Animations ka farq": [
+            (f"{C_}/ppt-transitions-animations.jpg",
+             "Transitions versus Animations")],
+        "Slideshow chalana": [
+            (f"{C_}/ppt-keys.jpg", "Running the Show — F5, Shift+F5, Esc")],
+        "Slide ka size, 4:3 aur 16:9": [
+            (f"{C_}/ppt-slide-sizes.jpg", "Slide Sizes — 4:3 and 16:9")],
+        "Notes aur Handouts": [
+            (f"{C_}/ppt-handouts.jpg", "Notes and Handouts")],
+        "Master Slide": [
+            (f"{C_}/ppt-master.jpg", "Slide Master — one master, many slides")],
+        "Rehearse Timings": [
+            (f"{C_}/ppt-rehearse.jpg", "Rehearse Timings")],
+    },
+    "practical-word": {
+        "Kaam 1: Application ya letter likhna": [
+            (f"{C_}/word-application.jpg", "A Finished Application, Part by Part")],
+        "Kaam 2: Formatting — likhai ko sajana": [
+            (f"{C_}/word-home-formatting.jpg", "Formatting with the Home Tab")],
+        "Kaam 3: CV ya Resume banana": [
+            (f"{C_}/word-cv.jpg", "A Finished CV")],
+        "Kaam 4: Table banana aur us me result likhna": [
+            (f"{C_}/word-table.jpg", "The Result Table")],
+        "Kaam 5: List, page number aur header": [
+            (f"{C_}/header-footer.jpg", "Header and Page Number in Place")],
+        "Kaam 6: Save karna, PDF banana aur print karna": [
+            (f"{C_}/word-save-print.jpg", "Print, PDF and Save")],
+        "Kaam 7: Spelling check chala kar document saaf karna": [
+            (f"{C_}/word-spelling.jpg", "Cleaning a Document with Spell Check")],
+    },
+    "practical-excel": {
+        "Qadam 1: Headings likhna": [
+            (f"{C_}/excel-grid.jpg", "Step 1 — Headings on the Grid")],
+        "Qadam 2: Data enter karna aur sheet ko saaf karna": [
+            (f"{C_}/excel-finish.jpg", "Step 2 — A Clean Sheet, Bold Header Row")],
+        "Qadam 3: Total ka formula — SUM": [
+            (f"{C_}/excel-formulas.jpg", "Step 3 — The SUM Formula")],
+        "Qadam 4: Percentage ka formula": [
+            (f"{C_}/excel-percent-fill.jpg",
+             "Step 4 — Percentage with the % Button")],
+        "Qadam 5: Status ke liye IF ka formula": [
+            (f"{C_}/excel-formulas.jpg",
+             "Step 5 — The IF Formula for PASS and FAIL")],
+        "Qadam 6: Fill handle — formula sab par lagana": [
+            (f"{C_}/excel-percent-fill.jpg", "Step 6 — The Fill Handle")],
+        "Qadam 7: Class ki report — AVERAGE, MAX aur MIN": [
+            (f"{C_}/excel-formulas.jpg", "Step 7 — AVERAGE, MAX and MIN")],
+        "Qadam 8: Sort karna aur filter lagana": [
+            (f"{C_}/excel-chart-sort.jpg", "Step 8 — Sort and Filter")],
+        "Qadam 9: Print ke liye tayyar karna": [
+            (f"{C_}/excel-finish.jpg", "Step 9 — Ready to Print")],
+    },
+    "practical-windows": {
+        "Kaam 1: File aur folder banana, naam badalna": [
+            (f"{C_}/windows-menus.jpg",
+             "New Folder and Rename — the Right-Click Menu")],
+        "Kaam 2: Copy paste aur cut paste ka farq": [
+            (f"{C_}/windows-copy-cut.jpg", "Copy versus Cut")],
+        "Kaam 3: Delete karna aur Recycle Bin se wapas lana": [
+            (f"{C_}/windows-menus.jpg",
+             "Delete, and Restore from the Recycle Bin")],
+        "Kaam 4: Screenshot lena": [
+            (f"{C_}/windows-tools.jpg", "Taking a Screenshot")],
+        "Kaam 5: File ko zip karna aur kholna": [
+            (f"{C_}/windows-menus.jpg", "Zip a File — Send to Compressed Folder")],
+        "Kaam 6: USB lagana aur safely nikalna": [
+            (f"{C_}/windows-tools.jpg", "USB — Plug In and Eject Safely")],
+        "Kaam 7: Program install aur uninstall karna": [
+            (f"{C_}/windows-tools.jpg", "Install and Uninstall — Settings, Apps")],
+        "Kaam 8: Task Manager se hang program band karna": [
+            (f"{C_}/windows-tools.jpg", "Task Manager — End a Stuck Program")],
+        "Qadam 2: Nayi slides lagana": [
+            (f"{C_}/ppt-slides-layout.jpg", "Adding New Slides")],
+        "Qadam 4: Transition lagana — slide badalne ka andaaz": [
+            (f"{C_}/ppt-transitions-animations.jpg", "Adding a Transition")],
+        "Achhi presentation ke usool": [
+            (f"{C_}/windows-slides-good-bad.jpg", "Good Slide versus Bad Slide")],
+    },
+    # --- Everyday Science (manifests: v2/eds-body, v2/eds-nature) ---
+    "human-body": {
+        "Dil — jism ka pump": [
+            (f"{E_}/heart.jpg", "The Heart — four chambers")],
+        "Khoon — jism ki delivery service": [
+            (f"{E_}/blood.jpg", "Blood — cells and blood groups")],
+        "Aankh — jism ka camera": [
+            (f"{E_}/eye.jpg", "The Eye — how we see")],
+        "Kaan — sunna aur tawazun": [
+            (f"{E_}/ear.jpg", "The Ear — three parts")],
+        "Haddiyan — jism ka dhancha": [
+            (f"{E_}/skeleton.jpg", "The Skeleton — 206 bones")],
+        "Dimaagh — jism ka control room": [
+            (f"{E_}/brain.jpg", "The Brain — the control room")],
+        "Paachan ka nizam — khana se taqat tak": [
+            (f"{E_}/digestive.jpg", "The Digestive System")],
+        "Chamra — jism ki deewar": [
+            (f"{E_}/skin.jpg", "Skin — three layers")],
+        "Sans ka nizam — hawa ka ana jana": [
+            (f"{E_}/breathing.jpg", "Breathing — lungs and diaphragm")],
+    },
+    "health-food": {
+        "Vitamin A — aankhon wala vitamin": [
+            (f"{E_}/vitamin-a.jpg", "Vitamin A — eyes and night blindness")],
+        "Vitamin B group — taqat aur aasab wala khandaaan": [
+            (f"{E_}/vitamin-b.jpg", "Vitamin B1 — polished rice and beriberi")],
+        "Vitamin C — zakham bharne wala, malte wala vitamin": [
+            (f"{E_}/vitamin-c.jpg", "Vitamin C — citrus fruits and scurvy")],
+        "Vitamin D — sooraj ki roshni wala vitamin": [
+            (f"{E_}/vitamin-d.jpg", "Vitamin D — sunlight and rickets")],
+        "Vitamin E aur Vitamin K — do chhote lekin lazmi naam": [
+            (f"{E_}/vitamin-k.jpg", "Vitamin K — blood clotting")],
+        "Minerals — haddi, khoon aur gale ke teen naam": [
+            (f"{E_}/minerals.jpg", "Minerals — calcium, iron, iodine")],
+        "Ab bimariyan — pehle bacteria aur virus ka farq": [
+            (f"{E_}/bacteria-virus.jpg", "Bacteria versus Virus")],
+        "Mashhoor bimariyan aur un ki wajah": [
+            (f"{E_}/mosquito.jpg", "Dengue versus Malaria — two mosquitoes")],
+        "Vaccine kya hai aur kaam kesay karti hai": [
+            (f"{E_}/vaccine.jpg", "How a Vaccine Trains the Body")],
+        "Aakhir me safai — sab se sasti dawai": [
+            (f"{E_}/hygiene.jpg", "Cleanliness — breaking the germ chain")],
+    },
+    "plants-nature": {
+        "Phool ke hisse, ankh se dekho": [
+            (f"{E_}/flower.jpg", "Parts of a Flower")],
+        "Photosynthesis, pauda khana kesay banata hai": [
+            (f"{E_}/photosynthesis.jpg", "Photosynthesis — how a plant cooks")],
+        "Beej se pauda, germination ke marhalay": [
+            (f"{E_}/germination.jpg", "Germination — seed to plant")],
+        "Pani ka cycle, wahi pani bar bar": [
+            (f"{E_}/water-cycle.jpg", "The Water Cycle")],
+        "Mausam aur hawa, baadal, barish aur garaj chamak": [
+            (f"{E_}/rainbow.jpg", "Rainbow — seven colours in order")],
+        "Greenhouse effect aur global warming": [
+            (f"{E_}/greenhouse.jpg", "The Greenhouse Effect")],
+        "Chaand, sooraj aur grehan, dikhne wali baat": [
+            (f"{E_}/grehan.jpg", "Eclipses — solar and lunar")],
+    },
+    "physics-chemistry": {
+        "Roshni, sab se tez musafir": [
+            (f"{E_}/lens-mirror.jpg", "Lenses — convex and concave")],
+        "Awaaz, lehrain jo sunai deti hain": [
+            (f"{E_}/echo.jpg", "Echo — sound coming back")],
+        "Bijli, taar ke andar dodti taaqat": [
+            (f"{E_}/electricity.jpg", "Electricity — units, fuse and MCB")],
+        "Simple machines, kaam asaan karne wale purane dost": [
+            (f"{E_}/lever.jpg", "Simple Machines — the three levers"),
+            (f"{E_}/pulley.jpg", "Simple Machines — pulley and slope")],
+        "Magnet, wo loha jo khud kheenchta hai": [
+            (f"{E_}/magnet.jpg", "Magnet — poles and compass")],
+        "Density, barf tairti kyun hai aur loha doobta kyun hai": [
+            (f"{E_}/density.jpg", "Density — why ice floats and iron sinks")],
+        "Tezab aur base, litmus wala khel": [
+            (f"{E_}/ph-scale.jpg", "Acids and Bases — the pH scale")],
+        "Hawa aur pani, do zaroori cheezain gin kar": [
+            (f"{E_}/air-composition.jpg", "Air — 78% nitrogen, 21% oxygen")],
+        "Dhaten, para, tungsten aur zang": [
+            (f"{E_}/metals.jpg", "Metals — mercury, tungsten and rust")],
+        "Aijadaat aur scientists, cheez aur us ka banane wala": [
+            (f"{E_}/scientists.jpg", "Inventions and Their Inventors")],
+    },
+    # --- Islamiat (manifest: v2/history-islamiat) ---
+    "ghazwaat": {
+        "Ghazwa-e-Badr, jang jo sab kuch badal gayi": [
+            (f"{H_}/ghazwa-badr.jpg", "Map — Badr, south-west of Madinah")],
+        "Ghazwa-e-Uhud, jeet-ti hui jang ka rukh kesay badla": [
+            (f"{H_}/ghazwa-madinah.jpg", "Map — Madinah, with Uhud in its north")],
+        "Ghazwa-e-Khandaq, jab khandaq ne das hazar ko rok diya": [
+            (f"{H_}/ghazwa-madinah.jpg", "Map — Madinah, the trench city")],
+        "Saal-war tartib, aakhir me aik nazar": [
+            (f"{H_}/ghazwa-madinah.jpg", "Map — Madinah at the centre")],
+    },
+    "seerat": {
+        "Paper ke fix nuktaat": [
+            (f"{H_}/seerat-timeline.jpg", "Seerat Timeline — 571 to 632")],
+    },
+    # --- History (manifest: v2/history-islamiat) ---
+    "wars-712-1947": {
+        "Muhammad bin Qasim aur Sindh ki fatah, 712": [
+            (f"{H_}/sindh-712.jpg", "Map — Sindh, land of the 712 campaign")],
+        "Tarain ki dusri jang, 1192": [
+            (f"{H_}/battle-tarain.jpg", "Map — Tarain, near Karnal")],
+        "Panipat ki pehli jang, 1526": [
+            (f"{H_}/battle-panipat.jpg", "Map — Panipat")],
+        "Panipat ki dusri jang, 1556": [
+            (f"{H_}/battle-panipat.jpg", "Map — Panipat")],
+        "Plassey ki jang, 1757": [
+            (f"{H_}/battle-plassey.jpg", "Map — Plassey on the Bhagirathi")],
+        "Panipat ki teesri jang, 1761": [
+            (f"{H_}/battle-panipat.jpg", "Map — Panipat")],
+        "Buxar ki jang, 1764": [
+            (f"{H_}/battle-buxar.jpg", "Map — Buxar on the Ganga")],
+        "Mysore ki jangain aur Tipu Sultan, 1767 se 1799": [
+            (f"{H_}/battle-seringapatam.jpg",
+             "Map — Seringapatam, near Mysuru")],
+        "Anglo-Sikh jangain aur Punjab ka qabza, 1845 se 1849": [
+            (f"{H_}/punjab-lahore.jpg", "Map — Punjab of the five rivers")],
+        "1857 ki Jang-e-Azadi": [
+            (f"{H_}/battle-delhi1857.jpg", "Map — Delhi, heart of 1857")],
+    },
+    "wars-1947-2026": {
+        "Pehli jang, 1947 se 1948. Kashmir se shuru hone wali kahani": [
+            (f"{H_}/kashmir-1947.jpg", "Map — Kashmir and Srinagar")],
+        "1965 ki jang. 6 September ka din": [
+            (f"{H_}/punjab-lahore.jpg", "Map — Lahore and the 1965 front")],
+        "1971 ki jang. Mashriqi Pakistan ka alag hona": [
+            (f"{H_}/dhaka-1971.jpg", "Map — Dhaka")],
+        "Siachen, 1984. Duniya ka sab se uncha maidan-e-jang": [
+            (f"{H_}/siachen-1984.jpg",
+             "Map — Siachen, the highest battlefield")],
+        "Kargil ki jang, 1999. LoC ke paar mahdood takrao": [
+            (f"{H_}/kargil-1999.jpg", "Map — Kargil")],
+        "Pehli Aalmai Jang, 1914 se 1918": [
+            (f"{H_}/europe-ww1.jpg", "Map — Europe in the First World War")],
+        "Dusri Aalmai Jang, 1939 se 1945": [
+            (f"{H_}/ww2-europe.jpg", "Map — Europe in the Second World War"),
+            (f"{H_}/ww2-pacific.jpg",
+             "Map — Japan and the Pacific, where the war ended")],
+    },
+    # --- Space: both recap visuals describe the planets page ---
+    "solar-system": {
+        "Sab se wali recap — paper ke pakke sawal": [
+            (f"{V_}/planets.jpg", "The Solar System — Sun and eight planets")],
+    },
+}
+
+# Per-occurrence override for repeated visuals under one heading:
+# the second solar-system recap visual is the 'sab se' chart, which
+# the same planets page carries as its per-planet paper points.
+VISUAL_MAP_OCC = {
+    ("solar-system", "Sab se wali recap — paper ke pakke sawal", 1): [
+        (f"{V_}/planets.jpg",
+         "Sab Se Chart — biggest, hottest, farthest, most moons")],
+}
+
+# Image inserted right after a section heading (or at the section's
+# end) where the doc has no visual block of its own.
+# (stem -> [(kind, heading prefix, asset, caption)])
+SECTION_INSERTS = {
+    "health-food": [
+        ("after", "Vitamin kya hai", f"{E_}/vitamins.jpg",
+         "Vitamins at a Glance — A, B, C, D, E and K"),
+    ],
+    "quran": [
+        ("after", "Ab numbers ka poora hisaab", f"{H_}/quran-facts.jpg",
+         "The Quran in Numbers — 114 Surahs, 30 Paras, 6,236 Ayahs"),
+    ],
+    "ghazwaat": [
+        ("after", "Fatah Makkah", f"{H_}/ghazwa-makkah.jpg",
+         "Map — Makkah"),
+        ("after", "Taif ka muhasra", f"{H_}/ghazwa-taif.jpg",
+         "Map — Taif, south-east of Makkah"),
+        ("after", "Ghazwa-e-Tabuk", f"{H_}/ghazwa-tabuk.jpg",
+         "Map — Tabuk, the last expedition"),
+    ],
+    "seerat": [
+        ("after", "Paidaish aur khandan", f"{H_}/ghazwa-makkah.jpg",
+         "Map — Makkah, the birthplace"),
+        ("after", "Taif ka safar", f"{H_}/ghazwa-taif.jpg",
+         "Map — Taif"),
+    ],
+    "sultanate": [
+        ("after", "Pehle poori tasveer dekh lo",
+         f"{H_}/sultanate-timeline.jpg",
+         "Delhi Sultanate — Five Dynasties, 1206 to 1526"),
+    ],
+    "mughal": [
+        ("after", "Pehle poori tasveer dekh lo",
+         f"{H_}/mughal-timeline.jpg",
+         "The Mughals — Babur to Bahadur Shah Zafar"),
+    ],
+    "wars-1947-2026": [
+        ("after", "Aakhir me saal-war tartib", f"{H_}/wars-timeline.jpg",
+         "Wars Timeline — 1947 to Kargil 1999"),
+    ],
+    "geometry": [
+        ("end", "Area, andar ki jagah", f"{E_}/perimeter-area.jpg",
+         "Perimeter versus Area — fence or floor"),
+        ("end", "Triangle ke teen konay aur 180 wala raaz",
+         f"{E_}/triangle-circle.jpg",
+         "Triangle and Circle — the cut-corner trick and pi"),
+    ],
+}
+
+# Image as the FIRST block of a reading topic.
+TOPIC_LEAD = {
+    "provinces": (f"{V_}/pakistan-overview.jpg",
+                  "Pakistan at a Glance — provinces and key facts"),
+    "world-terms": (f"{V_}/oceans-seas.jpg",
+                    "Oceans and Seas — the water words of the map"),
+    "treaties": (f"{V_}/treaties.jpg", "Pakistan's Treaties at a Glance"),
+    "solar-system": (f"{V_}/planets.jpg", "The Solar System at a Glance"),
+}
+
+# Image as the FIRST block of an English lesson (grammar charts).
+LESSON_LEAD = {
+    "grammar-25": (f"{V_}/parts-of-speech.jpg",
+                   "Parts of Speech — the whole family"),
+    "grammar-31": (f"{V_}/tenses-timeline.jpg",
+                   "All 12 Tenses on One Timeline"),
+    "grammar-47": (f"{V_}/punctuation.jpg",
+                   "Punctuation — every mark and its job"),
+    "grammar-28": (f"{V_}/sentence-types.jpg", "Sentence Types at a Glance"),
+    "grammar-30": (f"{V_}/active-passive.jpg",
+                   "Active to Passive — the swap"),
+    "grammar-29": (f"{V_}/direct-indirect.jpg",
+                   "Direct to Indirect — the three changes"),
+}
+
+# Image heading the FIRST feature parsed from a geography/world
+# feature doc (those docs render as map-feature collections, so the
+# overview page heads the doc's lead entry).
+FEATURE_LEAD = {
+    "rivers": (f"{V_}/pakistan-rivers.jpg", "The Indus River System"),
+    "dams-barrages": (f"{G_}/geo-dams.jpg",
+                      "Dams and Barrages — north to south"),
+    "doabs": (f"{V_}/pakistan-doabs.jpg", "The Five Doabs of Punjab"),
+    "passes": (f"{G_}/geo-passes.jpg", "The Northern Passes"),
+    "mountains": (f"{V_}/pakistan-mountains.jpg",
+                  "Ranges and Peaks of the North"),
+    "borders": (f"{G_}/borders.jpg",
+                "Pakistan's Borders and Their Lengths"),
+    "heritage": (f"{G_}/geo-heritage.jpg", "Heritage Sites on the Map"),
+    "coast-ports": (f"{G_}/geo-coast.jpg", "Coast and Ports — west to east"),
+    "lakes": (f"{G_}/geo-lakes.jpg", "Lakes of Pakistan — north to south"),
+    "world-features": (f"{V_}/continents.jpg", "The Seven Continents"),
+}
+
+
+def insert_section_images(blocks, rules, owner):
+    """Apply SECTION_INSERTS-style rules to a block list. 'after'
+    inserts right behind the section's heading block; 'end' inserts
+    just before the next heading (the section's last position)."""
+    for kind, prefix, asset, caption in rules:
+        hidx = None
+        for i, b in enumerate(blocks):
+            if b["type"] == "heading" and b["text"].startswith(prefix):
+                hidx = i
+                break
+        if hidx is None:
+            problems.append(
+                f"{owner}: insert heading '{prefix}' not found "
+                f"for {asset}"
+            )
+            continue
+        if kind == "after":
+            pos = hidx + 1
+        else:
+            pos = len(blocks)
+            for j in range(hidx + 1, len(blocks)):
+                if blocks[j]["type"] == "heading":
+                    pos = j
+                    break
+        blocks.insert(pos, _img(asset, caption))
+        wire_counts["inserted"] += 1
+    return blocks
+
+
+def wire_topic(topic, tasveer):
+    """v2.0 wiring for one parsed topic: replace visual blocks with
+    mapped images (card mode), apply section inserts, and put the
+    topic-leading visual page first."""
+    stem = topic["id"]
+    blocks = topic["blocks"]
+    if tasveer == "card":
+        out = []
+        heading = ""
+        seen = {}
+        for b in blocks:
+            if b["type"] == "heading":
+                heading = b["text"]
+                out.append(b)
+                continue
+            if b["type"] != "visual":
+                out.append(b)
+                continue
+            occ = seen.get(heading, 0)
+            seen[heading] = occ + 1
+            imgs = VISUAL_MAP_OCC.get((stem, heading, occ))
+            if imgs is None:
+                imgs = VISUAL_MAP.get(stem, {}).get(heading)
+            if not imgs:
+                visual_unmapped.append(
+                    f"{stem} under <{heading}>: {b['text'][:80]}"
+                )
+                problems.append(
+                    f"{stem}: visual block under <{heading}> has no "
+                    f"mapped diagram"
+                )
+                out.append(b)
+                continue
+            for asset, caption in imgs:
+                out.append(_img(asset, caption))
+            wire_counts["visual_replaced"] += 1
+            visuals_by_stem[stem] = visuals_by_stem.get(stem, 0) + 1
+        blocks = out
+    if stem in SECTION_INSERTS:
+        blocks = insert_section_images(
+            blocks, SECTION_INSERTS[stem], f"topic/{stem}"
+        )
+    if stem in TOPIC_LEAD:
+        asset, caption = TOPIC_LEAD[stem]
+        blocks.insert(0, _img(asset, caption))
+        wire_counts["lead"] += 1
+    topic["blocks"] = blocks
+    return topic
+
+
+# ---------------------------------------------------------------------------
 # Lessons
 # ---------------------------------------------------------------------------
 
@@ -556,6 +1083,11 @@ def parse_lesson(path):
     else:
         part_index, part_name = LESSON_PART[number]
 
+    if lid in LESSON_LEAD:
+        asset, caption = LESSON_LEAD[lid]
+        blocks.insert(0, _img(asset, caption))
+        wire_counts["lead"] += 1
+
     return {
         "id": lid,
         "number": number,
@@ -667,13 +1199,14 @@ def parse_topic(path, portion="pakistan", tasveer="keep"):
         kept = [ln for ln in b if not PIN_RE.match(ln.strip())]
         if kept:
             rest.append(kept)
-    return {
+    topic = {
         "id": path.stem,
         "title": title,
         "subtitle": subtitle,
         "portion": portion,
         "blocks": body_blocks(rest, tasveer=tasveer),
     }
+    return wire_topic(topic, tasveer)
 
 
 def leak_check(blocks, owner):
@@ -878,7 +1411,7 @@ def write_file(name, content):
 
 def gen_lessons():
     lessons = []
-    for n in range(1, 47):
+    for n in range(1, 50):
         path = LESSONS_DIR / f"grammar-{n:02d}.md"
         if not path.exists():
             problems.append(f"grammar-{n:02d}.md: file missing")
@@ -892,10 +1425,14 @@ def gen_lessons():
                 f"{les['id']}: MCQs={len(les['mcqs'])}, "
                 f"blocks={len(les['blocks'])}, part={les['partName']}{flag}"
             )
+    if len(lessons) != 49:
+        problems.append(
+            f"lessons: {len(lessons)} English lessons parsed, expected 49"
+        )
     groups = [
         ("english_lessons_a.dart", "englishLessonsA", lessons[0:24]),
         ("english_lessons_b.dart", "englishLessonsB", lessons[24:40]),
-        ("english_lessons_c.dart", "englishLessonsC", lessons[40:46]),
+        ("english_lessons_c.dart", "englishLessonsC", lessons[40:49]),
     ]
     for fname, var, group in groups:
         body = ",\n".join(emit_lesson(l) for l in group)
@@ -920,6 +1457,10 @@ def gen_geography():
             problems.append(f"geography/{fname}: file missing")
             continue
         feats = parse_features(path, category)
+        if path.stem in FEATURE_LEAD and feats:
+            asset, caption = FEATURE_LEAD[path.stem]
+            feats[0]["blocks"].insert(0, _img(asset, caption))
+            wire_counts["lead"] += 1
         all_features.extend(feats)
         print(f"{fname}: {len(feats)} features ({category})")
     topics = []
@@ -986,6 +1527,10 @@ def gen_world():
         feats = parse_features(
             path, "Duniya", section_categories=WORLD_SECTION_CATEGORIES
         )
+        if "world-features" in FEATURE_LEAD and feats:
+            asset, caption = FEATURE_LEAD["world-features"]
+            feats[0]["blocks"].insert(0, _img(asset, caption))
+            wire_counts["lead"] += 1
         features.extend(feats)
         print(f"world-features.md: {len(feats)} features (sections)")
     path = world_dir / "gulfs-straits.md"
@@ -1170,6 +1715,11 @@ def parse_maths_lesson(path, number):
             problems.append(f"{lid}: answer key has stray Q{n}")
     leak_check(blocks, f"maths/{lid}")
 
+    if lid in SECTION_INSERTS:
+        blocks = insert_section_images(
+            blocks, SECTION_INSERTS[lid], f"maths/{lid}"
+        )
+
     return {
         "id": lid,
         "number": number,
@@ -1231,11 +1781,34 @@ def main():
             print(" -", p)
     else:
         print("\nNo parse problems.")
+    print(
+        f"\nWIRING: {wire_counts['visual_replaced']} visual blocks "
+        f"replaced by images, {wire_counts['inserted']} section "
+        f"inserts, {wire_counts['lead']} leading images"
+    )
+    if visuals_by_stem:
+        print("Visual blocks wired per doc:")
+        for stem in sorted(visuals_by_stem):
+            print(f" - {stem}: {visuals_by_stem[stem]}")
     if map_image_missing:
         print(
             f"\nFATAL: {len(map_image_missing)} map snapshot(s) missing — "
             "refusing to ship dangling image paths."
         )
+        return 1
+    if diagram_missing:
+        print(
+            f"\nFATAL: {len(diagram_missing)} diagram image(s) missing — "
+            "refusing to ship dangling image paths."
+        )
+        return 1
+    if visual_unmapped:
+        print(
+            f"\nFATAL: {len(visual_unmapped)} visual block(s) have no "
+            "mapped diagram — the owner banned text Visual Guide boxes:"
+        )
+        for u in visual_unmapped:
+            print(" -", u)
         return 1
     return 0
 

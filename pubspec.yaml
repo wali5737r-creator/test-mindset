@@ -1,7 +1,7 @@
 name: test_mindset
 description: "Test Mindset - a free online quiz maker for teachers and students. Create a test, share one link, students take it with no login."
 publish_to: "none"
-version: 1.7.0+13
+version: 2.0.0+14
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -33,3 +33,8 @@ flutter:
   assets:
     - assets/learning/maps/pakistan/
     - assets/learning/maps/world/
+    - assets/learning/diagrams/computer/
+    - assets/learning/diagrams/eds/
+    - assets/learning/diagrams/history/
+    - assets/learning/diagrams/visual-notes/
+    - assets/learning/diagrams/geo-maps/

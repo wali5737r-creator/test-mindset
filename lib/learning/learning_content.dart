@@ -8,7 +8,6 @@ import 'models/learning_models.dart';
 ///
 /// English Grammar and GK / Pakistan Studies are two fully separate
 /// portions: separate lists, separate screens, separate progress.
-library;
 
 /// All 46 English lessons, in course order (by lesson number).
 const List<Lesson> allLessons = <Lesson>[

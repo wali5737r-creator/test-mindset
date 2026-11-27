@@ -12,7 +12,20 @@
           "package_name": "com.muhammad.mindset"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "679331143087-ev6n3mgk001bi1131ub159lhrgtlspsh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.muhammad.mindset",
+            "certificate_hash": "98eee2a03efcc5ee662327204a0bb2627a2825bb"
+          }
+        },
+        {
+          "client_id": "679331143087-go0isd1sacb0o4jrk8knbi2jtkl6ncfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyClygtN-YXo3yRi1RHGJltKXTD1pOdJu5M"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679331143087-go0isd1sacb0o4jrk8knbi2jtkl6ncfj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

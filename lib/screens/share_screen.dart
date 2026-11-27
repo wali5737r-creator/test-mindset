@@ -8,8 +8,8 @@ import '../models/quiz_test.dart';
 import '../services/auth_service.dart';
 import '../services/test_service.dart';
 
-/// Shows the test code + shareable student link, with copy/share buttons.
-/// Students need no login - just this link or code.
+/// Shows the test code, with copy/share buttons.
+/// Students need no login - just this code, entered in the app.
 ///
 /// Arguments: {'test': TestModel}.
 class ShareScreen extends StatefulWidget {
@@ -30,12 +30,10 @@ class _ShareScreenState extends State<ShareScreen> {
     _test = (args as Map)['test'] as TestModel;
   }
 
-  String get _link => AppConfig.studentLinkFor(_test.code);
-
   String get _shareText =>
       'Take my test "${_test.title}" on ${AppConfig.appName}:\n'
-      '$_link\n'
-      'Or open ${AppConfig.appName} and enter the code: ${_test.code}';
+      'Open the ${AppConfig.appName} app and enter this code: ${_test.code}\n'
+      'No login needed.';
 
   Future<void> _publishNow() async {
     if (_isPublishing) return;
@@ -138,32 +136,11 @@ class _ShareScreenState extends State<ShareScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 18),
-                  const Text(
-                    'Student Link',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  const SizedBox(height: 6),
-                  SelectableText(_link),
                   const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () => _copy(_test.code, 'Test code'),
-                          icon: const Icon(Icons.copy),
-                          label: const Text('Copy Code'),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () => _copy(_link, 'Link'),
-                          icon: const Icon(Icons.link),
-                          label: const Text('Copy Link'),
-                        ),
-                      ),
-                    ],
+                  OutlinedButton.icon(
+                    onPressed: () => _copy(_test.code, 'Test code'),
+                    icon: const Icon(Icons.copy),
+                    label: const Text('Copy Code'),
                   ),
                   const SizedBox(height: 12),
                   FilledButton.icon(
@@ -177,10 +154,9 @@ class _ShareScreenState extends State<ShareScreen> {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'Students open the link (or enter the code in the app) - '
-                    'no account or login is needed. They write their name, '
-                    'take the timed test, and you see every result in your '
-                    'dashboard.',
+                    'Students open the app and enter this code - no account '
+                    'or login is needed. They write their name, take the '
+                    'timed test, and you see every result in your dashboard.',
                     textAlign: TextAlign.center,
                   ),
                 ],

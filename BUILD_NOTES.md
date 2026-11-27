@@ -265,6 +265,16 @@ migration is needed. Only the DISPLAY is gated: scoring is unchanged
 time to compute the score), and teacher screens (attempt detail,
 results) always show the full review regardless of the setting.
 
+### 5. Mobile-only: web link removed from the share screen (v1.1.2)
+
+Owner decision (2026-11-27): Test Mindset is a mobile app only — the
+web version was never deployed, so the student web link shown on the
+share screen pointed nowhere. The share screen now shows only the
+test code (copy + share text are code-based); students open the app
+and enter the code on the home screen. `AppConfig.webBaseUrl` /
+`studentLinkFor` remain in the config, unused, in case a web deploy
+is ever revived.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing

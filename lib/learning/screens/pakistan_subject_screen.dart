@@ -70,7 +70,7 @@ class PakistanSubjectScreen extends GetView<PakistanSubjectController> {
                           const SizedBox(width: 12),
                           Expanded(
                             child: Text(
-                              'Pakistan ka Naqsha',
+                              'Pakistan Map',
                               style: theme.textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color:
@@ -86,11 +86,11 @@ class PakistanSubjectScreen extends GetView<PakistanSubjectController> {
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        '${allMapFeatures.length} jagahen naqshay par — '
-                        'darya, bandh, daray, pahar, doab, sarhad, '
-                        'tareekhi jagahen aur jheelain. Kisi bhi nishan '
-                        'ko chhuo, mukammal tafseel khul jayegi. '
-                        'Map Quiz bhi wahin hai.',
+                        '${allMapFeatures.length} places on the map — rivers, '
+                        'dams, passes, mountains, doabs, borders, '
+                        'historic sites and lakes. Tap any pin to '
+                        'open its full details. The Map Quiz is '
+                        'there too.',
                         style: theme.textTheme.bodyMedium?.copyWith(
                           color: theme.colorScheme.onPrimaryContainer,
                         ),
@@ -112,7 +112,7 @@ class PakistanSubjectScreen extends GetView<PakistanSubjectController> {
             ),
             const SizedBox(height: 20),
             Text(
-              'Parhai ke Topics',
+              'Reading Topics',
               style: theme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: theme.colorScheme.primary,
@@ -120,9 +120,9 @@ class PakistanSubjectScreen extends GetView<PakistanSubjectController> {
             ),
             const SizedBox(height: 6),
             Text(
-              'Har topic mukammal tafseel ke sath — geography ki '
-              'istilahaat aur sobay, aur phir Pak Studies: tehreek, '
-              'rehnuma, aaeen aur qaumi nishanaat.',
+              'Every topic in full detail — geography terms and the '
+              'provinces, then Pak Studies: the movement, the '
+              'leaders, the constitutions and national symbols.',
               style: theme.textTheme.bodyMedium,
             ),
             const SizedBox(height: 10),

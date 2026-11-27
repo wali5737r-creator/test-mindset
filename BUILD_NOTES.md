@@ -581,6 +581,91 @@ carries its own map picture, showing where it is and what surrounds it.
 - Untouched: every content text, all progress keys, the live maps
   themselves, and all teacher/student flows.
 
+## v1.6 (2026-11-27) — all-English interface + bogus-pin fix
+
+Owner's order: NO Roman Urdu in any app function name or label —
+app name, icon label, buttons, screen titles, chips, hints, login —
+everything English. Only the study CONTENT (lesson/topic text,
+MCQs, feature detail bodies) stays Roman Urdu. App name/label
+"Test Mindset" was already English.
+
+- UI string sweep over all of lib/ except lib/learning/data/
+  (content): LearnHome heading/intro/progress caption and all 11
+  portion-card titles + subtitles, portion intros, map screens
+  (titles "Pakistan Map" / "World Map", category hint bars, quiz
+  bar: Question / Next / Try Again / View Map / Close Quiz /
+  "Exactly the right place!"), the OpenTopoMap offline note
+  ("Internet is needed to load the map. Once an area opens, it is
+  saved on your phone."), solar-system header, lesson/topic
+  completion buttons ("Lesson Completed — tap to undo"),
+  practice-quiz chrome (Question, Next Question, See Result,
+  Review, Practise Again, Correct answer / Your answer), the
+  renderer's trap-card labels (Wrong / Correct / Reason) and
+  "Visual Guide" heading, and the home screen's Learning card
+  ("Start Learning"). Teacher/student/auth screens were already
+  English (verified by grep).
+- Portion display name: "Tanzeemain aur Muahide" →
+  "Organizations & Treaties" (learn_home_screen + portion_screen).
+  The other ten portion names were already English.
+- English-lesson part names renamed in the generator (PARTS, the
+  single source) and regenerated:
+  Buniyad — Shuruaat → Foundation — Getting Started;
+  Noun aur Pronoun — Gehraai → Nouns & Pronouns in Depth;
+  Adjective, Adverb aur Degree → Adjectives, Adverbs & Degrees;
+  Verb aur Tenses → Verbs & Tenses;
+  Jumlay — Sawal, Nafi, Hukam → Sentences — Questions, Negatives
+  & Commands;
+  Chhote Alfaaz — Prepositions aur Usage → Small Words —
+  Prepositions & Usage;
+  Helping Verbs aur Modals → Helping Verbs & Modals;
+  Voice aur Narration (unchanged);
+  Infinitive, Gerund aur Participle → Infinitive, Gerund &
+  Participle;
+  Parts of Speech — Mukammal Jaiza → Parts of Speech — Complete
+  Review;
+  Vocabulary — Idioms, Proverbs, Phrasal Verbs (unchanged);
+  Vocabulary — One Word, Synonyms, Confusing Words (unchanged);
+  Common Mistakes — Ghaltiyan Pakro → Common Mistakes — Spot the
+  Error.
+- Map categories renamed in the generator (FEATURE_FILES,
+  WORLD_SECTION_CATEGORIES, gulfs_category) so data and code agree;
+  the colour switches in feature_sheet.dart and the zoom tables in
+  generate_map_snapshots.py were renamed to match.
+  Pakistan: Darya → Rivers, Bandh/Barrage → Dams & Barrages,
+  Daray → Passes, Pahar → Mountains, Doab → Doabs,
+  Heritage → Heritage Sites, Sarhad → Borders,
+  Sahel → Coast & Ports, Registran/Maidan → Deserts & Plains,
+  Jheelain → Lakes.
+  World: Aabnaye → Straits, Khaleej → Gulfs, Bay → Bays,
+  Samandar → Seas & Oceans, Canal/Aabnaye → Canals & Straits,
+  Darya → Rivers, Pahar → Mountains, Registran → Deserts,
+  Jheelain → Lakes, Jazire → Islands.
+  'Sab' → 'All' in both map screens.
+- Bogus-pin fix: world feature gulfs-straits-01 shipped in
+  v1.3–v1.5 named "Ye topic kyun zaroori hai" (the gulfs-straits
+  intro heading), with the intro prose inside its body. Root
+  cause: the real first feature's heading, "Persian Gulf
+  (Khaleej-e-Faris)", ends in ")", which is_heading() rejects, so
+  parse_features fell back to the previous heading in the buffer.
+  The pin itself (26.5, 52.0) IS the Persian Gulf's pin — the doc
+  has exactly 16 Pin lines for 16 real features, so there was no
+  extra feature to delete; removing it would have deleted the
+  Persian Gulf and renumbered the other 15 gulfs features onto
+  the wrong snapshot images. Fix in the generator instead:
+  parse_features now uses is_feature_heading(), which also
+  accepts a short title carrying a parenthetical second name.
+  Result: gulfs-straits-01 is now "Persian Gulf
+  (Khaleej-e-Faris)", category Gulfs, body = its own text only
+  (intro prose no longer emitted as a feature); id, coordinates
+  and snapshot (gulfs-straits-01.jpg, centred on the Persian
+  Gulf) unchanged. World features stay 39 real pins, Pakistan
+  stays 143.
+- IDs and progress keys: NOT touched anywhere. Only display
+  labels changed; all existing user progress survives. Data diff
+  vs v1.5 is limited to partName lines (english_lessons_*),
+  category lines (geography_data, world_data) and the
+  gulfs-straits-01 entry; every other data file is byte-identical.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing

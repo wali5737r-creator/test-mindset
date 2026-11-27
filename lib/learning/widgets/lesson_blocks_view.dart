@@ -146,7 +146,7 @@ class _BlockWidget extends StatelessWidget {
                   ),
                   const SizedBox(width: 6),
                   Text(
-                    'Tasveer me dekho — Visual',
+                    'Visual Guide',
                     style: theme.textTheme.labelLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: theme.colorScheme.onTertiaryContainer,
@@ -210,7 +210,7 @@ class _BlockWidget extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        'Ghalat: ${block.wrong}',
+                        'Wrong: ${block.wrong}',
                         style: TextStyle(
                           color: Colors.red.shade900,
                           fontSize: 15.5,
@@ -232,7 +232,7 @@ class _BlockWidget extends StatelessWidget {
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        'Sahi: ${block.right}',
+                        'Correct: ${block.right}',
                         style: TextStyle(
                           color: Colors.green.shade900,
                           fontSize: 15.5,
@@ -248,7 +248,7 @@ class _BlockWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
                   child: Text(
-                    'Wajah: ${block.note}',
+                    'Reason: ${block.note}',
                     style: theme.textTheme.bodyMedium?.copyWith(height: 1.4),
                   ),
                 ),

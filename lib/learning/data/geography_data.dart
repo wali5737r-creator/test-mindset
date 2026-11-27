@@ -6,7 +6,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-01",
     name: "Darya-e-Sindh, yani Indus River",
-    category: "Darya",
+    category: "Rivers",
     lat: 27.7,
     lon: 68.86,
     imageAsset: "assets/learning/maps/pakistan/rivers-01.jpg",
@@ -20,7 +20,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-02",
     name: "Darya-e-Jhelum, yani Jhelum River",
-    category: "Darya",
+    category: "Rivers",
     lat: 33.14,
     lon: 73.64,
     imageAsset: "assets/learning/maps/pakistan/rivers-02.jpg",
@@ -32,7 +32,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-03",
     name: "Darya-e-Chenab, yani Chenab River",
-    category: "Darya",
+    category: "Rivers",
     lat: 31.72,
     lon: 72.98,
     imageAsset: "assets/learning/maps/pakistan/rivers-03.jpg",
@@ -44,7 +44,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-04",
     name: "Darya-e-Ravi, yani Ravi River",
-    category: "Darya",
+    category: "Rivers",
     lat: 31.55,
     lon: 74.34,
     imageAsset: "assets/learning/maps/pakistan/rivers-04.jpg",
@@ -56,7 +56,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-05",
     name: "Darya-e-Beas, yani Beas River",
-    category: "Darya",
+    category: "Rivers",
     lat: 31.17,
     lon: 75.2,
     imageAsset: "assets/learning/maps/pakistan/rivers-05.jpg",
@@ -68,7 +68,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-06",
     name: "Darya-e-Sutlej, yani Sutlej River",
-    category: "Darya",
+    category: "Rivers",
     lat: 29.4,
     lon: 71.68,
     imageAsset: "assets/learning/maps/pakistan/rivers-06.jpg",
@@ -80,7 +80,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-07",
     name: "Darya-e-Kabul, yani Kabul River",
-    category: "Darya",
+    category: "Rivers",
     lat: 34.01,
     lon: 71.98,
     imageAsset: "assets/learning/maps/pakistan/rivers-07.jpg",
@@ -92,7 +92,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-08",
     name: "Darya-e-Swat, yani Swat River",
-    category: "Darya",
+    category: "Rivers",
     lat: 34.77,
     lon: 72.36,
     imageAsset: "assets/learning/maps/pakistan/rivers-08.jpg",
@@ -104,7 +104,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-09",
     name: "Darya-e-Gilgit, yani Gilgit River",
-    category: "Darya",
+    category: "Rivers",
     lat: 35.92,
     lon: 74.31,
     imageAsset: "assets/learning/maps/pakistan/rivers-09.jpg",
@@ -116,7 +116,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-10",
     name: "Darya-e-Hunza, yani Hunza River",
-    category: "Darya",
+    category: "Rivers",
     lat: 36.33,
     lon: 74.67,
     imageAsset: "assets/learning/maps/pakistan/rivers-10.jpg",
@@ -128,7 +128,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-11",
     name: "Darya-e-Chitral, yani Chitral River",
-    category: "Darya",
+    category: "Rivers",
     lat: 35.85,
     lon: 71.79,
     imageAsset: "assets/learning/maps/pakistan/rivers-11.jpg",
@@ -140,7 +140,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-12",
     name: "Zhob aur Gomal, yani Zhob River aur Gomal River",
-    category: "Darya",
+    category: "Rivers",
     lat: 31.86,
     lon: 70.9,
     imageAsset: "assets/learning/maps/pakistan/rivers-12.jpg",
@@ -152,7 +152,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-13",
     name: "Darya-e-Hub, yani Hub River",
-    category: "Darya",
+    category: "Rivers",
     lat: 25.25,
     lon: 67.18,
     imageAsset: "assets/learning/maps/pakistan/rivers-13.jpg",
@@ -164,7 +164,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-14",
     name: "Darya-e-Porali, yani Porali River",
-    category: "Darya",
+    category: "Rivers",
     lat: 25.32,
     lon: 66.65,
     imageAsset: "assets/learning/maps/pakistan/rivers-14.jpg",
@@ -176,7 +176,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "rivers-15",
     name: "Darya-e-Hingol, yani Hingol River",
-    category: "Darya",
+    category: "Rivers",
     lat: 25.6,
     lon: 65.5,
     imageAsset: "assets/learning/maps/pakistan/rivers-15.jpg",
@@ -190,7 +190,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-01",
     name: "Tarbela Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 34.09,
     lon: 72.7,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-01.jpg",
@@ -202,7 +202,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-02",
     name: "Mangla Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 33.14,
     lon: 73.64,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-02.jpg",
@@ -214,7 +214,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-03",
     name: "Warsak Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 34.16,
     lon: 71.36,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-03.jpg",
@@ -226,7 +226,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-04",
     name: "Chashma Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 32.43,
     lon: 71.38,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-04.jpg",
@@ -238,7 +238,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-05",
     name: "Ghazi Barotha",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 33.78,
     lon: 72.43,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-05.jpg",
@@ -250,7 +250,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-06",
     name: "Diamer Basha Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 35.52,
     lon: 73.74,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-06.jpg",
@@ -262,7 +262,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-07",
     name: "Guddu Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 28.42,
     lon: 69.73,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-07.jpg",
@@ -274,7 +274,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-08",
     name: "Sukkur Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 27.68,
     lon: 68.85,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-08.jpg",
@@ -286,7 +286,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-09",
     name: "Kotri Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 25.45,
     lon: 68.32,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-09.jpg",
@@ -298,7 +298,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-10",
     name: "Taunsa Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 30.51,
     lon: 70.85,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-10.jpg",
@@ -310,7 +310,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-11",
     name: "Jinnah Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 32.92,
     lon: 71.52,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-11.jpg",
@@ -322,7 +322,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-12",
     name: "Rasul Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 32.68,
     lon: 73.52,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-12.jpg",
@@ -334,7 +334,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-13",
     name: "Qadirabad Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 32.32,
     lon: 73.68,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-13.jpg",
@@ -346,7 +346,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-14",
     name: "Balloki Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 31.22,
     lon: 73.87,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-14.jpg",
@@ -358,7 +358,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-15",
     name: "Sulemanki Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 30.38,
     lon: 73.87,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-15.jpg",
@@ -370,7 +370,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-16",
     name: "Islam Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 29.82,
     lon: 72.72,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-16.jpg",
@@ -382,7 +382,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-17",
     name: "Panjnad Barrage",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 29.35,
     lon: 71.02,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-17.jpg",
@@ -394,7 +394,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-18",
     name: "Khanpur Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 33.81,
     lon: 72.93,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-18.jpg",
@@ -406,7 +406,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-19",
     name: "Rawal Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 33.7,
     lon: 73.13,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-19.jpg",
@@ -418,7 +418,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-20",
     name: "Simly Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 33.72,
     lon: 73.34,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-20.jpg",
@@ -430,7 +430,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-21",
     name: "Hub Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 25.25,
     lon: 67.18,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-21.jpg",
@@ -442,7 +442,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-22",
     name: "Mirani Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 25.94,
     lon: 62.69,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-22.jpg",
@@ -454,7 +454,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "dams-barrages-23",
     name: "Gomal Zam Dam",
-    category: "Bandh/Barrage",
+    category: "Dams & Barrages",
     lat: 32.03,
     lon: 69.84,
     imageAsset: "assets/learning/maps/pakistan/dams-barrages-23.jpg",
@@ -468,7 +468,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "doabs-01",
     name: "Sindh Sagar Doab",
-    category: "Doab",
+    category: "Doabs",
     lat: 32.3,
     lon: 72.35,
     imageAsset: "assets/learning/maps/pakistan/doabs-01.jpg",
@@ -479,7 +479,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "doabs-02",
     name: "Chaj Doab",
-    category: "Doab",
+    category: "Doabs",
     lat: 32.58,
     lon: 73.48,
     imageAsset: "assets/learning/maps/pakistan/doabs-02.jpg",
@@ -490,7 +490,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "doabs-03",
     name: "Rachna Doab",
-    category: "Doab",
+    category: "Doabs",
     lat: 32.16,
     lon: 74.19,
     imageAsset: "assets/learning/maps/pakistan/doabs-03.jpg",
@@ -501,7 +501,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "doabs-04",
     name: "Bari Doab",
-    category: "Doab",
+    category: "Doabs",
     lat: 31.55,
     lon: 74.34,
     imageAsset: "assets/learning/maps/pakistan/doabs-04.jpg",
@@ -512,7 +512,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "doabs-05",
     name: "Bist Doab",
-    category: "Doab",
+    category: "Doabs",
     lat: 31.33,
     lon: 75.58,
     imageAsset: "assets/learning/maps/pakistan/doabs-05.jpg",
@@ -525,7 +525,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-01",
     name: "Khyber Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 34.11,
     lon: 71.1,
     imageAsset: "assets/learning/maps/pakistan/passes-01.jpg",
@@ -536,7 +536,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-02",
     name: "Bolan Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 29.85,
     lon: 67.62,
     imageAsset: "assets/learning/maps/pakistan/passes-02.jpg",
@@ -547,7 +547,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-03",
     name: "Khunjerab Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 36.85,
     lon: 75.42,
     imageAsset: "assets/learning/maps/pakistan/passes-03.jpg",
@@ -558,7 +558,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-04",
     name: "Gomal Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 31.62,
     lon: 69.83,
     imageAsset: "assets/learning/maps/pakistan/passes-04.jpg",
@@ -569,7 +569,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-05",
     name: "Tochi Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 33.12,
     lon: 70.13,
     imageAsset: "assets/learning/maps/pakistan/passes-05.jpg",
@@ -580,7 +580,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-06",
     name: "Babusar Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 35.15,
     lon: 74.05,
     imageAsset: "assets/learning/maps/pakistan/passes-06.jpg",
@@ -591,7 +591,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-07",
     name: "Lowari Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 35.35,
     lon: 71.8,
     imageAsset: "assets/learning/maps/pakistan/passes-07.jpg",
@@ -602,7 +602,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-08",
     name: "Shandur Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 36.08,
     lon: 72.52,
     imageAsset: "assets/learning/maps/pakistan/passes-08.jpg",
@@ -613,7 +613,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-09",
     name: "Broghil Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 36.85,
     lon: 73.42,
     imageAsset: "assets/learning/maps/pakistan/passes-09.jpg",
@@ -624,7 +624,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-10",
     name: "Mintaka Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 36.94,
     lon: 74.85,
     imageAsset: "assets/learning/maps/pakistan/passes-10.jpg",
@@ -635,7 +635,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-11",
     name: "Kilik Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 37.08,
     lon: 74.68,
     imageAsset: "assets/learning/maps/pakistan/passes-11.jpg",
@@ -646,7 +646,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-12",
     name: "Karakoram Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 35.51,
     lon: 77.82,
     imageAsset: "assets/learning/maps/pakistan/passes-12.jpg",
@@ -657,7 +657,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-13",
     name: "Malakand Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 34.58,
     lon: 71.93,
     imageAsset: "assets/learning/maps/pakistan/passes-13.jpg",
@@ -668,7 +668,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-14",
     name: "Peiwar Kotal Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 33.97,
     lon: 69.87,
     imageAsset: "assets/learning/maps/pakistan/passes-14.jpg",
@@ -679,7 +679,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-15",
     name: "Shangla Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 34.88,
     lon: 72.6,
     imageAsset: "assets/learning/maps/pakistan/passes-15.jpg",
@@ -690,7 +690,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "passes-16",
     name: "Dorah Pass",
-    category: "Daray",
+    category: "Passes",
     lat: 36.12,
     lon: 70.97,
     imageAsset: "assets/learning/maps/pakistan/passes-16.jpg",
@@ -703,7 +703,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-01",
     name: "Karakoram Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 35.88,
     lon: 76.51,
     imageAsset: "assets/learning/maps/pakistan/mountains-01.jpg",
@@ -714,7 +714,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-02",
     name: "Himalaya Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 35.24,
     lon: 74.59,
     imageAsset: "assets/learning/maps/pakistan/mountains-02.jpg",
@@ -725,7 +725,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-03",
     name: "Hindu Kush Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 36.25,
     lon: 71.84,
     imageAsset: "assets/learning/maps/pakistan/mountains-03.jpg",
@@ -736,7 +736,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-04",
     name: "Sulaiman Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 31.62,
     lon: 69.93,
     imageAsset: "assets/learning/maps/pakistan/mountains-04.jpg",
@@ -747,7 +747,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-05",
     name: "Kirthar Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 27.42,
     lon: 67.13,
     imageAsset: "assets/learning/maps/pakistan/mountains-05.jpg",
@@ -758,7 +758,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-06",
     name: "Safed Koh Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 34.03,
     lon: 69.79,
     imageAsset: "assets/learning/maps/pakistan/mountains-06.jpg",
@@ -769,7 +769,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-07",
     name: "Toba Kakar Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 30.9,
     lon: 68.4,
     imageAsset: "assets/learning/maps/pakistan/mountains-07.jpg",
@@ -780,7 +780,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-08",
     name: "Hindu Raj Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 36.4,
     lon: 72.9,
     imageAsset: "assets/learning/maps/pakistan/mountains-08.jpg",
@@ -791,7 +791,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-09",
     name: "Pamir Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 36.9,
     lon: 73.7,
     imageAsset: "assets/learning/maps/pakistan/mountains-09.jpg",
@@ -802,7 +802,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-10",
     name: "Salt Range",
-    category: "Pahar",
+    category: "Mountains",
     lat: 32.54,
     lon: 71.93,
     imageAsset: "assets/learning/maps/pakistan/mountains-10.jpg",
@@ -813,7 +813,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-11",
     name: "Margalla Hills",
-    category: "Pahar",
+    category: "Mountains",
     lat: 33.74,
     lon: 73.04,
     imageAsset: "assets/learning/maps/pakistan/mountains-11.jpg",
@@ -824,7 +824,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-12",
     name: "K2",
-    category: "Pahar",
+    category: "Mountains",
     lat: 35.88,
     lon: 76.51,
     imageAsset: "assets/learning/maps/pakistan/mountains-12.jpg",
@@ -835,7 +835,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-13",
     name: "Nanga Parbat",
-    category: "Pahar",
+    category: "Mountains",
     lat: 35.24,
     lon: 74.59,
     imageAsset: "assets/learning/maps/pakistan/mountains-13.jpg",
@@ -846,7 +846,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-14",
     name: "Gasherbrum I",
-    category: "Pahar",
+    category: "Mountains",
     lat: 35.72,
     lon: 76.7,
     imageAsset: "assets/learning/maps/pakistan/mountains-14.jpg",
@@ -857,7 +857,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-15",
     name: "Gasherbrum II",
-    category: "Pahar",
+    category: "Mountains",
     lat: 35.76,
     lon: 76.65,
     imageAsset: "assets/learning/maps/pakistan/mountains-15.jpg",
@@ -868,7 +868,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-16",
     name: "Broad Peak",
-    category: "Pahar",
+    category: "Mountains",
     lat: 35.81,
     lon: 76.57,
     imageAsset: "assets/learning/maps/pakistan/mountains-16.jpg",
@@ -879,7 +879,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-17",
     name: "Rakaposhi",
-    category: "Pahar",
+    category: "Mountains",
     lat: 36.14,
     lon: 74.49,
     imageAsset: "assets/learning/maps/pakistan/mountains-17.jpg",
@@ -890,7 +890,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "mountains-18",
     name: "Tirich Mir",
-    category: "Pahar",
+    category: "Mountains",
     lat: 36.25,
     lon: 71.84,
     imageAsset: "assets/learning/maps/pakistan/mountains-18.jpg",
@@ -903,7 +903,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "deserts-plains-01",
     name: "Thar Desert",
-    category: "Registran/Maidan",
+    category: "Deserts & Plains",
     lat: 25.36,
     lon: 69.74,
     imageAsset: "assets/learning/maps/pakistan/deserts-plains-01.jpg",
@@ -914,7 +914,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "deserts-plains-02",
     name: "Cholistan Desert",
-    category: "Registran/Maidan",
+    category: "Deserts & Plains",
     lat: 28.77,
     lon: 71.33,
     imageAsset: "assets/learning/maps/pakistan/deserts-plains-02.jpg",
@@ -925,7 +925,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "deserts-plains-03",
     name: "Thal Desert",
-    category: "Registran/Maidan",
+    category: "Deserts & Plains",
     lat: 31.63,
     lon: 71.07,
     imageAsset: "assets/learning/maps/pakistan/deserts-plains-03.jpg",
@@ -936,7 +936,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "deserts-plains-04",
     name: "Kharan Desert",
-    category: "Registran/Maidan",
+    category: "Deserts & Plains",
     lat: 28.58,
     lon: 65.42,
     imageAsset: "assets/learning/maps/pakistan/deserts-plains-04.jpg",
@@ -947,7 +947,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "deserts-plains-05",
     name: "Pothohar Plateau",
-    category: "Registran/Maidan",
+    category: "Deserts & Plains",
     lat: 32.93,
     lon: 72.86,
     imageAsset: "assets/learning/maps/pakistan/deserts-plains-05.jpg",
@@ -958,7 +958,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "deserts-plains-06",
     name: "Balochistan Plateau",
-    category: "Registran/Maidan",
+    category: "Deserts & Plains",
     lat: 30.18,
     lon: 66.99,
     imageAsset: "assets/learning/maps/pakistan/deserts-plains-06.jpg",
@@ -971,7 +971,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "borders-01",
     name: "Afghanistan ki sarhad aur Durand Line",
-    category: "Sarhad",
+    category: "Borders",
     lat: 34.12,
     lon: 71.1,
     imageAsset: "assets/learning/maps/pakistan/borders-01.jpg",
@@ -985,7 +985,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "borders-02",
     name: "Iran ki sarhad",
-    category: "Sarhad",
+    category: "Borders",
     lat: 28.6,
     lon: 61.6,
     imageAsset: "assets/learning/maps/pakistan/borders-02.jpg",
@@ -998,7 +998,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "borders-03",
     name: "China ki sarhad",
-    category: "Sarhad",
+    category: "Borders",
     lat: 36.85,
     lon: 75.42,
     imageAsset: "assets/learning/maps/pakistan/borders-03.jpg",
@@ -1012,7 +1012,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "borders-04",
     name: "India ki sarhad aur Radcliffe Line",
-    category: "Sarhad",
+    category: "Borders",
     lat: 31.6,
     lon: 74.57,
     imageAsset: "assets/learning/maps/pakistan/borders-04.jpg",
@@ -1026,7 +1026,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "borders-05",
     name: "Kashmir wali Line of Control",
-    category: "Sarhad",
+    category: "Borders",
     lat: 34.37,
     lon: 74.47,
     imageAsset: "assets/learning/maps/pakistan/borders-05.jpg",
@@ -1040,7 +1040,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "borders-06",
     name: "Arabian Sea ki saheli sarhad",
-    category: "Sarhad",
+    category: "Borders",
     lat: 24.86,
     lon: 67.0,
     imageAsset: "assets/learning/maps/pakistan/borders-06.jpg",
@@ -1067,7 +1067,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-01",
     name: "Mohenjo-daro",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 27.33,
     lon: 68.13,
     imageAsset: "assets/learning/maps/pakistan/heritage-01.jpg",
@@ -1080,7 +1080,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-02",
     name: "Harappa",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 30.63,
     lon: 72.87,
     imageAsset: "assets/learning/maps/pakistan/heritage-02.jpg",
@@ -1093,7 +1093,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-03",
     name: "Taxila",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 33.75,
     lon: 72.83,
     imageAsset: "assets/learning/maps/pakistan/heritage-03.jpg",
@@ -1106,7 +1106,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-04",
     name: "Kot Diji",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 27.35,
     lon: 68.71,
     imageAsset: "assets/learning/maps/pakistan/heritage-04.jpg",
@@ -1119,7 +1119,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-05",
     name: "Mehrgarh",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 29.38,
     lon: 67.62,
     imageAsset: "assets/learning/maps/pakistan/heritage-05.jpg",
@@ -1132,7 +1132,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-06",
     name: "Lahore Fort",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 31.59,
     lon: 74.32,
     imageAsset: "assets/learning/maps/pakistan/heritage-06.jpg",
@@ -1145,7 +1145,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-07",
     name: "Badshahi Mosque",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 31.59,
     lon: 74.31,
     imageAsset: "assets/learning/maps/pakistan/heritage-07.jpg",
@@ -1158,7 +1158,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-08",
     name: "Wazir Khan Mosque",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 31.58,
     lon: 74.32,
     imageAsset: "assets/learning/maps/pakistan/heritage-08.jpg",
@@ -1171,7 +1171,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-09",
     name: "Shalimar Gardens",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 31.59,
     lon: 74.38,
     imageAsset: "assets/learning/maps/pakistan/heritage-09.jpg",
@@ -1184,7 +1184,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-10",
     name: "Jahangir ka Maqbara",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 31.62,
     lon: 74.3,
     imageAsset: "assets/learning/maps/pakistan/heritage-10.jpg",
@@ -1197,7 +1197,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-11",
     name: "Rohtas Fort",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 32.96,
     lon: 73.58,
     imageAsset: "assets/learning/maps/pakistan/heritage-11.jpg",
@@ -1210,7 +1210,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-12",
     name: "Derawar Fort",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 28.77,
     lon: 71.33,
     imageAsset: "assets/learning/maps/pakistan/heritage-12.jpg",
@@ -1223,7 +1223,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-13",
     name: "Ranikot Fort",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 25.9,
     lon: 67.9,
     imageAsset: "assets/learning/maps/pakistan/heritage-13.jpg",
@@ -1236,7 +1236,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-14",
     name: "Makli Necropolis",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 24.76,
     lon: 67.9,
     imageAsset: "assets/learning/maps/pakistan/heritage-14.jpg",
@@ -1249,7 +1249,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-15",
     name: "Shah Jahan Mosque Thatta",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 24.75,
     lon: 67.92,
     imageAsset: "assets/learning/maps/pakistan/heritage-15.jpg",
@@ -1262,7 +1262,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-16",
     name: "Chaukhandi Tombs",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 24.87,
     lon: 67.27,
     imageAsset: "assets/learning/maps/pakistan/heritage-16.jpg",
@@ -1275,7 +1275,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-17",
     name: "Banbhore",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 24.75,
     lon: 67.52,
     imageAsset: "assets/learning/maps/pakistan/heritage-17.jpg",
@@ -1288,7 +1288,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-18",
     name: "Umerkot",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 25.36,
     lon: 69.74,
     imageAsset: "assets/learning/maps/pakistan/heritage-18.jpg",
@@ -1301,7 +1301,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-19",
     name: "Noor Mahal Bahawalpur",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 29.38,
     lon: 71.68,
     imageAsset: "assets/learning/maps/pakistan/heritage-19.jpg",
@@ -1314,7 +1314,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "heritage-20",
     name: "Mohatta Palace",
-    category: "Heritage",
+    category: "Heritage Sites",
     lat: 24.81,
     lon: 67.03,
     imageAsset: "assets/learning/maps/pakistan/heritage-20.jpg",
@@ -1329,7 +1329,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-01",
     name: "Arabian Sea",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.0,
     lon: 66.5,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-01.jpg",
@@ -1342,7 +1342,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-02",
     name: "Makran Coast aur Pakistan ki sahel patti",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 25.3,
     lon: 64.0,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-02.jpg",
@@ -1356,7 +1356,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-03",
     name: "Karachi Port",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.83,
     lon: 66.98,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-03.jpg",
@@ -1369,7 +1369,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-04",
     name: "Port Qasim",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.78,
     lon: 67.33,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-04.jpg",
@@ -1382,7 +1382,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-05",
     name: "Gwadar Port",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 25.11,
     lon: 62.34,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-05.jpg",
@@ -1395,7 +1395,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-06",
     name: "Ormara",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 25.21,
     lon: 64.63,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-06.jpg",
@@ -1407,7 +1407,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-07",
     name: "Pasni",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 25.26,
     lon: 63.47,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-07.jpg",
@@ -1419,7 +1419,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-08",
     name: "Jiwani",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 25.05,
     lon: 61.75,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-08.jpg",
@@ -1432,7 +1432,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-09",
     name: "Keti Bandar",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.14,
     lon: 67.45,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-09.jpg",
@@ -1444,7 +1444,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-10",
     name: "Astola Jazeera",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 25.12,
     lon: 63.85,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-10.jpg",
@@ -1457,7 +1457,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-11",
     name: "Bundal Jazeera",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.73,
     lon: 67.12,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-11.jpg",
@@ -1469,7 +1469,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-12",
     name: "Baba aur Bhit Jazair",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.83,
     lon: 66.96,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-12.jpg",
@@ -1481,7 +1481,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-13",
     name: "Manora",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.8,
     lon: 66.97,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-13.jpg",
@@ -1493,7 +1493,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-14",
     name: "Churna Jazeera",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 24.9,
     lon: 66.6,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-14.jpg",
@@ -1505,7 +1505,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "coast-ports-15",
     name: "Indus Delta",
-    category: "Sahel",
+    category: "Coast & Ports",
     lat: 23.95,
     lon: 67.85,
     imageAsset: "assets/learning/maps/pakistan/coast-ports-15.jpg",
@@ -1521,7 +1521,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-01",
     name: "Manchar Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 26.42,
     lon: 67.67,
     imageAsset: "assets/learning/maps/pakistan/lakes-01.jpg",
@@ -1533,7 +1533,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-02",
     name: "Keenjhar Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 24.96,
     lon: 68.03,
     imageAsset: "assets/learning/maps/pakistan/lakes-02.jpg",
@@ -1545,7 +1545,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-03",
     name: "Haleji Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 24.81,
     lon: 67.77,
     imageAsset: "assets/learning/maps/pakistan/lakes-03.jpg",
@@ -1557,7 +1557,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-04",
     name: "Hadero Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 24.82,
     lon: 67.9,
     imageAsset: "assets/learning/maps/pakistan/lakes-04.jpg",
@@ -1569,7 +1569,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-05",
     name: "Uchhali Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 32.57,
     lon: 72.02,
     imageAsset: "assets/learning/maps/pakistan/lakes-05.jpg",
@@ -1581,7 +1581,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-06",
     name: "Khabikki Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 32.62,
     lon: 72.21,
     imageAsset: "assets/learning/maps/pakistan/lakes-06.jpg",
@@ -1593,7 +1593,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-07",
     name: "Namal Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 32.68,
     lon: 71.8,
     imageAsset: "assets/learning/maps/pakistan/lakes-07.jpg",
@@ -1605,7 +1605,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-08",
     name: "Rawal Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 33.7,
     lon: 73.13,
     imageAsset: "assets/learning/maps/pakistan/lakes-08.jpg",
@@ -1617,7 +1617,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-09",
     name: "Simly Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 33.83,
     lon: 73.35,
     imageAsset: "assets/learning/maps/pakistan/lakes-09.jpg",
@@ -1629,7 +1629,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-10",
     name: "Hanna Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 30.25,
     lon: 67.1,
     imageAsset: "assets/learning/maps/pakistan/lakes-10.jpg",
@@ -1641,7 +1641,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-11",
     name: "Saiful Muluk Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 34.88,
     lon: 73.69,
     imageAsset: "assets/learning/maps/pakistan/lakes-11.jpg",
@@ -1653,7 +1653,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-12",
     name: "Attabad Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 36.34,
     lon: 74.82,
     imageAsset: "assets/learning/maps/pakistan/lakes-12.jpg",
@@ -1665,7 +1665,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-13",
     name: "Satpara Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 35.24,
     lon: 75.64,
     imageAsset: "assets/learning/maps/pakistan/lakes-13.jpg",
@@ -1677,7 +1677,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-14",
     name: "Lower Kachura Jheel, Shangrila",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 35.42,
     lon: 75.45,
     imageAsset: "assets/learning/maps/pakistan/lakes-14.jpg",
@@ -1689,7 +1689,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-15",
     name: "Upper Kachura Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 35.45,
     lon: 75.42,
     imageAsset: "assets/learning/maps/pakistan/lakes-15.jpg",
@@ -1701,7 +1701,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-16",
     name: "Borith Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 36.43,
     lon: 74.86,
     imageAsset: "assets/learning/maps/pakistan/lakes-16.jpg",
@@ -1713,7 +1713,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-17",
     name: "Rush Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 36.17,
     lon: 74.88,
     imageAsset: "assets/learning/maps/pakistan/lakes-17.jpg",
@@ -1725,7 +1725,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-18",
     name: "Phander Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 36.17,
     lon: 72.93,
     imageAsset: "assets/learning/maps/pakistan/lakes-18.jpg",
@@ -1737,7 +1737,7 @@ const List<MapFeature> mapFeatures = <MapFeature>[
   MapFeature(
     id: "lakes-19",
     name: "Karambar Jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 36.88,
     lon: 73.7,
     imageAsset: "assets/learning/maps/pakistan/lakes-19.jpg",

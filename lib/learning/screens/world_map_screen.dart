@@ -15,7 +15,7 @@ import '../widgets/topo_map.dart';
 /// NOTHING is shown until the student picks one category (the old
 /// static image showed all 39 pins at once — owner's complaint).
 /// Tap a pin for its full detail.
-/// Map Quiz mode: "X kahan hai?" — tap the right place on the map.
+/// Map Quiz mode: "Where is X?" — tap the right place on the map.
 class WorldMapController extends GetxController {
   final ProgressService _progress = ProgressService.instance;
 
@@ -23,7 +23,7 @@ class WorldMapController extends GetxController {
   final fm.MapController mapController = fm.MapController();
 
   /// Selected category; null = none picked yet, so the map starts
-  /// clean. 'Sab' is available but is never the default.
+  /// clean. 'All' is available but is never the default.
   final category = RxnString();
 
   /// True once any tile failed to load (offline + nothing cached).
@@ -42,7 +42,7 @@ class WorldMapController extends GetxController {
   List<WorldFeature> get visibleFeatures {
     final cat = category.value;
     if (cat == null) return const <WorldFeature>[];
-    if (cat == 'Sab') return allWorldFeatures;
+    if (cat == 'All') return allWorldFeatures;
     return allWorldFeatures.where((f) => f.category == cat).toList();
   }
 
@@ -125,14 +125,14 @@ class WorldMapScreen extends GetView<WorldMapController> {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Duniya ka Naqsha'),
+        title: const Text('World Map'),
         actions: <Widget>[
           Obx(
             () => controller.quizMode.value
                 ? TextButton.icon(
                     onPressed: controller.exitQuiz,
                     icon: const Icon(Icons.close),
-                    label: const Text('Quiz band'),
+                    label: const Text('Close Quiz'),
                   )
                 : TextButton.icon(
                     onPressed: controller.startQuiz,
@@ -175,15 +175,15 @@ class WorldMapScreen extends GetView<WorldMapController> {
 
   String _hintText() {
     if (controller.quizMode.value) {
-      return 'Naqshay par sahi jagah tap karo. Zoom ke liye do '
-          'ungliyan phailao.';
+      return 'Tap the correct place on the map. Spread two '
+          'fingers to zoom.';
     }
     if (controller.category.value == null) {
-      return 'Pehle upar se aik qisam chunein — phir naqshay par sirf '
-          'usi ke pins ayenge. Zoom ke liye do ungliyan phailao.';
+      return 'First pick a category above — then only its pins '
+          'will appear on the map. Spread two fingers to zoom.';
     }
-    return 'Kisi pin ko chhuo — us jagah ki mukammal tafseel khul '
-        'jayegi. Zoom ke liye do ungliyan phailao.';
+    return 'Tap a pin — the full details of that place will '
+        'open. Spread two fingers to zoom.';
   }
 
   Widget _flutterMap(BuildContext context) {
@@ -246,7 +246,7 @@ class WorldMapScreen extends GetView<WorldMapController> {
 
   Widget _chipsBar(BuildContext context) {
     final theme = Theme.of(context);
-    final categories = <String>['Sab', ...worldMapCategories()];
+    final categories = <String>['All', ...worldMapCategories()];
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
@@ -278,9 +278,9 @@ class WorldMapScreen extends GetView<WorldMapController> {
             color: theme.colorScheme.primaryContainer,
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
             child: Text(
-              'Upar se aik qisam chunein — jese sirf Darya ya sirf '
-              'Khaleej. Phir naqshay par sirf usi qisam ke pins nazar '
-              'ayenge, sab mix nahi honge.',
+              'Pick a category above — for example only Rivers or '
+              'only Gulfs. Then only that category\'s pins will '
+              'appear on the map; nothing gets mixed up.',
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onPrimaryContainer,
               ),
@@ -301,7 +301,7 @@ class WorldMapScreen extends GetView<WorldMapController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              'Map Quiz khatam — Score: ${controller.quizScore.value}/'
+              'Map Quiz finished — Score: ${controller.quizScore.value}/'
               '${controller.targets.length}',
               style: theme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
@@ -321,12 +321,12 @@ class WorldMapScreen extends GetView<WorldMapController> {
                 FilledButton.icon(
                   onPressed: controller.startQuiz,
                   icon: const Icon(Icons.replay),
-                  label: const Text('Dobara'),
+                  label: const Text('Try Again'),
                 ),
                 const SizedBox(width: 10),
                 OutlinedButton(
                   onPressed: controller.exitQuiz,
-                  child: const Text('Naqsha dekho'),
+                  child: const Text('View Map'),
                 ),
               ],
             ),
@@ -346,7 +346,7 @@ class WorldMapScreen extends GetView<WorldMapController> {
           Row(
             children: <Widget>[
               Text(
-                'Sawal ${controller.round.value + 1}/'
+                'Question ${controller.round.value + 1}/'
                 '${controller.targets.length}',
                 style: theme.textTheme.titleSmall
                     ?.copyWith(fontWeight: FontWeight.w600),
@@ -363,7 +363,7 @@ class WorldMapScreen extends GetView<WorldMapController> {
           Text(
             target == null
                 ? ''
-                : '${target.name} kahan hai? Naqshay par tap karo.',
+                : 'Where is ${target.name}? Tap it on the map.',
             style: theme.textTheme.titleMedium
                 ?.copyWith(fontWeight: FontWeight.bold),
           ),
@@ -384,8 +384,8 @@ class WorldMapScreen extends GetView<WorldMapController> {
                 Expanded(
                   child: Text(
                     controller.lastCorrect.value == true
-                        ? 'Bilkul sahi jagah!'
-                        : 'Ye rahi sahi jagah — ${revealed.name}.',
+                        ? 'Exactly the right place!'
+                        : 'Here is the right place — ${revealed.name}.',
                     style: theme.textTheme.bodyMedium,
                   ),
                 ),
@@ -394,7 +394,7 @@ class WorldMapScreen extends GetView<WorldMapController> {
                   child: Text(
                     controller.round.value >= controller.targets.length - 1
                         ? 'Result'
-                        : 'Agla',
+                        : 'Next',
                   ),
                 ),
               ],

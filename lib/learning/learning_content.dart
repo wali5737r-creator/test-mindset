@@ -18,7 +18,7 @@ import 'models/learning_models.dart';
 /// Every portion is fully separate: separate lists, separate screens,
 /// separate progress. Portions (v1.3): English, Pakistan, World,
 /// Space, Computer, Maths, Urdu, Islamiat, History,
-/// Tanzeemain aur Muahide, Everyday Science.
+/// Organizations & Treaties, Everyday Science.
 
 /// All 46 English lessons, in course order (by lesson number).
 const List<Lesson> allLessons = <Lesson>[

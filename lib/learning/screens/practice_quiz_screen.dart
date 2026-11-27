@@ -97,7 +97,7 @@ class PracticeQuizScreen extends GetView<PracticeQuizController> {
         Row(
           children: <Widget>[
             Text(
-              'Sawal ${controller.index.value + 1} / $total',
+              'Question ${controller.index.value + 1} / $total',
               style: theme.textTheme.titleSmall
                   ?.copyWith(fontWeight: FontWeight.w600),
             ),
@@ -158,8 +158,8 @@ class PracticeQuizScreen extends GetView<PracticeQuizController> {
             onPressed: controller.next,
             child: Text(
               controller.index.value >= total - 1
-                  ? 'Result dekho'
-                  : 'Agla sawal',
+                  ? 'See Result'
+                  : 'Next Question',
             ),
           ),
         ],
@@ -241,7 +241,7 @@ class PracticeQuizScreen extends GetView<PracticeQuizController> {
           ),
         const SizedBox(height: 20),
         Text(
-          'Review — har sawal ka sahi jawab',
+          'Review — the correct answer to every question',
           style: theme.textTheme.titleMedium
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
@@ -251,12 +251,12 @@ class PracticeQuizScreen extends GetView<PracticeQuizController> {
         FilledButton.icon(
           onPressed: controller.retake,
           icon: const Icon(Icons.replay),
-          label: const Text('Dobara practice karo'),
+          label: const Text('Practise Again'),
         ),
         const SizedBox(height: 10),
         OutlinedButton(
           onPressed: () => Get.back<void>(),
-          child: const Text('Wapas lesson par'),
+          child: const Text('Back to Lesson'),
         ),
       ],
     );
@@ -297,13 +297,13 @@ class PracticeQuizScreen extends GetView<PracticeQuizController> {
             ),
             const SizedBox(height: 6),
             Text(
-              'Sahi jawab: ${'ABCD'[mcq.correctIndex]}. '
+              'Correct answer: ${'ABCD'[mcq.correctIndex]}. '
               '${mcq.options[mcq.correctIndex]}',
               style: TextStyle(color: Colors.green.shade800, height: 1.4),
             ),
             if (!right && mine >= 0)
               Text(
-                'Tumhara jawab: ${'ABCD'[mine]}. ${mcq.options[mine]}',
+                'Your answer: ${'ABCD'[mine]}. ${mcq.options[mine]}',
                 style: TextStyle(color: Colors.red.shade800, height: 1.4),
               ),
             const SizedBox(height: 4),

@@ -6,7 +6,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-01",
     name: "Nile, duniya ka sab se lamba darya",
-    category: "Darya",
+    category: "Rivers",
     lat: 30.04,
     lon: 31.24,
     imageAsset: "assets/learning/maps/world/world-features-01.jpg",
@@ -17,7 +17,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-02",
     name: "Amazon, pani ke hisab se sab se bara darya",
-    category: "Darya",
+    category: "Rivers",
     lat: -3.12,
     lon: -60.02,
     imageAsset: "assets/learning/maps/world/world-features-02.jpg",
@@ -28,7 +28,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-03",
     name: "Yangtze, Asia ka sab se lamba darya",
-    category: "Darya",
+    category: "Rivers",
     lat: 31.23,
     lon: 121.47,
     imageAsset: "assets/learning/maps/world/world-features-03.jpg",
@@ -39,7 +39,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-04",
     name: "Mississippi, America ka mashhoor darya",
-    category: "Darya",
+    category: "Rivers",
     lat: 29.15,
     lon: -89.25,
     imageAsset: "assets/learning/maps/world/world-features-04.jpg",
@@ -50,7 +50,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-05",
     name: "Sahara, duniya ka sab se bara garam registran",
-    category: "Registran",
+    category: "Deserts",
     lat: 23.0,
     lon: 10.0,
     imageAsset: "assets/learning/maps/world/world-features-05.jpg",
@@ -61,7 +61,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-06",
     name: "Gobi, thanda registran",
-    category: "Registran",
+    category: "Deserts",
     lat: 42.59,
     lon: 103.43,
     imageAsset: "assets/learning/maps/world/world-features-06.jpg",
@@ -72,7 +72,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-07",
     name: "Everest, duniya ki sab se unchi choti",
-    category: "Pahar",
+    category: "Mountains",
     lat: 27.99,
     lon: 86.93,
     imageAsset: "assets/learning/maps/world/world-features-07.jpg",
@@ -83,7 +83,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-08",
     name: "Kilimanjaro, Africa ki sab se unchi choti",
-    category: "Pahar",
+    category: "Mountains",
     lat: -3.07,
     lon: 37.35,
     imageAsset: "assets/learning/maps/world/world-features-08.jpg",
@@ -94,7 +94,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-09",
     name: "Alps, Europe ka mashhoor silsila",
-    category: "Pahar",
+    category: "Mountains",
     lat: 46.56,
     lon: 8.03,
     imageAsset: "assets/learning/maps/world/world-features-09.jpg",
@@ -105,7 +105,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-10",
     name: "Andes, duniya ka sab se lamba silsila",
-    category: "Pahar",
+    category: "Mountains",
     lat: -20.0,
     lon: -68.5,
     imageAsset: "assets/learning/maps/world/world-features-10.jpg",
@@ -116,7 +116,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-11",
     name: "Rockies, North America ka silsila",
-    category: "Pahar",
+    category: "Mountains",
     lat: 44.43,
     lon: -110.59,
     imageAsset: "assets/learning/maps/world/world-features-11.jpg",
@@ -127,7 +127,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-12",
     name: "Suez Canal, Mediterranean aur Red Sea ka rabta",
-    category: "Canal/Aabnaye",
+    category: "Canals & Straits",
     lat: 30.42,
     lon: 32.34,
     imageAsset: "assets/learning/maps/world/world-features-12.jpg",
@@ -138,7 +138,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-13",
     name: "Panama Canal, Atlantic aur Pacific ka rabta",
-    category: "Canal/Aabnaye",
+    category: "Canals & Straits",
     lat: 9.08,
     lon: -79.68,
     imageAsset: "assets/learning/maps/world/world-features-13.jpg",
@@ -149,7 +149,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-14",
     name: "Strait of Malacca, masroof tareen guzargah",
-    category: "Canal/Aabnaye",
+    category: "Canals & Straits",
     lat: 4.2,
     lon: 100.1,
     imageAsset: "assets/learning/maps/world/world-features-14.jpg",
@@ -160,7 +160,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-15",
     name: "Strait of Hormuz, teel ki guzargah",
-    category: "Canal/Aabnaye",
+    category: "Canals & Straits",
     lat: 26.56,
     lon: 56.27,
     imageAsset: "assets/learning/maps/world/world-features-15.jpg",
@@ -171,7 +171,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-16",
     name: "Bering Strait, Asia aur America ke darmiyan",
-    category: "Canal/Aabnaye",
+    category: "Canals & Straits",
     lat: 65.78,
     lon: -168.99,
     imageAsset: "assets/learning/maps/world/world-features-16.jpg",
@@ -182,7 +182,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-17",
     name: "Strait of Gibraltar, Europe aur Africa ke darmiyan",
-    category: "Canal/Aabnaye",
+    category: "Canals & Straits",
     lat: 35.97,
     lon: -5.49,
     imageAsset: "assets/learning/maps/world/world-features-17.jpg",
@@ -193,7 +193,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-18",
     name: "Caspian Sea, duniya ki sab se bari jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 42.3,
     lon: 50.3,
     imageAsset: "assets/learning/maps/world/world-features-18.jpg",
@@ -204,7 +204,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-19",
     name: "Lake Baikal, duniya ki sab se gehri jheel",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 53.79,
     lon: 108.16,
     imageAsset: "assets/learning/maps/world/world-features-19.jpg",
@@ -215,7 +215,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-20",
     name: "Dead Sea, duniya ki sab se neechi jagah",
-    category: "Jheelain",
+    category: "Lakes",
     lat: 31.5,
     lon: 35.55,
     imageAsset: "assets/learning/maps/world/world-features-20.jpg",
@@ -226,7 +226,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-21",
     name: "Greenland, duniya ka sab se bara jazira",
-    category: "Jazire",
+    category: "Islands",
     lat: 71.71,
     lon: -42.6,
     imageAsset: "assets/learning/maps/world/world-features-21.jpg",
@@ -237,7 +237,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-22",
     name: "Madagascar, Africa ke qareeb bara jazira",
-    category: "Jazire",
+    category: "Islands",
     lat: -19.0,
     lon: 47.0,
     imageAsset: "assets/learning/maps/world/world-features-22.jpg",
@@ -248,7 +248,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "world-features-23",
     name: "Indonesia, sab se bara archipelago mulk",
-    category: "Jazire",
+    category: "Islands",
     lat: -2.5,
     lon: 118.0,
     imageAsset: "assets/learning/maps/world/world-features-23.jpg",
@@ -260,22 +260,19 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   ),
   WorldFeature(
     id: "gulfs-straits-01",
-    name: "Ye topic kyun zaroori hai",
-    category: "Aabnaye",
+    name: "Persian Gulf (Khaleej-e-Faris)",
+    category: "Gulfs",
     lat: 26.5,
     lon: 52.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-01.jpg",
     blocks: <LessonBlock>[
-      LessonBlock.paragraph("Dekho, duniya ki tijarat ka sab se bara hissa inhi paniyon se guzarta hai. Teel inhi khaleejon se nikalta hai, jahaz inhi aabnayon se hokar dusre samandar me jate hain, aur tareekh ki bari jangein bhi inhi tang darwazon par lari gayi hain. Is liye one paper me har saal koi na koi khaleej ya aabnaay lazmi ati hai. Sawal kabhi jagah poochta hai, kabhi kin mulkon ke darmiyan hai, aur kabhi ye ke ye mashhoor kyun hai."),
-      LessonBlock.paragraph("Har feature ko teen sawalon se parho ge. Kahan hai. Kin mulkon ya kin paniyon ke darmiyan hai. Aur kyun aham hai, teel ki wajah se, tijarat ki wajah se ya jang ki tareekh ki wajah se. Teeno jawab ajayen to wo feature tumhara pakka ho gaya. Shaklon ki pehchan tum istilahaat wali file me seekh chuke ho, yahan unhi shaklon ke asal naam aur kahaniyan hain."),
-      LessonBlock.paragraph("Persian Gulf (Khaleej-e-Faris)"),
       LessonBlock.paragraph("Arabia aur Iran ke darmiyan zameen me ghusi hui ye khaleej duniya ki sab se aham khaleej hai, aur us ki wajah aik hi lafz hai, teel. Is ke kinare aath mulk hain. Iran, Iraq, Kuwait, Saudi Arabia, Bahrain, Qatar, United Arab Emirates aur Oman. In mulkon ke paas duniya ke teel ke zakhair ka bohat bara hissa hai aur wo teel jahazon me bhar kar isi khaleej se bahar bheja jata hai. Khaleej ka pani nisbatan uthla aur garam hai aur bahar jane ka is ka akela bara darwaza Strait of Hormuz hai, is liye jo is darwaze par asar rakhe wo duniya ki teel ki farahmi par asar dal sakta hai. Tareekh me bhi ye pani garam raha hai, 1980 ki dahai me Iran Iraq jang me yahan ke teel wale jahazon par hamle hue aur 1991 ki Gulf War bhi isi ilaqay ke gird ghoomi. Pakistan ke liye is ki do ahmiyatain hain, aik ye ke faasla bohat kam hai, dusri ye ke lakho Pakistani inhi khaliji mulkon me kaam karte hain aur un ki bheji hui rakam yahin se ati hai."),
     ],
   ),
   WorldFeature(
     id: "gulfs-straits-02",
     name: "Gulf of Oman",
-    category: "Khaleej",
+    category: "Gulfs",
     lat: 24.7,
     lon: 58.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-02.jpg",
@@ -286,7 +283,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-03",
     name: "Arabian Sea",
-    category: "Samandar",
+    category: "Seas & Oceans",
     lat: 15.0,
     lon: 65.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-03.jpg",
@@ -297,7 +294,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-04",
     name: "Red Sea",
-    category: "Samandar",
+    category: "Seas & Oceans",
     lat: 21.0,
     lon: 38.5,
     imageAsset: "assets/learning/maps/world/gulfs-straits-04.jpg",
@@ -308,7 +305,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-05",
     name: "Mediterranean Sea",
-    category: "Samandar",
+    category: "Seas & Oceans",
     lat: 36.0,
     lon: 18.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-05.jpg",
@@ -319,7 +316,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-06",
     name: "Bay of Bengal",
-    category: "Bay",
+    category: "Bays",
     lat: 14.0,
     lon: 88.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-06.jpg",
@@ -330,7 +327,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-07",
     name: "Gulf of Mexico",
-    category: "Khaleej",
+    category: "Gulfs",
     lat: 25.0,
     lon: -90.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-07.jpg",
@@ -341,7 +338,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-08",
     name: "Gulf of Aden",
-    category: "Khaleej",
+    category: "Gulfs",
     lat: 12.5,
     lon: 45.5,
     imageAsset: "assets/learning/maps/world/gulfs-straits-08.jpg",
@@ -352,7 +349,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-09",
     name: "South China Sea",
-    category: "Samandar",
+    category: "Seas & Oceans",
     lat: 14.0,
     lon: 115.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-09.jpg",
@@ -363,7 +360,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-10",
     name: "Caribbean Sea",
-    category: "Samandar",
+    category: "Seas & Oceans",
     lat: 15.5,
     lon: -76.0,
     imageAsset: "assets/learning/maps/world/gulfs-straits-10.jpg",
@@ -374,7 +371,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-11",
     name: "Bering Strait",
-    category: "Aabnaye",
+    category: "Straits",
     lat: 65.78,
     lon: -168.99,
     imageAsset: "assets/learning/maps/world/gulfs-straits-11.jpg",
@@ -385,7 +382,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-12",
     name: "Strait of Gibraltar",
-    category: "Aabnaye",
+    category: "Straits",
     lat: 35.97,
     lon: -5.49,
     imageAsset: "assets/learning/maps/world/gulfs-straits-12.jpg",
@@ -396,7 +393,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-13",
     name: "Bab el-Mandeb",
-    category: "Aabnaye",
+    category: "Straits",
     lat: 12.6,
     lon: 43.4,
     imageAsset: "assets/learning/maps/world/gulfs-straits-13.jpg",
@@ -407,7 +404,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-14",
     name: "English Channel",
-    category: "Aabnaye",
+    category: "Straits",
     lat: 50.2,
     lon: -1.5,
     imageAsset: "assets/learning/maps/world/gulfs-straits-14.jpg",
@@ -418,7 +415,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-15",
     name: "Strait of Malacca",
-    category: "Aabnaye",
+    category: "Straits",
     lat: 4.2,
     lon: 100.1,
     imageAsset: "assets/learning/maps/world/gulfs-straits-15.jpg",
@@ -429,7 +426,7 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
   WorldFeature(
     id: "gulfs-straits-16",
     name: "Dardanelles aur Bosphorus, Istanbul ki do aabnayen",
-    category: "Aabnaye",
+    category: "Straits",
     lat: 40.7,
     lon: 27.8,
     imageAsset: "assets/learning/maps/world/gulfs-straits-16.jpg",

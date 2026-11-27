@@ -53,7 +53,7 @@ class SolarSystemVisual extends StatelessWidget {
               SizedBox(width: 8),
               Expanded(
                 child: Text(
-                  'Nizam-e-Shamsi — Suraj aur Aath Siyare',
+                  'The Solar System — the Sun and Eight Planets',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -65,8 +65,8 @@ class SolarSystemVisual extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           const Text(
-            'Har siyara apne asal rang aur tartib me hai. Kisi ko bhi '
-            'chhuo — us ki mukammal tafseel khul jayegi.',
+            'Every planet is shown in its real colour and correct '
+            'order. Tap any of them — its full details will open.',
             style: TextStyle(color: Colors.white70, fontSize: 13),
           ),
           const SizedBox(height: 10),

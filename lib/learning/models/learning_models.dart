@@ -108,7 +108,7 @@ class Lesson {
 class MapFeature {
   final String id; // e.g. 'rivers-01'
   final String name;
-  final String category; // Darya, Bandh/Barrage, Daray, ...
+  final String category; // Rivers, Dams & Barrages, Passes, ...
   final double lat;
   final double lon;
 
@@ -165,7 +165,7 @@ class GeoTopic {
 class WorldFeature {
   final String id; // e.g. 'world-features-01'
   final String name;
-  final String category; // Darya, Pahar, Khaleej, Aabnaye, ...
+  final String category; // Rivers, Mountains, Gulfs, Straits, ...
   final double lat;
   final double lon;
 

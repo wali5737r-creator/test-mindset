@@ -119,8 +119,8 @@ class MapOfflineNote extends StatelessWidget {
           const SizedBox(width: 8),
           Expanded(
             child: Text(
-              'Naqsha load karne ke liye internet chahiye — aik dafa '
-              'khul jaye to save ho jata hai.',
+              'Internet is needed to load the map. Once an area '
+              'opens, it is saved on your phone.',
               style: theme.textTheme.bodySmall
                   ?.copyWith(color: Colors.brown.shade900),
             ),

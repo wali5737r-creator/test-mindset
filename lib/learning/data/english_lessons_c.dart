@@ -9,7 +9,7 @@ const List<Lesson> englishLessonsC = <Lesson>[
     title: "Common Mistakes 1. Subject-Verb Agreement ki Ghaltiyan",
     subtitle: "Faail aur fail ka mel. Paper ki sab se zyada dohrai jane wali ghalti",
     partIndex: 12,
-    partName: "Common Mistakes — Ghaltiyan Pakro",
+    partName: "Common Mistakes — Spot the Error",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("One paper ke English hisse me aik sawal aisa hota hai jisme aik jumla diya hota hai aur tumhe us me chhupi ghalti pakarni hoti hai. Is ko error detection kehte hain. Aur suno, is qism ke sawalon me sab se zyada ghaltiyan faail aur fail ke mel par banti hain. Angrezi me isay subject-verb agreement kehte hain, yani faail aik ho to fail bhi aik wala, faail zyada hon to fail bhi zyada wala."),
@@ -114,7 +114,7 @@ const List<Lesson> englishLessonsC = <Lesson>[
     title: "Common Mistakes 2. Tense ki Ghaltiyan",
     subtitle: "Waqt ka ishara dekho, fail khud sahi ho jayega",
     partIndex: 12,
-    partName: "Common Mistakes — Ghaltiyan Pakro",
+    partName: "Common Mistakes — Spot the Error",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Error detection ke sawalon me dusri sab se bari qism tense ki ghaltiyon ki hai. Aur is qism ki khaas baat ye hai ke is me jumla dekhne me bilkul theek lagta hai. Alfaaz bhi sahi hote hain, matlab bhi banta hai, bas waqt ka mel bigra hota hai. Examiner janta hai ke Pakistani student verb ki formain to rat leta hai, lekin ye nahi seekhta ke kis waqt ke sath konsi form jayegi."),
@@ -223,7 +223,7 @@ const List<Lesson> englishLessonsC = <Lesson>[
     title: "Common Mistakes 3. Preposition ki Ghaltiyan",
     subtitle: "Har lafz ka apna joda hota hai, aur paper usi jode ko parkhta hai",
     partIndex: 12,
-    partName: "Common Mistakes — Ghaltiyan Pakro",
+    partName: "Common Mistakes — Spot the Error",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Error detection me teesri bari qism preposition ki ghaltiyon ki hai. Ye wo chhote chhote alfaaz hain, in, on, at, to, from, with, of, jo jumle me nazar bhi mushkil se ate hain lekin number inhi par kat-ta hai. In ghaltiyon ki sab se bari wajah hamari Urdu hai. Urdu me hum kehte hain mujh se bara, us ke sath shadi, is par gussa — aur student wohi ke wohi English me le ata hai. English ka har lafz apna joda khud chunta hai, Urdu ke tarjume se nahi chunta."),
@@ -329,7 +329,7 @@ const List<Lesson> englishLessonsC = <Lesson>[
     title: "Common Mistakes 4. Article ki Ghaltiyan",
     subtitle: "A, an aur the. Teen chhote lafz, aur paper ke sab se saste number",
     partIndex: 12,
-    partName: "Common Mistakes — Ghaltiyan Pakro",
+    partName: "Common Mistakes — Spot the Error",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("A, an aur the ko article kehte hain, aur ye teen chhote se lafz one paper me har saal ghalti ban kar ate hain. Pehle lesson me tum ne a aur an ka kaan wala qanoon seekha tha, awaaz suno, letter mat dekho. Is lesson me baat us se aage ki hai. Yahan the ki ghaltiyan bhi hain, aur wo ghaltiyan bhi jahan article lagana hi ghalat hai. Examiner teen taraf se phansata hai. Jahan article chahiye wahan wo use ghayab kar deta hai, jahan nahi chahiye wahan laga deta hai, aur jahan the chahiye wahan a laga deta hai."),
@@ -435,7 +435,7 @@ const List<Lesson> englishLessonsC = <Lesson>[
     title: "Common Mistakes 5. Pronoun aur Word Order ki Ghaltiyan",
     subtitle: "Me ki jagah I, aur jumle ke andar chhupa sawal. Chhoti ghaltiyan, pakke number",
     partIndex: 12,
-    partName: "Common Mistakes — Ghaltiyan Pakro",
+    partName: "Common Mistakes — Spot the Error",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Pronoun wo lafz hai jo naam ki jagah ata hai, I, me, he, him, who, whom, myself. Aur error detection me pronoun ki ghaltiyan is liye bohat ati hain kyunke ye sunne me bilkul theek lagti hain. Between you and I, ye jumla tum roz sunte ho, ganaano aur filmo me bhi yahi ata hai, lekin paper me ye ghalat hai. Examiner janta hai ke jo cheez bol chal me sahi lagti hai, student use paper me bhi sahi samjhega. Isi liye ye ghaltiyan har paper me dohrai jati hain."),
@@ -545,7 +545,7 @@ const List<Lesson> englishLessonsC = <Lesson>[
     title: "Common Mistakes 6. Ghalat Lafz aur Spelling ki Ghaltiyan",
     subtitle: "Sunne me aik jaise, likhne me alag. Aur wo lambe alfaaz jin ki spelling har dafa kat-ti hai",
     partIndex: 12,
-    partName: "Common Mistakes — Ghaltiyan Pakro",
+    partName: "Common Mistakes — Spot the Error",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Common mistakes ki is aakhri qism me ghalti qanoon ki nahi, lafz ki hai. Kuch alfaaz sunne me bilkul aik jaise hain lekin likhne me aur matlab me zameen asman ka farq hai. Their aur there, its aur it's, loose aur lose. Student bol kar sochta hai, aur kaan in me farq bata hi nahi sakta. Dusri taraf wo lambe alfaaz hain jin ki spelling Pakistani students ko har dafa dhoka deti hai. Embarrass, government, separately. Paper in dono ko mila kar parkhta hai, kabhi sahi jumla chunne ko deta hai aur kabhi sahi spelling wala lafz."),

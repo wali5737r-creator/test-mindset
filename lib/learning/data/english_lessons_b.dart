@@ -9,7 +9,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Parts of Speech — Complete",
     subtitle: "Parts of Speech mukammal. Aath hisse, aik jumla, aur paper wali pehchan",
     partIndex: 9,
-    partName: "Parts of Speech — Mukammal Jaiza",
+    partName: "Parts of Speech — Complete Review",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Level 1 me tum ne har hisse ko alag alag pehchanna seekha tha. Ab Level 2 me paper tum se wohi pehchan aik hi jumle ke andar karwata hai. One paper me is par seedha sawal ata hai ke is jumle me ye lafz kis part of speech hai. Sawal dekhne me chhota lagta hai, lekin phansata bohat hai, kyunke paper wale jan bujh kar wo lafz dete hain jo do hisso ka kaam karta hai. Water kabhi noun hai aur kabhi verb. Fast kabhi adjective hai aur kabhi adverb. Jo student lafz ko nahi, us ke kaam ko pehchanta hai, wo ye number kabhi nahi khota. Ye lesson tumhe wahi nazar dega. Aakhir tak tum kisi bhi jumle ke har lafz ka kaam bata sako ge, aur yehi skill aage narration aur sentence wale lessons ki buniyad hai."),
@@ -123,7 +123,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Noun and Its Types",
     subtitle: "Noun aur us ki qismein. Khaas, aam, jamaat, jazbaat aur jins",
     partIndex: 1,
-    partName: "Noun aur Pronoun — Gehraai",
+    partName: "Nouns & Pronouns in Depth",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Lesson 1 me tum ne seekha tha ke noun har naam wali cheez ko kehte hain. Ab paper us se aik kadam aage jata hai. Paper poochhta hai ke ye noun kis qism ka hai. Proper hai ya common, collective hai ya abstract. Aur is se bhi aage, collective noun ke sath verb singular ayega ya plural, ye sawal one paper me bar bar ata hai. Committee has ya committee have, jury its ya jury their, yehi wo bareek jagah hai jahan tayyari wala student number leta hai aur rata lagane wala reh jata hai. Is lesson me hum paanch qismein aisi pakki karenge ke pehchan bhi ho jaye aur verb wala masla bhi hamesha ke liye hal ho jaye."),
@@ -241,7 +241,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Adjective and Adverb — Types",
     subtitle: "Adjective aur Adverb ki qismein. Khoobi kis ki hai, yehi asal sawal hai",
     partIndex: 2,
-    partName: "Adjective, Adverb aur Degree",
+    partName: "Adjectives, Adverbs & Degrees",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Lesson 8 me tum ne adjective aur adverb ki buniyad parhi thi. Adjective cheez ki khoobi batata hai aur adverb kaam ki khoobi. Level 2 me paper is se aage jata hai. Wo poochhta hai ke ye adjective kis qism ka hai, ye adverb kis qism ka hai. Aur us se bhi zyada, wo jumle ki ghalti me adjective ki jagah adverb aur adverb ki jagah adjective rakh kar tumhe phansata hai. He speaks English fluent. Ye jumla sunne me theek lagta hai, lekin paper me yehi ghalat hai. Is lesson me hum dono ki qismein bhi pakki karenge aur un ki jagah ke qanoon bhi, taake pehchan bhi ho aur istemal bhi."),
@@ -358,7 +358,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Sentences — Structure and Kinds",
     subtitle: "Jumle ki saakht aur qismein. Clause gino, jumla pehchan lo",
     partIndex: 4,
-    partName: "Jumlay — Sawal, Nafi, Hukam",
+    partName: "Sentences — Questions, Negatives & Commands",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("Ab tak tum alfaaz aur un ke kaam parh rahe the. Ab paper tum se poora jumla pehchanne ko kehta hai. Ye jumla simple hai ya compound, complex hai ya sirf aik tukra jo jumla hi nahi. One paper me sentence ki saakht pehchanne ka sawal taqreeban har dafa ata hai, aur narration seekhne se pehle ye pehchan lazmi hai, kyunke narration me jumlo ko jorna aur torna yehi kaam hai. Achi baat ye hai ke is ki pehchan ka aik hi usool hai. Clause gino. Jo student clause ginna seekh jaye, us ke liye ye sawal sab se asaan number ban jata hai."),
@@ -473,7 +473,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Direct and Indirect Speech",
     subtitle: "Direct aur Indirect. Dusre ki baat apne alfaaz me, baghair matlab badle",
     partIndex: 7,
-    partName: "Voice aur Narration",
+    partName: "Voice & Narration",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("One paper me narration ka sawal na aye, ye taqreeban na mumkin hai. Kabhi direct ko indirect karna hota hai, kabhi indirect ko direct me pehchanna hota hai, aur chaar options me se teen is qanoon ki kisi na kisi bareek ghalti par bane hote hain. Achi khabar ye hai ke narration koi jadoo nahi. Is ke chand pakke qanoon hain. Tense aik kadam peeche jata hai, pronoun bolne aur sunne wale ke hisaab se badalta hai, aur waqt ke alfaaz bhi peeche ho jate hain. Ye teen cheezein samajh lo to narration paper ka sab se pakka number ban jata hai. Is lesson me hum pura qanoon aik sath rakhenge, taake exam hall me koi surat tumhe uljha na sake."),
@@ -599,7 +599,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Active and Passive Voice — Complete",
     subtitle: "Active aur Passive Voice. Har tense ka passive, aik hi formula se",
     partIndex: 7,
-    partName: "Voice aur Narration",
+    partName: "Voice & Narration",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me voice change ka sawal taqreeban har dafa ata hai. Kabhi active jumla de kar us ki passive chunni hoti hai aur kabhi passive de kar active. Aur ye sawal un sawalon me se hai jo pura number dete hain, kyunke in ka aik hi formula hai aur jo student wo formula pakka kar le, wo tense koi sa bhi ho, ghalti nahi karta. Lesson 24 me hum ne passive ki buniyad seekhi thi, ke jab kaam aham ho aur karne wala nahi to jumla passive banta hai. Ab is lesson me hum usi buniyad ko mukammal karte hain. Sab tenses ka passive, kis tense ka passive banta hi nahi, by kab lagta hai aur kab chhup jata hai, do object wale jumle aur hukum wale jumlo ka passive. Ye sab is aik lesson me hai. Isay pakka kar lo, voice wala hissa paper me tumhara bank ban jayega."),
@@ -714,7 +714,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "All 12 Tenses — Pehchan aur Farq",
     subtitle: "Barah Tenses. Aik hi kahani, barah waqt, aur har tense ki pehchan",
     partIndex: 3,
-    partName: "Verb aur Tenses",
+    partName: "Verbs & Tenses",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me tense ka sawal sab se zyada ane wale sawalon me se hai. Kabhi jumla de kar poocha jata hai ke ye konsa tense hai, kabhi khali jagah me sahi verb lagana hota hai, aur kabhi chaar jumlo me se aik theek jumla chunna hota hai. In teeno soraton me jeet usi ki hoti hai jo tense ko pehchan sakta hai. Masla ye hai ke aksar students barah tenses ko barah alag cheezein samajh kar ratte hain aur paper me sab gadh madh ho jata hai. Is lesson me hum barah tenses ko aik hi kahani par chala kar dekhenge, har tense ki pehchan wali nishani seekhenge, aur Urdu tarjume se tense pehchanne ka wo tareeqa seekhenge jo kabhi dhoka nahi deta. Lesson 18 me hum ne Past Tense ko tafseel se parha tha aur Lesson 19 me continuous wale rang dekhe thay. Ab un sab ko aik jagah jama karke poori tasveer dekhte hain."),
@@ -828,7 +828,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Usage — Is Am Are, Has Have Had, Do Does Did",
     subtitle: "Teen Khandan. Is, has aur does kiske sath ate hain, Urdu matlab ke sath",
     partIndex: 6,
-    partName: "Helping Verbs aur Modals",
+    partName: "Helping Verbs & Modals",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me agar kisi aik cheez par sab se zyada sawal bante hain to wo yehi chhote chhote helping verb hain. Is, am, are. Has, have, had. Do, does, did. Khali jagah me inhi me se aik lagana hota hai, jumla theek karna ho to inhi ki ghalti chhupi hoti hai, aur tense ka har sawal bhi inhi se shuru hota hai. Masla ye hai ke students inhe alag alag lafz samajh kar ratte hain, halanke ye sirf teen khandan hain. Jo student teen khandano ka hisaab samajh le, us ke liye English ka aadha darwaza khul jata hai. Lesson 3 me hum ne pronouns ke sath am, is, are ki pehli pehchan ki thi. Ab un teen khandano ko mukammal karte hain, Urdu matlab ke sath, taake paper me kabhi shak na ho."),
@@ -941,7 +941,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Usage — Should, Could, Would, May, Might, Must",
     subtitle: "Chhe Madadgar. Har lafz ka Urdu chehra, mashwara, ijazat, imkan aur lazmiat",
     partIndex: 6,
-    partName: "Helping Verbs aur Modals",
+    partName: "Helping Verbs & Modals",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me modal verbs ke sawal har saal ate hain. Should, could, would, may, might, must. Khali jagah me in me se sahi wala lagana hota hai, aur ghalti is liye hoti hai ke in sab ke peechay Urdu ke mukhtalif matlab chhupe hote hain. Student angrezi jumla parhta hai lekin zehen me Urdu matlab nahi ban pata, to andaza lag jata hai. Is lesson ka kaam ye hai ke har modal ko us ka Urdu chehra de diya jaye. Jab tumhe ye pata chal jaye ke should matlab chahiye, might matlab shayad lekin ummeed kam, must matlab lazmi, to paper ka sawal andaze ka nahi rehta, pehchan ka ban jata hai. Lesson 15 me hum ne can, must aur have to ki buniyad rakhi thi. Ab usi khandan ke baqi afrad ko gehraai se dekhte hain."),
@@ -1056,7 +1056,7 @@ const List<Lesson> englishLessonsB = <Lesson>[
     title: "Usage — Prepositions At, By, For, Of, From, With, On, In",
     subtitle: "Aath Prepositions. Har lafz ke kayi chehre, Urdu matlab aur jumlo ke sath",
     partIndex: 5,
-    partName: "Chhote Alfaaz — Prepositions aur Usage",
+    partName: "Small Words — Prepositions & Usage",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me preposition ka sawal hamesha hota hai, aur aksar aik nahi, kayi hote hain. Khali jagah se pehle koi mashhoor jumla de diya jata hai aur chaar prepositions me se aik chunna hota hai. Ye sawal ratne se hal nahi hote, kyunke har preposition ke kayi matlab hain aur jumla dekh kar chehra pehchanna parta hai. At, by, for, of, from, with, on, in. Ye aath lafz chhote hain lekin English ka aadha istemal inhi par khara hai. Lesson 5 me hum ne jagah wali prepositions seekhi theen aur Lesson 21 me waqt ke sath at, on, in ka qanoon parha tha. Ab in aath lafzon ke tamam aham chehre aik jagah jama karte hain, Urdu matlab ke sath, taake paper ka koi preposition tumhe dhoka na de sake."),

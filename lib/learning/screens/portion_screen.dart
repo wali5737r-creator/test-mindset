@@ -22,57 +22,58 @@ class PortionInfo {
 
 const Map<String, PortionInfo> portionInfos = <String, PortionInfo>{
   'world': PortionInfo(
-    title: 'World — Duniya',
-    intro: 'Pehle naqshay par duniya ki mashhoor jagahen dekho, phir '
-        'mulk aur istilahaat parho.',
+    title: 'World',
+    intro: 'First see the world\'s famous places on the map, then '
+        'read the countries and map terms.',
     icon: Icons.public,
   ),
   'space': PortionInfo(
-    title: 'Space — Asmaan',
-    intro: 'Upar siyaron ko chhu kar un ki tafseel kholo, phir teen '
-        'topics mukammal parho.',
+    title: 'Space',
+    intro: 'Tap a planet above to open its full details, then read '
+        'all three topics.',
     icon: Icons.rocket_launch,
   ),
   'computer': PortionInfo(
     title: 'Computer',
-    intro: 'Pehle course parho — buniyad, Word, Excel, PowerPoint aur '
-        'shortcuts — phir Practical hisse me asal kaam step by step.',
+    intro: 'Read the course first — basics, Word, Excel, PowerPoint '
+        'and shortcuts — then do the real work step by step in the '
+        'Practical section.',
     icon: Icons.computer,
   ),
   'urdu': PortionInfo(
     title: 'Urdu',
-    intro: 'Ghazal ki istilahaat, asnaaf, qawaid, muhawaray aur adab '
-        'ke mashhoor facts — nukta ba nukta.',
+    intro: 'Ghazal terms, poetry and prose forms, grammar rules, '
+        'idioms and famous literature facts — point by point.',
     icon: Icons.translate,
   ),
   'islamiat': PortionInfo(
     title: 'Islamiat',
-    intro: 'Quran, Hadees, Seerat, Ghazwaat, Khulafa-e-Rashideen aur '
-        'Arkan-e-Islam — har cheez tafseel se.',
+    intro: 'Quran, Hadith, Seerat, Ghazwaat, the Khulafa-e-Rashideen '
+        'and the Pillars of Islam — everything in full detail.',
     icon: Icons.mosque,
   ),
   'history': PortionInfo(
     title: 'History',
-    intro: 'Delhi Sultanate aur Mughal badshah kahani ke andaaz me, '
-        'aur 712 se 2026 tak ki jangain mukammal tafseel ke sath.',
+    intro: 'The Delhi Sultanate and the Mughal emperors told as '
+        'stories, and the wars from 712 to 2026 in full detail.',
     icon: Icons.history_edu,
   ),
   'orgs': PortionInfo(
-    title: 'Tanzeemain aur Muahide',
-    intro: 'UNO, IMF, NATO, OIC, SAARC jaisi tanzeemain aur Indus '
-        'Waters, Tashkent, Simla jese mashhoor muahide.',
+    title: 'Organizations & Treaties',
+    intro: 'Organizations like UNO, IMF, NATO, OIC and SAARC, and '
+        'famous treaties like Indus Waters, Tashkent and Simla.',
     icon: Icons.groups,
   ),
   'eds': PortionInfo(
     title: 'Everyday Science',
-    intro: 'Jo cheezain paper poochta hai lekin hum ne kabhi dekhi '
-        'nahi — har topic ke sath tasveer-numa cards.',
+    intro: 'The things exam papers ask about but we have never '
+        'actually seen — with picture-style cards in every topic.',
     icon: Icons.science,
   ),
 };
 
 /// One topic-based portion (World, Space, Computer, Urdu, Islamiat,
-/// History, Tanzeemain aur Muahide, Everyday Science): an optional
+/// History, Organizations & Treaties, Everyday Science): an
 /// header visual (world map card / solar system), then the reading
 /// topics, each opening in the shared TopicScreen.
 class PortionController extends GetxController {
@@ -129,7 +130,7 @@ class PortionScreen extends GetView<PortionController> {
               const SizedBox(height: 20),
             ],
             Text(
-              'Parhai ke Topics',
+              'Reading Topics',
               style: theme.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: theme.colorScheme.primary,
@@ -145,7 +146,7 @@ class PortionScreen extends GetView<PortionController> {
               if (controller.portion == 'computer' &&
                   topic.id.startsWith('practical-') &&
                   topic.id == 'practical-word')
-                _groupHeading(context, 'Practical — Asal Kaam'),
+                _groupHeading(context, 'Practical — Real Work'),
               _topicRow(context, topic),
             ],
           ],
@@ -193,7 +194,7 @@ class PortionScreen extends GetView<PortionController> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
-                      'Duniya ka Naqsha',
+                      'World Map',
                       style: theme.textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                         color: theme.colorScheme.onPrimaryContainer,
@@ -208,10 +209,10 @@ class PortionScreen extends GetView<PortionController> {
               ),
               const SizedBox(height: 8),
               Text(
-                '${allWorldFeatures.length} jagahen naqshay par — bare '
-                'darya, pahar, khaleejain, aabnayen aur jazire. Kisi '
-                'bhi nishan ko chhuo, mukammal tafseel khul jayegi. '
-                'Map Quiz bhi wahin hai.',
+                '${allWorldFeatures.length} places on the map — great '
+                'rivers, mountains, gulfs, straits and islands. Tap '
+                'any pin to open its full details. The Map Quiz is '
+                'there too.',
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: theme.colorScheme.onPrimaryContainer,
                 ),

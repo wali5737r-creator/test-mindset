@@ -65,7 +65,7 @@ class TopicScreen extends GetView<TopicController> {
                 ? FilledButton.tonalIcon(
                     onPressed: controller.toggleDone,
                     icon: const Icon(Icons.check_circle),
-                    label: const Text('Topic Complete hai — undo karo'),
+                    label: const Text('Topic Completed — tap to undo'),
                   )
                 : OutlinedButton.icon(
                     onPressed: controller.toggleDone,

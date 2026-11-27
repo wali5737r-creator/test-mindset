@@ -45,19 +45,19 @@ OUT_DIR = ROOT / "lib" / "learning" / "data"
 # one part; lesson numbers keep course order inside each part.
 # ---------------------------------------------------------------------------
 PARTS = [
-    ("Buniyad — Shuruaat", [1, 2, 3, 4, 6, 7]),
-    ("Noun aur Pronoun — Gehraai", [13, 14, 26]),
-    ("Adjective, Adverb aur Degree", [8, 17, 27]),
-    ("Verb aur Tenses", [9, 18, 19, 20, 31]),
-    ("Jumlay — Sawal, Nafi, Hukam", [10, 11, 12, 28]),
-    ("Chhote Alfaaz — Prepositions aur Usage", [5, 16, 21, 34]),
-    ("Helping Verbs aur Modals", [15, 32, 33]),
-    ("Voice aur Narration", [24, 29, 30]),
-    ("Infinitive, Gerund aur Participle", [22, 23]),
-    ("Parts of Speech — Mukammal Jaiza", [25]),
+    ("Foundation — Getting Started", [1, 2, 3, 4, 6, 7]),
+    ("Nouns & Pronouns in Depth", [13, 14, 26]),
+    ("Adjectives, Adverbs & Degrees", [8, 17, 27]),
+    ("Verbs & Tenses", [9, 18, 19, 20, 31]),
+    ("Sentences — Questions, Negatives & Commands", [10, 11, 12, 28]),
+    ("Small Words — Prepositions & Usage", [5, 16, 21, 34]),
+    ("Helping Verbs & Modals", [15, 32, 33]),
+    ("Voice & Narration", [24, 29, 30]),
+    ("Infinitive, Gerund & Participle", [22, 23]),
+    ("Parts of Speech — Complete Review", [25]),
     ("Vocabulary — Idioms, Proverbs, Phrasal Verbs", [35, 36, 37]),
     ("Vocabulary — One Word, Synonyms, Confusing Words", [38, 39, 40]),
-    ("Common Mistakes — Ghaltiyan Pakro", [41, 42, 43, 44, 45, 46]),
+    ("Common Mistakes — Spot the Error", [41, 42, 43, 44, 45, 46]),
 ]
 LESSON_PART = {}
 for _i, (_name, _nums) in enumerate(PARTS):
@@ -66,16 +66,16 @@ for _i, (_name, _nums) in enumerate(PARTS):
 
 # Geography feature docs -> map category (chip label).
 FEATURE_FILES = [
-    ("rivers.md", "Darya"),
-    ("dams-barrages.md", "Bandh/Barrage"),
-    ("doabs.md", "Doab"),
-    ("passes.md", "Daray"),
-    ("mountains.md", "Pahar"),
-    ("deserts-plains.md", "Registran/Maidan"),
-    ("borders.md", "Sarhad"),
-    ("heritage.md", "Heritage"),
-    ("coast-ports.md", "Sahel"),
-    ("lakes.md", "Jheelain"),
+    ("rivers.md", "Rivers"),
+    ("dams-barrages.md", "Dams & Barrages"),
+    ("doabs.md", "Doabs"),
+    ("passes.md", "Passes"),
+    ("mountains.md", "Mountains"),
+    ("deserts-plains.md", "Deserts & Plains"),
+    ("borders.md", "Borders"),
+    ("heritage.md", "Heritage Sites"),
+    ("coast-ports.md", "Coast & Ports"),
+    ("lakes.md", "Lakes"),
 ]
 TOPIC_FILES = ["terms.md", "provinces.md"]
 
@@ -89,26 +89,26 @@ PAKSTUDY_FILES = [
 
 # World map: section heading -> chip category in world-features.md.
 WORLD_SECTION_CATEGORIES = {
-    "Duniya ke mashhoor darya": "Darya",
-    "Duniya ke mashhoor registran": "Registran",
-    "Duniya ki mashhoor chotiyan aur silsile": "Pahar",
-    "Mashhoor canals aur aabnayen, yani straits": "Canal/Aabnaye",
-    "Mashhoor jheelain aur neechi jagah": "Jheelain",
-    "Mashhoor jazire": "Jazire",
+    "Duniya ke mashhoor darya": "Rivers",
+    "Duniya ke mashhoor registran": "Deserts",
+    "Duniya ki mashhoor chotiyan aur silsile": "Mountains",
+    "Mashhoor canals aur aabnayen, yani straits": "Canals & Straits",
+    "Mashhoor jheelain aur neechi jagah": "Lakes",
+    "Mashhoor jazire": "Islands",
 }
 
 
 def gulfs_category(name):
     """Chip category for a gulfs-straits.md feature, from its name."""
     if "Strait" in name or "Channel" in name:
-        return "Aabnaye"
+        return "Straits"
     if "Gulf" in name:
-        return "Khaleej"
+        return "Gulfs"
     if "Bay" in name:
-        return "Bay"
+        return "Bays"
     if "Sea" in name:
-        return "Samandar"
-    return "Aabnaye"  # Bab el-Mandeb, Dardanelles/Bosphorus
+        return "Seas & Oceans"
+    return "Straits"  # Bab el-Mandeb, Dardanelles/Bosphorus
 
 
 # ---------------------------------------------------------------------------
@@ -283,6 +283,23 @@ def is_heading(text):
     if len(text) > 95 or NUM_RE.match(text):
         return False
     return not text.endswith((".", "!", "?", ":", '"', "…", ")"))
+
+
+def is_feature_heading(text):
+    """Heading test for map features in parse_features.
+
+    Like is_heading, but a short title carrying a parenthetical
+    second name still counts as a heading — e.g. 'Persian Gulf
+    (Khaleej-e-Faris)', which is_heading rejects for ending in ')'.
+    Without this, such a feature took the previous section's heading
+    as its name (gulfs-straits-01 shipped as 'Ye topic kyun zaroori
+    hai', the intro heading, in v1.3–v1.5).
+    """
+    if is_heading(text):
+        return True
+    if len(text) > 95 or NUM_RE.match(text):
+        return False
+    return text.endswith(")") and "(" in text
 
 
 def parse_traps(block):
@@ -588,7 +605,7 @@ def parse_features(path, category, section_categories=None, category_fn=None):
             lat, lon = float(m.group(1)), float(m.group(2))
             hidx = None
             for i, bb in enumerate(buffer):
-                if len(bb) == 1 and is_heading(block_text(bb)):
+                if len(bb) == 1 and is_feature_heading(block_text(bb)):
                     hidx = i
             if hidx is None:
                 problems.append(
@@ -975,7 +992,7 @@ def gen_world():
     if not path.exists():
         problems.append("world/gulfs-straits.md: file missing")
     else:
-        feats = parse_features(path, "Khaleej/Aabnaye",
+        feats = parse_features(path, "Gulfs & Straits",
                                category_fn=gulfs_category)
         features.extend(feats)
         print(f"gulfs-straits.md: {len(feats)} features (name categories)")

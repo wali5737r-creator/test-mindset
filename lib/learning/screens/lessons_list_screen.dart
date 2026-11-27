@@ -55,8 +55,9 @@ class LessonsListScreen extends GetView<LessonsListController> {
             Padding(
               padding: const EdgeInsets.only(top: 6, bottom: 8),
               child: Text(
-                'Har topic pehle concept se, phir formula se — ratta '
-                'nahi, samajh. Har lesson ke sath 10 practice sawal.',
+                'Every topic starts with the concept, then the formula — '
+                'understanding, not cramming. 10 practice questions '
+                'with every lesson.',
                 style: theme.textTheme.bodyMedium,
               ),
             ),
@@ -114,7 +115,7 @@ class LessonsListScreen extends GetView<LessonsListController> {
                   if (isLast)
                     Chip(
                       visualDensity: VisualDensity.compact,
-                      label: const Text('Jari rakhein'),
+                      label: const Text('Continue'),
                       side: BorderSide.none,
                       backgroundColor: theme.colorScheme.tertiaryContainer,
                     ),

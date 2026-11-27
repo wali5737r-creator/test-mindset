@@ -6,25 +6,25 @@ import 'lesson_blocks_view.dart';
 /// Accent colour per map category (pins + chips share these).
 Color categoryColor(String category) {
   switch (category) {
-    case 'Darya':
+    case 'Rivers':
       return Colors.blue.shade700;
-    case 'Bandh/Barrage':
+    case 'Dams & Barrages':
       return Colors.indigo.shade600;
-    case 'Doab':
+    case 'Doabs':
       return Colors.orange.shade800;
-    case 'Daray':
+    case 'Passes':
       return Colors.brown.shade600;
-    case 'Pahar':
+    case 'Mountains':
       return Colors.grey.shade800;
-    case 'Registran/Maidan':
+    case 'Deserts & Plains':
       return Colors.amber.shade800;
-    case 'Sarhad':
+    case 'Borders':
       return Colors.purple.shade700;
-    case 'Heritage':
+    case 'Heritage Sites':
       return Colors.red.shade700;
-    case 'Sahel':
+    case 'Coast & Ports':
       return Colors.cyan.shade800;
-    case 'Jheelain':
+    case 'Lakes':
       return Colors.teal.shade700;
     default:
       return Colors.blueGrey.shade700;
@@ -34,25 +34,25 @@ Color categoryColor(String category) {
 /// Accent colour per world-map category.
 Color worldCategoryColor(String category) {
   switch (category) {
-    case 'Darya':
+    case 'Rivers':
       return Colors.blue.shade700;
-    case 'Samandar':
+    case 'Seas & Oceans':
       return Colors.blue.shade900;
-    case 'Khaleej':
+    case 'Gulfs':
       return Colors.cyan.shade800;
-    case 'Bay':
+    case 'Bays':
       return Colors.teal.shade700;
-    case 'Aabnaye':
+    case 'Straits':
       return Colors.indigo.shade600;
-    case 'Canal/Aabnaye':
+    case 'Canals & Straits':
       return Colors.deepPurple.shade600;
-    case 'Pahar':
+    case 'Mountains':
       return Colors.grey.shade800;
-    case 'Registran':
+    case 'Deserts':
       return Colors.amber.shade800;
-    case 'Jheelain':
+    case 'Lakes':
       return Colors.lightBlue.shade800;
-    case 'Jazire':
+    case 'Islands':
       return Colors.green.shade700;
     default:
       return Colors.blueGrey.shade700;

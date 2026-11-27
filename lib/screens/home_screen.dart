@@ -197,12 +197,12 @@ class HomeScreen extends GetView<HomeController> {
                         size: 30,
                       ),
                       title: const Text(
-                        'Seekhna shuru karo',
+                        'Start Learning',
                         style: TextStyle(fontWeight: FontWeight.w600),
                       ),
                       subtitle: const Text(
-                        'PPSC ki tayyari: English Grammar aur Pakistan '
-                        'Studies. Bina login, bina internet.',
+                        'PPSC preparation: English Grammar and Pakistan '
+                        'Studies. No login, no internet.',
                       ),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () => Get.toNamed(AppRoutes.learn),

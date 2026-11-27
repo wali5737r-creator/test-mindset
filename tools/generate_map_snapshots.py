@@ -58,30 +58,30 @@ BG_COLOR = (238, 235, 228)  # paper colour where no tile exists
 # Snapshot zoom per Pakistan category: tight enough to read the
 # place, wide enough to see what surrounds it.
 PAK_ZOOM = {
-    "Darya": 7,
-    "Bandh/Barrage": 8,
-    "Daray": 8,
-    "Pahar": 7,
-    "Doab": 8,
-    "Heritage": 9,
-    "Sarhad": 6,
-    "Sahel": 7,
-    "Registran/Maidan": 7,
-    "Jheelain": 8,
+    "Rivers": 7,
+    "Dams & Barrages": 8,
+    "Passes": 8,
+    "Mountains": 7,
+    "Doabs": 8,
+    "Heritage Sites": 9,
+    "Borders": 6,
+    "Coast & Ports": 7,
+    "Deserts & Plains": 7,
+    "Lakes": 8,
 }
 
 # Snapshot zoom per World category.
 WORLD_ZOOM = {
-    "Samandar": 3,
-    "Khaleej": 3,
-    "Bay": 3,
-    "Aabnaye": 6,
-    "Canal/Aabnaye": 6,
-    "Darya": 4,
-    "Pahar": 5,
-    "Registran": 4,
-    "Jheelain": 5,
-    "Jazire": 5,
+    "Seas & Oceans": 3,
+    "Gulfs": 3,
+    "Bays": 3,
+    "Straits": 6,
+    "Canals & Straits": 6,
+    "Rivers": 4,
+    "Mountains": 5,
+    "Deserts": 4,
+    "Lakes": 5,
+    "Islands": 5,
 }
 
 _last_fetch = [0.0]
@@ -211,7 +211,7 @@ def collect_jobs():
     )
     feats += G.parse_features(
         world_dir / "gulfs-straits.md",
-        "Khaleej/Aabnaye",
+        "Gulfs & Straits",
         category_fn=G.gulfs_category,
     )
     for f in feats:

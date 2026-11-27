@@ -135,7 +135,7 @@ class EnglishSubjectScreen extends GetView<EnglishSubjectController> {
                   if (isLast)
                     Chip(
                       visualDensity: VisualDensity.compact,
-                      label: const Text('Jari rakhein'),
+                      label: const Text('Continue'),
                       side: BorderSide.none,
                       backgroundColor: theme.colorScheme.tertiaryContainer,
                     ),

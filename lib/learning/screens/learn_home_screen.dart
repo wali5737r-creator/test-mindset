@@ -21,8 +21,8 @@ class PortionProgress {
 
 /// Learning Mode home: one card per portion, each fully separate
 /// with its own progress (English, Pakistan, World, Space, Computer,
-/// Maths, Urdu, Islamiat, History, Tanzeemain aur Muahide, Everyday
-/// Science). No login, no internet.
+/// Maths, Urdu, Islamiat, History, Organizations & Treaties,
+/// Everyday Science). No login, no internet.
 class LearnHomeController extends GetxController {
   final ProgressService _progress = ProgressService.instance;
 
@@ -146,15 +146,15 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
           padding: const EdgeInsets.all(20),
           children: <Widget>[
             Text(
-              'PPSC ki tayyari — apni raftaar se',
+              'PPSC Preparation — at Your Own Pace',
               style: theme.textTheme.titleLarge
                   ?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 6),
             Text(
-              'Koi login nahi, koi internet nahi. Parho, practice karo, '
-              'aur progress isi phone par save rahegi. Har subject '
-              'bilkul alag hai — jo parhna hai sirf wahi khulega.',
+              'No login and no internet needed. Read, practise, and your '
+              'progress stays saved on this phone. Every subject is '
+              'kept separate — open only what you want to study.',
               style: theme.textTheme.bodyMedium,
             ),
             const SizedBox(height: 14),
@@ -163,7 +163,7 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
                 const Icon(Icons.emoji_events, size: 18),
                 const SizedBox(width: 6),
                 Text(
-                  'Kul progress: $totalDone / $totalAll complete',
+                  'Total progress: $totalDone / $totalAll complete',
                   style: theme.textTheme.titleSmall
                       ?.copyWith(fontWeight: FontWeight.w600),
                 ),
@@ -181,8 +181,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               _resumeChip(
                 context,
                 lastLesson.portion == 'maths'
-                    ? 'Jari rakhein: ${lastLesson.title}'
-                    : 'Jari rakhein: Lesson ${lastLesson.number} — '
+                    ? 'Continue: ${lastLesson.title}'
+                    : 'Continue: Lesson ${lastLesson.number} — '
                         '${lastLesson.title}',
                 () async {
                   await Get.toNamed(
@@ -198,7 +198,7 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               const SizedBox(height: 14),
               _resumeChip(
                 context,
-                'Jari rakhein: ${lastTopic.title}',
+                'Continue: ${lastTopic.title}',
                 () async {
                   await Get.toNamed(
                     AppRoutes.learnTopic,
@@ -215,8 +215,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.menu_book,
               title: 'English Grammar',
               subtitle:
-                  '${allLessons.length} lessons, 13 hisso me — '
-                  'har lesson ke sath 10 practice sawal',
+                  '${allLessons.length} lessons in 13 parts — 10 practice '
+                  'questions with every lesson',
               onTap: () async {
                 await Get.toNamed(AppRoutes.learnEnglish);
                 controller.load();
@@ -228,8 +228,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.map,
               title: 'GK & Pakistan Studies',
               subtitle:
-                  'Pakistan ka naqsha (${allMapFeatures.length} jagahen), '
-                  'geography ke topics aur Pak Studies mukammal',
+                  'Pakistan map (${allMapFeatures.length} places), geography '
+                  'topics and complete Pak Studies',
               extra: controller.mapQuizBest.value == null
                   ? null
                   : 'Map Quiz best: ${controller.mapQuizBest.value}/10',
@@ -242,10 +242,10 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               context,
               portionId: 'world',
               icon: Icons.public,
-              title: 'World — Duniya',
+              title: 'World',
               subtitle:
-                  'Duniya ka naqsha (${allWorldFeatures.length} jagahen), '
-                  'mashhoor mulk, khaleejain, aabnayen aur istilahaat',
+                  'World map (${allWorldFeatures.length} places), famous '
+                  'countries, gulfs, straits and map terms',
               extra: controller.worldMapQuizBest.value == null
                   ? null
                   : 'Map Quiz best: ${controller.worldMapQuizBest.value}/10',
@@ -255,10 +255,10 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               context,
               portionId: 'space',
               icon: Icons.rocket_launch,
-              title: 'Space — Asmaan',
+              title: 'Space',
               subtitle:
-                  'Nizam-e-Shamsi siyaron ke chart ke sath, atmosphere '
-                  'ki layers, ozone, satellites, comets aur galaxies',
+                  'The solar system with a planet chart, the layers of the '
+                  'atmosphere, ozone, satellites, comets and galaxies',
               onTap: () => _openPortion('space'),
             ),
             _portionCard(
@@ -267,8 +267,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.computer,
               title: 'Computer',
               subtitle:
-                  'Buniyad, MS Word / Excel / PowerPoint ke mukammal '
-                  'overview, shortcut keys — aur Practical asal kaam',
+                  'Basics, complete MS Word / Excel / PowerPoint overviews, '
+                  'shortcut keys — and hands-on Practical work',
               onTap: () => _openPortion('computer'),
             ),
             _portionCard(
@@ -277,8 +277,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.calculate,
               title: 'Maths',
               subtitle:
-                  '${allMathsLessons.length} topics — concept pehle, '
-                  'formula baad me; har topic ke sath 10 practice sawal',
+                  '${allMathsLessons.length} topics — concept first, formula '
+                  'after; 10 practice questions with every topic',
               onTap: () async {
                 await Get.toNamed(
                   AppRoutes.learnLessons,
@@ -293,8 +293,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.translate,
               title: 'Urdu',
               subtitle:
-                  'Ghazal ki istilahaat (matla, maqta, radeef), '
-                  'asnaaf, qawaid, muhawaray aur adab ke facts',
+                  'Ghazal terms (matla, maqta, radeef), poetry and prose '
+                  'forms, grammar, idioms and literature facts',
               onTap: () => _openPortion('urdu'),
             ),
             _portionCard(
@@ -303,8 +303,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.mosque,
               title: 'Islamiat',
               subtitle:
-                  'Quran aur Hadees ki details, Seerat, Ghazwaat '
-                  'kahani ke andaaz me, Khulafa aur Arkan-e-Islam',
+                  'Quran and Hadith in detail, Seerat, Ghazwaat told as '
+                  'stories, the Khulafa and the Pillars of Islam',
               onTap: () => _openPortion('islamiat'),
             ),
             _portionCard(
@@ -313,18 +313,18 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.history_edu,
               title: 'History',
               subtitle:
-                  'Delhi Sultanate ke paanch khandan, Mughal badshah '
-                  'aur un ke karnamy, 712 se 2026 tak ki jangain',
+                  'The five dynasties of the Delhi Sultanate, the Mughal '
+                  'emperors and their deeds, wars from 712 to 2026',
               onTap: () => _openPortion('history'),
             ),
             _portionCard(
               context,
               portionId: 'orgs',
               icon: Icons.groups,
-              title: 'Tanzeemain aur Muahide',
+              title: 'Organizations & Treaties',
               subtitle:
-                  'UNO, IMF, World Bank, NATO, OIC, SAARC — aur Indus '
-                  'Waters, Tashkent, Simla jese mashhoor muahide',
+                  'UNO, IMF, World Bank, NATO, OIC, SAARC — and famous '
+                  'treaties like Indus Waters, Tashkent and Simla',
               onTap: () => _openPortion('orgs'),
             ),
             _portionCard(
@@ -333,8 +333,8 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
               icon: Icons.science,
               title: 'Everyday Science',
               subtitle:
-                  'Insani jism, khurak aur vitamins, pauday aur '
-                  'qudrat, rozmarra ki physics aur chemistry',
+                  'The human body, food and vitamins, plants and nature, '
+                  'everyday physics and chemistry',
               onTap: () => _openPortion('eds'),
             ),
           ],

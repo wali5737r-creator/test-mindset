@@ -102,7 +102,7 @@ class LessonScreen extends GetView<LessonController> {
                 ? FilledButton.tonalIcon(
                     onPressed: controller.toggleDone,
                     icon: const Icon(Icons.check_circle),
-                    label: const Text('Lesson Complete hai — undo karo'),
+                    label: const Text('Lesson Completed — tap to undo'),
                   )
                 : OutlinedButton.icon(
                     onPressed: controller.toggleDone,

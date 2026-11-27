@@ -9,7 +9,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "A, An and Nouns",
     subtitle: "A, An aur Nouns. Har cheez ka naam, aur \"aik\" ka sahi istemal",
     partIndex: 0,
-    partName: "Buniyad — Shuruaat",
+    partName: "Foundation — Getting Started",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me English ke hisse me article par, yani a, an aur the par, har saal sawal ata hai. Kabhi jumla theek karna hota hai aur kabhi chaar options me se sahi wala chunna hota hai. Aur mazay ki baat suno, ye sawal paper ke sab se asaan number hain. Bas aik chhota sa qanoon samajhna hai. Jo student ye lesson pakka kar le, wo paper me an honest aur a university jaisi ghalti kabhi nahi karega. Aur yaad rakho, yahi wo ghaltiyan hain jin par aadhe se zyada students apne number kaatte hain."),
@@ -123,7 +123,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Plural Nouns",
     subtitle: "Plural Nouns. Aik se zyada, lekin har noun ka apna andaaz.",
     partIndex: 0,
-    partName: "Buniyad — Shuruaat",
+    partName: "Foundation — Getting Started",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me plural par do tarah ke sawal ate hain. Pehli tarah ke seedhe sawal hote hain, jaise koi pooche ke plural of criterion kya hai. Doosri tarah jumla theek karne wale sawal hote hain, jahan informations, sheeps ya brother-in-laws jaisi ghalti jumle ke andar chhupi hoti hai. Ye sawal un students ke number kaatte hain jo sirf aik usool jante hain ke s laga do, kaam khatam. Sach ye hai ke plural ke chand hi usool hain. Is lesson ke baad tum har noun ka plural khud bana sako ge, rata lagaye baghair."),
@@ -245,7 +245,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Pronouns and am, is, are",
     subtitle: "Pronouns aur am, is, are. Kaam karne wala kaun, aur kaam kis par hua",
     partIndex: 0,
-    partName: "Buniyad — Shuruaat",
+    partName: "Foundation — Getting Started",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me pronoun par har saal sawal ata hai, aur ye sawal aksar jumla theek karne wale hisse me chhupa hota hai. Kabhi Ali and me went likha hota hai aur kabhi between you and I. Dono jumle dekhne me theek lagte hain, lekin aik me ghalti hai. Aur be verb, yani am, is aur are, ka sawal to har paper me lazmi ata hai, kyunke har jumle me yehi verb chalta hai. Jo student ye lesson pakka kar le, wo pronoun wali ghalti kabhi nahi karega, aur am, is, are ka sawal us ke liye muft ke number ban jayega."),
@@ -360,7 +360,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "What, This and That",
     subtitle: "What, This aur That. Paas wala ye, door wala wo, aur kya wala sawal",
     partIndex: 0,
-    partName: "Buniyad — Shuruaat",
+    partName: "Foundation — Getting Started",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me this, that, these, those aur what par sawal har saal ata hai. Kabhi jumla theek karna hota hai ke this books sahi hai ya these books, aur kabhi khali jagah me what ya which bharna hota hai. Ye sawal chhote lagte hain lekin yehi number kaatte hain, kyunke Urdu me ye aur wo to hai lekin this aur that ke chaar roop, this, that, these aur those, dimagh me ulajh jate hain. Is lesson me hum pehle ye farq itna saaf karenge ke ungli ke ishare se yaad rahe, phir what ka kaam samjhenge. Jo student ye lesson pakka kar le, wo in sawalo me kabhi nahi phansega."),
@@ -478,7 +478,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Prepositions of Place",
     subtitle: "Prepositions of Place. Cheez kahan hai, ye batane wale alfaaz",
     partIndex: 5,
-    partName: "Chhote Alfaaz — Prepositions aur Usage",
+    partName: "Small Words — Prepositions & Usage",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me preposition ka sawal sab se zyada ata hai, aur un me bhi jagah wali prepositions, in, on, at, under, between, paper ki jaan hain. Kabhi jumle me khali jagah hoti hai aur kabhi pura jumla theek karna hota hai. Pakistani students ka sab se bara masla ye hai ke Urdu me par aik hi lafz hai. Meiz par, Lahore par, deewar par, sab par. Lekin English me har jagah ka apna lafz hai, in bhi hai, on bhi hai aur at bhi hai. Jo student in teeno ka farq samajh jaye aur baqi jagah wali prepositions ke Urdu matlab pakke kar le, us ke liye ye sawal asaan number ban jate hain. Is lesson me hum har preposition ko us ke Urdu matlab ke sath zehen me bithayenge."),
@@ -600,7 +600,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "There Is and There Are",
     subtitle: "There Is aur There Are. Kisi cheez ke hone ka bayan",
     partIndex: 0,
-    partName: "Buniyad — Shuruaat",
+    partName: "Foundation — Getting Started",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me there is aur there are par sawal bar bar ata hai. Kabhi khali jagah me is ya are bharna hota hai aur kabhi jumla theek karna hota hai, jahan there are a book jaisi ghalti chhupi hoti hai. Pakistani students ki sab se bari uljhan ye hai ke wo there ka tarjuma wahan karte rehte hain, halanke is jumle me there ka matlab wahan bilkul nahi hota. Dusri uljhan ye hai ke verb kis ko dekhega, kyunke noun to verb ke baad ata hai. Is lesson me hum ye dono uljhanein hamesha ke liye khatam karenge. Jo student ye samajh jaye ke faisla peeche wale pehle noun ka hota hai, us ke liye ye sawal asaan ho jayega."),
@@ -720,7 +720,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Possessive Adjectives and Whose",
     subtitle: "Possessive Adjectives aur Whose. Mera, tumhara, us ka, aur kis ka wala sawal",
     partIndex: 0,
-    partName: "Buniyad — Shuruaat",
+    partName: "Foundation — Getting Started",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me possessive par har saal sawal ata hai, aur is mazmoon ki aik ghalti to itni mashhoor hai ke paper banane wale usay lazmi shamil karte hain. Wo ghalti hai its aur it is wali, yani its aur apostrophe wale its ka farq. Is ke sath whose aur who is wale whose ka farq bhi bar bar poocha jata hai. Ye sawal is liye number kaatte hain kyunke sunne me dono aik jaise lagte hain, farq sirf likhne me hai. Is lesson me hum saat possessive adjectives ko pakka karenge, phir in do mashhoor dhoko ko itna saaf karenge ke paper me ankh band karke sahi jawab lage. Jo student apostrophe wala test seekh jaye, wo ye number kabhi nahi harega."),
@@ -840,7 +840,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Adjectives and Adverbs",
     subtitle: "Adjectives aur Adverbs. Cheez ki khoobi aur kaam ki khoobi",
     partIndex: 2,
-    partName: "Adjective, Adverb aur Degree",
+    partName: "Adjectives, Adverbs & Degrees",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me adjective aur adverb ka sawal har saal ata hai, aur ye un sawalo me se hai jahan student ko lagta hai ke jawab theek hai lekin hota ghalat hai. He speaks good, she sings beautiful, ye jumle sunne me theek lagte hain lekin grammar me ghalat hain. Paper me kabhi sahi jumla chunna hota hai aur kabhi good aur well me se aik lagana hota hai. Is lesson ki khaas baat ye hai ke is ka qanoon bohat chhota hai. Adjective cheez ki khoobi batata hai, adverb kaam ki khoobi batata hai. Bas ye aik line samajh lo aur ly wale chand dhoke pehchan lo, to ye sawal tumhare liye asaan ho jayega. Ye buniyadi lesson hai, lekin paper me is ki ghalti bare bare tayyar students bhi kar jate hain."),
@@ -962,7 +962,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Verbs",
     subtitle: "Verbs. Kaam wale alfaaz, jumle ka engine",
     partIndex: 3,
-    partName: "Verb aur Tenses",
+    partName: "Verbs & Tenses",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me English ka aadha khail hi verb ka hai. Tense ka sawal ho, active passive ho, jumla theek karna ho ya khali jagah bharna ho, har jagah pehle verb ko pehchanna parta hai. Aur sach ye hai ke zyada tar students verb ko pehchan hi nahi sakte, is liye tense un ke liye hamesha andhere me teer chalana banta hai. Jo student verb, us ki shaklein aur madadgar verb ka farq pakka kar le, us ke liye aane wale saare tense wale lessons asaan ho jate hain. Ye lesson poori English grammar ki neev hai, isay halka mat lena."),
@@ -1086,7 +1086,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Question Sentences",
     subtitle: "Question Sentences. Sawal banana bhi aik fun hai",
     partIndex: 4,
-    partName: "Jumlay — Sawal, Nafi, Hukam",
+    partName: "Sentences — Questions, Negatives & Commands",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me sawal wale jumle do tarah se ate hain. Aik to seedha sawal theek karna hota hai, jahan lafzon ki tartib ulta pulta di hoti hai. Doosra narration aur indirect speech me ata hai, jahan sawal jumle ke andar chhupa hota hai aur aksar students wahan ghalti karte hain. Is ke ilawa interview aur rozmarra zindagi me sawal poochna hi sab se zyada kaam hai. Khushi ki baat ye hai ke English me sawal banane ka aik hi bandha hua tareeqa hai. Wo seekh lo to har sawal khud ban jayega, chahe wo yes no wala ho ya wh wala."),
@@ -1208,7 +1208,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Negative Sentences",
     subtitle: "Negative Sentences. Nafi ka aik hi darwaza hai",
     partIndex: 4,
-    partName: "Jumlay — Sawal, Nafi, Hukam",
+    partName: "Sentences — Questions, Negatives & Commands",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me negative jumle har jaga ghuse hue hain. Jumla theek karne wale sawal me doesn't went jaisi ghalti chhupi hoti hai, narration me not ki jagah badli hoti hai, aur double negative wala trap to examiner ka khaas pasandida hai. Pakistani students Urdu ke asar me sab se zyada yahi ghaltiyan karte hain, kyunke Urdu me do nafi aik sath chal jati hain aur English me nahi chalti. Ye lesson un saari ghaltiyon ka aik hi ilaj hai. Nafi ka qanoon aik hai, chhota hai, aur hamesha chalta hai."),
@@ -1328,7 +1328,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Imperative Sentences",
     subtitle: "Imperative Sentences. Hukam, darkhwast aur mashwara",
     partIndex: 4,
-    partName: "Jumlay — Sawal, Nafi, Hukam",
+    partName: "Sentences — Questions, Negatives & Commands",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me imperative jumle teen jagah ate hain. Pehle to seedhi pehchan ke sawal me, jahan chaar jumlo me se hukam wala jumla chunna hota hai. Doosra narration me, jahan hukam wale jumle ko reported speech me badalna parta hai aur yahi wo jagah hai jahan imperative ka asal imtehan hota hai. Teesra jumla theek karne me, jahan let ya do not ki ghalti chhupi hoti hai. Khushi ki baat ye hai ke imperative sab se chhota aur sab se seedha jumla hai. Is me na tense ka jhanjhat hai, na subject verb ke mel ka. Bas aik chhupa hua raaz hai, wo samajh lo to poora lesson tumhara hai."),
@@ -1450,7 +1450,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Uncountable Nouns",
     subtitle: "Uncountable Nouns. Jo gine nahi jate, un ki apni duniya hai",
     partIndex: 1,
-    partName: "Noun aur Pronoun — Gehraai",
+    partName: "Nouns & Pronouns in Depth",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me uncountable nouns examiner ka sab se pasandida topic hai, aur is ki wajah saaf hai. Pakistani students Urdu me har cheez ko gin lete hain. Aik mashwara, do mashware. English me ye nahi chalta. Advices, informations, furnitures, ye alfaaz paper me is liye rakhe jate hain taake Urdu soch wale student ko phansaya ja sake. Aur phanste bhi hain, har saal, har paper me. Ye lesson usi jaal ko kaatne ke liye hai. Aik dafa ye samajh ajaye ke konsi cheezein gini hi nahi ja saktin, to article wale sawal, much many wale sawal aur jumla theek karne wale sawal, teeno me number pakke ho jate hain."),
@@ -1572,7 +1572,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Possessive and Objective Pronouns",
     subtitle: "Possessive aur Objective Pronouns. Mine wale aur me wale alfaaz",
     partIndex: 1,
-    partName: "Noun aur Pronoun — Gehraai",
+    partName: "Nouns & Pronouns in Depth",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me pronoun ke sawal har saal ate hain, aur un me sab se mashhoor aik hi trap hai jo pachas saal se chal raha hai. Between you and me ayega ya between you and I? Aadhe se zyada students I laga kar number katwa lete hain. Is ke ilawa my aur mine ka farq, aur me, him, her, us, them ki sahi jagah, ye sab paper ke pakke sawal hain. Ye lesson in teeno ko aik sath saaf kar dega. Farq bohat chhota hai, lekin number is chhote se farq par hi milta hai."),
@@ -1691,7 +1691,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Helping Verbs Can, Must and Have To",
     subtitle: "Can, Must aur Have To. Sakta hai, lazmi hai, aur majboori hai.",
     partIndex: 6,
-    partName: "Helping Verbs aur Modals",
+    partName: "Helping Verbs & Modals",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me can, must aur have to par har saal sawal ata hai. Kabhi khali jagah bharni hoti hai aur kabhi jumla theek karna hota hai. Lekin is lesson ka sab se qeemti hissa aik farq hai jo aadhe se zyada students ko nahi pata hota. Must not aur do not have to ka farq. In dono ka matlab aik doosre ke bilkul ulta hai, aur paper hamesha yahi par parkhta hai. Jo student ye farq samajh gaya, wo in sawalo me kabhi number nahi katayega."),
@@ -1816,7 +1816,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Some, Any and How Many, How Much",
     subtitle: "Some, Any aur Miqdar. Kuch ka sahi istemal.",
     partIndex: 5,
-    partName: "Chhote Alfaaz — Prepositions aur Usage",
+    partName: "Small Words — Prepositions & Usage",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me some aur any wale sawal har saal ate hain, aur ye wo sawal hain jin me sab se zyada students phanste hain. Wajah saaf hai. Urdu me kuch aur koi har jagah chal jate hain, lekin English me some ki jagah alag hai aur any ki alag. Is ke sath how many aur how much ka farq bhi paper ka pasandida hai, aur aakhir me few aur little ke beech wo chhota sa farq jo jumle ka matlab hi badal deta hai. Ye lesson in teeno cheezon ko aik sath pakka kar dega. Ye sawal mushkil nahi hote, bas bareek hote hain, aur bareek cheez hi paper me number dilati hai."),
@@ -1936,7 +1936,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Comparative and Superlative",
     subtitle: "Comparative aur Superlative. Muqabla aur sab se barha hua.",
     partIndex: 2,
-    partName: "Adjective, Adverb aur Degree",
+    partName: "Adjectives, Adverbs & Degrees",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me degrees of comparison har saal ati hain. Than wale jumle, sab se wala superlative, aur as as wali barabari, ye teeno paper ke pakke sawal hain. Aur sach ye hai ke ye sawal sab se asaan number dete hain, bas chand usool pakke karne hote hain. Is lesson ki sab se qeemti cheezein teen hain. Pehli, more better jaisi dohri ghalti jo aadhe students karte hain. Doosri, good aur bad ke irregular roop jo rata mangte hain. Teesri, do cheezon me se aik chunne wala the taller of the two wala usool jo bohat kam students ko ata hai. Ye teeno is lesson me pakke ho jayenge."),
@@ -2062,7 +2062,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Past Tense",
     subtitle: "Past Tense. Guzra hua waqt, mukammal kaam.",
     partIndex: 3,
-    partName: "Verb aur Tenses",
+    partName: "Verbs & Tenses",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me past tense har jagah chhupa hota hai. Tareekh ke sawal is me bante hain, jumla theek karne wale sawal is me phansate hain, aur irregular verbs to seedhe seedhe pooche hi jate hain ke go ka past kya hai, teach ka past kya hai. Is lesson ka sab se bara trap did wala hai. Did ate hi verb apni pehli form me wapas chala jata hai, lekin aadhe students did you went likh dete hain. Doosra bara trap yesterday ke sath have gone lagana hai. Ye dono traps is lesson me hamesha ke liye khatam ho jayenge, aur sath me irregular verbs ki wo fehrist bhi mil jayegi jo paper me bar bar ati hai."),
@@ -2186,7 +2186,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Present and Past Continuous",
     subtitle: "Present aur Past Continuous. Jo ho raha hai, jo ho raha tha.",
     partIndex: 3,
-    partName: "Verb aur Tenses",
+    partName: "Verbs & Tenses",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me continuous tense ke sawal har saal ate hain. Kabhi ing ki spelling poochi jati hai ke running me n dohra kyun hai, kabhi while aur when wale jumle me sahi tense chunna hota hai, aur kabhi wo bareek trap ata hai jis me know aur want jaise verbs ko continuous bana kar tumhe phansaya jata hai. Ye lesson teeno cheezein pakki kar dega. Continuous tense mushkil nahi hai. Ye bas aik chalti hui tasveer hai. Jo student ye tasveer dekhna seekh gaya, wo is tense me kabhi ghalti nahi karega."),
@@ -2311,7 +2311,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Future. Will and Going To",
     subtitle: "Future. Ane wala waqt, aur faisla abhi ka hai ya plan pehle ka",
     partIndex: 3,
-    partName: "Verb aur Tenses",
+    partName: "Verbs & Tenses",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me ane wale waqt par sawal har saal ata hai. Kabhi will aur going to me se sahi wala chunna hota hai, kabhi jumla theek karna hota hai, aur kabhi wo mashhoor trap ata hai jis me when ke baad will laga kar aadhe students phans jate hain. Mazay ki baat ye hai ke ye sawal mushkil nahi hote. Bas tumhe ye samajhna hai ke bolne wala faisla is waqt kar raha hai ya plan pehle se bana hua hai. Ye aik farq samajh lo, is lesson ke saare number tumhare hain."),
@@ -2427,7 +2427,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Frequency Adverbs and Prepositions of Time",
     subtitle: "Frequency Adverbs aur Time ke Prepositions. Kitni dafa, aur waqt ke sath at, on, in",
     partIndex: 5,
-    partName: "Chhote Alfaaz — Prepositions aur Usage",
+    partName: "Small Words — Prepositions & Usage",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me is lesson ke do hisse hain aur dono hi har saal number dete hain. Pehla hissa frequency adverbs ka hai, yani always, usually, often, sometimes aur never. Paper in ki jagah poochta hai, jumle me ye kahan bethte hain. Doosra hissa waqt ke prepositions ka hai, at, on aur in, aur ye to paper ka sab se purana dost hai. At five o clock, on Monday, in June. Teen chhote se alfaaz, lekin galti karne par poora jumla ghalat ho jata hai. Achi baat ye hai ke dono hisso ke qanoon bohat saaf hain. Aik dafa jagah aur size wala qanoon samajh lo, ye sawal tumhare liye muft ke number ban jayenge."),
@@ -2544,7 +2544,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Infinitive and Gerund",
     subtitle: "Infinitive aur Gerund. To wala verb, aur ing wala verb jo noun ban jata hai",
     partIndex: 8,
-    partName: "Infinitive, Gerund aur Participle",
+    partName: "Infinitive, Gerund & Participle",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me aik sawal aisa zaroor ata hai jahan do verbs sath sath aa jate hain, aur paper poochta hai ke doosre verb ke sath to lagega ya ing. I want to go sahi hai ya I want going? I enjoy swimming sahi hai ya I enjoy to swim? Zyada tar students ye sawal andaze se karte hain aur andaza paper me number nahi deta. Sach ye hai ke ye verbs ki chhoti chhoti families hain. Har family ka apna mizaj hai. Jo student families pehchan le, us ke liye ye sawal zindagi bhar asaan ho jata hai. Isi liye ye lesson paper ke hisaab se bohat aham hai."),
@@ -2659,7 +2659,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Present and Past Participle",
     subtitle: "Present aur Past Participle. Ing aur ed wali shaklein jab adjective ban jayen",
     partIndex: 8,
-    partName: "Infinitive, Gerund aur Participle",
+    partName: "Infinitive, Gerund & Participle",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me aik trap aisa hai jo har saal, bina nagha, number kat ta hai. Interesting aur interested ka trap. The film was interesting sahi hai, I was interested sahi hai, lekin aadhe se zyada students in dono ko ulta kar dete hain. Is ke ilawa broken window, running water aur boiled egg jaise jumle bhi paper me ate hain, jahan verb ki shaklein adjective ban kar bethi hoti hain. Achi khabar ye hai ke is poori uljhan ka hal aik chhoti si line me hai jo is lesson ke aakhir tak tumhe rat jayegi. Cheez ing, insan ed. Bas ye samajh lo, is lesson ke saare sawal tumhare hain."),
@@ -2771,7 +2771,7 @@ const List<Lesson> englishLessonsA = <Lesson>[
     title: "Passive Voice ki Buniyad",
     subtitle: "Passive Voice ki Buniyad. Jab kaam aham ho, karne wala nahi",
     partIndex: 7,
-    partName: "Voice aur Narration",
+    partName: "Voice & Narration",
     blocks: <LessonBlock>[
       LessonBlock.heading("Ye lesson kyun zaroori hai"),
       LessonBlock.paragraph("PPSC ke one paper me passive voice par sawal na aye, aisa kam hi hota hai. Kabhi active ko passive me badalna hota hai, kabhi passive ko pehchanna hota hai, aur kabhi jumla theek karna hota hai jahan is wrote jaisi ghalti chhupi hoti hai. Akhbar ki surkhiyan, sarkari notifications aur PPSC ki apni advertisements, teeno passive se bhari hui hain. Applications are invited. The last date has been announced. Ye jumle parhne ke liye bhi passive ki samajh lazmi hai. Aik wazeh baat pehle se sun lo. Ye lesson sirf buniyad hai. Is me hum sirf present aur past ke saada passive seekhen ge. Poora passive, har tense ke sath, modal ke sath aur hukum wale jumlo ke sath, Level 2 me alag lesson me ayega. Buniyad pakki ho to wo lesson asaan lagega."),

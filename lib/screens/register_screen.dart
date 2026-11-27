@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/auth_controller.dart';
+import '../widgets/google_sign_in_button.dart';
 import '../widgets/loading_button.dart';
 
 /// Teacher registration: name, institute, email, password.
@@ -157,6 +158,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         label: 'Create Account',
                         loading: _authController.isLoading.value,
                         onPressed: _submit,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    const Row(
+                      children: [
+                        Expanded(child: Divider()),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 12),
+                          child: Text('or'),
+                        ),
+                        Expanded(child: Divider()),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    Obx(
+                      () => GoogleSignInButton(
+                        loading: _authController.isLoading.value,
+                        onPressed: () => _authController.signInWithGoogle(),
                       ),
                     ),
                     const SizedBox(height: 10),

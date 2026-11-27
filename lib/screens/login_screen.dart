@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../config/app_config.dart';
 import '../controllers/auth_controller.dart';
 import '../routes/app_routes.dart';
+import '../widgets/google_sign_in_button.dart';
 import '../widgets/loading_button.dart';
 
 /// Teacher login (email + password).
@@ -124,6 +125,24 @@ class _LoginScreenState extends State<LoginScreen> {
                         label: 'Login',
                         loading: _authController.isLoading.value,
                         onPressed: _submit,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    const Row(
+                      children: [
+                        Expanded(child: Divider()),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 12),
+                          child: Text('or'),
+                        ),
+                        Expanded(child: Divider()),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    Obx(
+                      () => GoogleSignInButton(
+                        loading: _authController.isLoading.value,
+                        onPressed: () => _authController.signInWithGoogle(),
                       ),
                     ),
                     const SizedBox(height: 10),

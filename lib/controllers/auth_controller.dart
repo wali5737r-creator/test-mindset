@@ -48,6 +48,23 @@ class AuthController extends GetxController {
     }
   }
 
+  Future<void> signInWithGoogle() async {
+    if (isLoading.value) return;
+    isLoading.value = true;
+    try {
+      final signedIn = await _auth.signInWithGoogle();
+      if (!signedIn) {
+        // User cancelled the Google account picker - stay put, no error.
+        return;
+      }
+      Get.offAllNamed(AppRoutes.dashboard);
+    } catch (e) {
+      Get.snackbar('Google sign-in failed', AuthService.friendlyError(e));
+    } finally {
+      isLoading.value = false;
+    }
+  }
+
   Future<void> resetPassword(String email) async {
     if (isLoading.value) return;
     isLoading.value = true;

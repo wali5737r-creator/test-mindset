@@ -26,7 +26,8 @@ lib/
     attempt.dart                 Attempt (+ percent getter: raw score
                                  floored at 0 for display only).
   services/
-    auth_service.dart            Register/login/logout/reset + teachers/{uid}
+    auth_service.dart            Register/login/logout/reset + Google
+                                 sign-in (v1.1.4) + teachers/{uid}
                                  profile doc + friendlyError() messages.
     test_service.dart            All Firestore work: tests CRUD, questions
                                  subcollection, find-by-code, attempts,
@@ -68,6 +69,8 @@ lib/
     attempt_detail_screen.dart   Per-question review of one attempt.
   widgets/
     loading_button.dart          FilledButton with spinner state.
+    google_sign_in_button.dart   White outlined "Continue with Google"
+                                 button with spinner state (v1.1.4).
     option_tile.dart             Selectable A/B/C/D option row.
     palette_grid.dart            Numbered answered/unanswered grid.
     question_review_card.dart    Correct/wrong/skipped review card, shared
@@ -275,6 +278,39 @@ and enter the code on the home screen. `AppConfig.webBaseUrl` /
 `studentLinkFor` remain in the config, unused, in case a web deploy
 is ever revived.
 
+## v1.1.4 (2026-11-27) — Google sign-in
+
+Version `1.1.4+6`. Teachers can now sign in with Google from both the
+login and register screens ("Continue with Google" button below the
+email form, separated by an "or" divider):
+
+- **Dependency:** `google_sign_in: ^6.2.2` (the classic 6.x API —
+  deliberately not 7.x, whose API changed completely).
+- **Flow:** `AuthService.signInWithGoogle()` runs the Google account
+  picker, exchanges the tokens for a Firebase credential
+  (`GoogleAuthProvider.credential`) and signs in with
+  `signInWithCredential`. It returns a bool: false means the user
+  cancelled the picker, which `AuthController.signInWithGoogle()`
+  treats as a silent no-op (no snackbar, no navigation). On success
+  the controller navigates exactly like email login
+  (`Get.offAllNamed(AppRoutes.dashboard)`); on error it shows
+  `AuthService.friendlyError` in a snackbar.
+- **Teacher doc auto-created:** on a first Google sign-in, if
+  `teachers/{uid}` does not exist it is created with the same shape
+  register() writes — `name` from the Google profile's displayName,
+  `institute` empty, `email`, `createdAt` serverTimestamp. Existing
+  docs are left untouched.
+- **Logout** also signs out of GoogleSignIn (guarded try/catch), so
+  the account picker is offered again next time instead of silently
+  reusing the last account.
+- **Signing:** release builds move from the ephemeral CI debug key to
+  a stable keystore kept in CI secrets, and that keystore's SHA-1 is
+  registered in the Firebase project — Google sign-in on Android
+  requires the SHA-1 match. Because the signing key changes, phones
+  upgrading from v1.1.3 or earlier need a one-time uninstall before
+  installing v1.1.4 (account and tests are in the cloud; nothing is
+  lost).
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing
@@ -320,7 +356,8 @@ GitHub web UI, as with his other repos).
 
 Pinned to stable majors known to coexist: `get ^4.7.2`,
 `firebase_core ^3.6.0`, `firebase_auth ^5.3.1`,
-`cloud_firestore ^5.4.4`, `file_picker ^13.4.0` (same major as the
+`cloud_firestore ^5.4.4`, `google_sign_in ^6.2.2` (v1.1.4; classic
+6.x API, not 7.x), `file_picker ^13.4.0` (same major as the
 owner's PDF editor app), `csv ^6.0.0`, `share_plus ^13.3.1`
 (`SharePlus.instance.share(ShareParams(...))` API), `intl ^0.19.0`.
 If a future `pub get` conflicts, prefer bumping the Firebase trio

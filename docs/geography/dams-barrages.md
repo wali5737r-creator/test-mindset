@@ -9,13 +9,13 @@ Tarbela Dam
 
 Tarbela Pakistan ka sab se mashhoor dam hai aur Indus River par bana hai. Ye Khyber Pakhtunkhwa me Haripur ke qareeb hai, jahan Indus paharon se nikal kar medaan ki taraf ata hai. Tarbela ki sab se bari pehchan ye hai ke ye duniya ka sab se bara earth filled dam hai, yani mitti aur pathar se bhara hua sab se bara bandh. Earth filled wala point paper me itni dafa aya hai ke isay dam ki pehchan samajh lo.
 
-Tarbela 1974 me mukammal hua tha. Is ka kaam do hain, bijli banana aur pani zakheera karna. Iski bijli ki salahiyat waqt ke sath barhti rahi hai aur ab taqreeban 4,888 megawatt hai, jo Pakistan ke kisi bhi aik dam se sab se zyada hai. Jab bhi paper me sab se bara dam ya sab se zyada bijli wala dam poocha jaye, jawab Tarbela hota hai.
+Tarbela 1974 me mukammal hua tha. Is ka kaam do hain, bijli banana aur pani zakheera karna. Jab ye dam bana tha to is ki bijli ki salahiyat 3,478 megawatt thi. Baad me waqt ke sath naye units lage aur khaas taur par Tarbela ke chauthe tausiyi mansubay ke baad ye salahiyat barh kar ab taqreeban 4,888 megawatt ho gayi hai, jo Pakistan ke kisi bhi aik dam se sab se zyada hai. Paper me dono figure ate hain, is liye farq samajh lo ke 3,478 asal ibtedai salahiyat hai aur 4,888 tausiy ke baad wali. Jab bhi paper me sab se bara dam ya sab se zyada bijli wala dam poocha jaye, jawab Tarbela hota hai.
 
 Pin: 34.09, 72.70
 
 Mangla Dam
 
-Mangla Dam Jhelum River par bana hai, Azad Kashmir me Mirpur ke qareeb. Ye Pakistan ka dusra bara mashhoor dam hai. Mangla 1967 me mukammal hua tha, aur baad me is ki unchai mazeed 30 feet barhai gayi, jisay Mangla Raising kehte hain. Unchai barhne se jheel me pani bhi zyada zakheera hone laga aur bijli bhi barh gayi, jo ab taqreeban 1,000 megawatt se zyada hai.
+Mangla Dam Jhelum River par bana hai, Azad Kashmir me Mirpur ke qareeb. Ye Pakistan ka dusra bara mashhoor dam hai. Mangla 1967 me mukammal hua tha, aur baad me is ki unchai mazeed 30 feet barhai gayi, jisay Mangla Raising kehte hain. Unchai barhne se jheel me pani bhi zyada zakheera hone laga aur bijli ki salahiyat bhi barh gayi. Mangla ki asal salahiyat 1,000 megawatt thi, aur raising ke baad ye taqreeban 1,150 megawatt ho gayi hai. Paper me Mangla ka figure aksar 1,150 hi ata hai, yehi pakka yaad rakho.
 
 Mangla ki khaas baat ye hai ke ye Indus Water Treaty ke baad banne wale pehle bare dams me se hai. Jab teen mashriqi darya Bharat ke hisse me chale gaye to un ke pani ki kami puri karne ke liye Mangla aur Tarbela banaye gaye, inhen replacement works kehte hain. Ye wala point Pak Studies ke liye bohat aham hai. Mangla ki jheel ko Mangla Lake kehte hain aur Mirpur sheher is ke kinare hai.
 
@@ -25,7 +25,7 @@ Warsak Dam
 
 Warsak Dam Kabul River par bana hai, Peshawar ke qareeb Warsak ke maqam par. Ye azaadi ke baad Pakistan me banne wala pehla bara dam hai, jo 1960 me mukammal hua. Iski tameer me Canada ne madad ki thi, ye baat bhi kabhi kabhi paper me ati hai.
 
-Warsak ki bijli ki salahiyat taqreeban 240 megawatt hai, jo Tarbela aur Mangla ke muqable me kam hai. Lekin is ki ahmiyat is ke size me nahi, is ke pehla hone me hai. Peshawar ki wadi ki aabpashi aur bijli dono ke liye ye dam buniyad bana. Jab paper me pehla dam poocha jaye to jawab Warsak hota hai, aur jab sab se bara poocha jaye to Tarbela. Dono sawal alag hain, in me confuse mat hona.
+Warsak ki bijli ki salahiyat taqreeban 243 megawatt hai, jo Tarbela aur Mangla ke muqable me kam hai. Lekin is ki ahmiyat is ke size me nahi, is ke pehla hone me hai. Peshawar ki wadi ki aabpashi aur bijli dono ke liye ye dam buniyad bana. Jab paper me pehla dam poocha jaye to jawab Warsak hota hai, aur jab sab se bara poocha jaye to Tarbela. Dono sawal alag hain, in me confuse mat hona.
 
 Pin: 34.16, 71.36
 
@@ -153,7 +153,7 @@ Rawal Dam
 
 Rawal Dam Korang River par bana hai, Islamabad ke andar. Ye 1962 me mukammal hua tha, yani Islamabad ke banne ke bilkul ibtedai daur me. Korang aik chhota pahari naala numa darya hai jo Murree ke paharon se ata hai.
 
-Rawal Dam Rawalpindi aur Islamabad ko peene ka pani deta hai. Is ki jheel, Rawal Lake, Islamabad ki mashhoor tareen jagahon me se hai, aur Lake View Park is ke kinare bana hai. Dam chhota hai lekin pehchan bohat bari hai, kyunke ye darul hukumat ke andar hai. Paper me sawal aam taur par yun ata hai ke Rawal Dam kis darya par hai, jawab Korang River.
+Rawal Dam Rawalpindi aur Islamabad ko peene ka pani deta hai. Yahan bijli nahi banti, is dam ka kaam sirf pani zakheera karke dono shehron ko supply karna hai. Is ki jheel, Rawal Lake, Islamabad ki mashhoor tareen jagahon me se hai, aur Lake View Park is ke kinare bana hai. Dam chhota hai lekin pehchan bohat bari hai, kyunke ye darul hukumat ke andar hai. Paper me sawal aam taur par yun ata hai ke Rawal Dam kis darya par hai, jawab Korang River.
 
 Pin: 33.70, 73.13
 

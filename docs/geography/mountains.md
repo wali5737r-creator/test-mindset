@@ -11,37 +11,37 @@ Gilgit-Baltistan ke ilaqay me teen azeem silsile, Karakoram, Himalaya aur Hindu 
 
 Karakoram Range
 
-Karakoram Pakistan ka sab se mashhoor silsila hai aur Gilgit-Baltistan me phaila hai. Is ki pehchan ye hai ke duniya ki chaar sab se unchi chotiyon me se zyada tar yahi hain aur yahan duniya ke sab se bare glaciers hain jo qatbi ilaqon ke bahir hain, jin me Siachen aur Baltoro sab se mashhoor hain. Karakoram ki sab se unchi choti K2 hai. Jab paper me sab se zyada 8,000 meter se unchi chotiyon wala silsila poocha jaye to jawab Karakoram hai.
+Karakoram Pakistan ka sab se mashhoor silsila hai aur Gilgit-Baltistan me phaila hai. Is ki lambai taqreeban 500 kilometre hai, jo Pakistan aur China ki sarhad ke sath sath chalti hai. Lambai me ye Himalaya se chhota hai, lekin unchai aur glaciers me ye us ke barabar khara hai. Is ki pehchan ye hai ke duniya ki chaar sab se unchi chotiyon me se zyada tar yahi hain aur yahan duniya ke sab se bare glaciers hain jo qatbi ilaqon ke bahir hain, jin me Siachen aur Baltoro sab se mashhoor hain. Karakoram ki sab se unchi choti K2 hai. Jab paper me sab se zyada 8,000 meter se unchi chotiyon wala silsila poocha jaye to jawab Karakoram hai.
 
 Pin: 35.88, 76.51
 
 Himalaya Range
 
-Himalaya duniya ka sab se uncha silsila hai jis ki sab se unchi choti Everest Nepal me hai, lekin is ka maghribi hissa Pakistan tak ata hai. Pakistan me Himalaya ki pehchan Nanga Parbat hai jo is silsile ka maghribi akhri bara pahar hai. Gilgit-Baltistan aur Azad Kashmir ke ilaqon me ye silsila phaila hai. Aik trap yaad rakho. Everest Pakistan me nahi hai, lekin Nanga Parbat Pakistan me Himalaya ki sab se unchi choti hai. Paper is farq ko bohat azmata hai.
+Himalaya duniya ka sab se uncha silsila hai jis ki sab se unchi choti Everest Nepal me hai, lekin is ka maghribi hissa Pakistan tak ata hai. Is silsile ki kul lambai taqreeban 2,400 kilometre hai, jo maghrib me Afghanistan ke qareeb se shuru ho kar Nepal aur Bhutan se hoti hui mashriq me Bharat ke aakhri siray tak jati hai. Pakistan me is ka sirf maghribi sira ata hai, lekin wahi sira Nanga Parbat jaisi azeem choti apne andar rakhta hai, is liye lambai ka zyada tar hissa bahir honay ke bawajood paper me Pakistan wala hissa hi poocha jata hai. Pakistan me Himalaya ki pehchan Nanga Parbat hai jo is silsile ka maghribi akhri bara pahar hai. Gilgit-Baltistan aur Azad Kashmir ke ilaqon me ye silsila phaila hai. Aik trap yaad rakho. Everest Pakistan me nahi hai, lekin Nanga Parbat Pakistan me Himalaya ki sab se unchi choti hai. Paper is farq ko bohat azmata hai.
 
 Pin: 35.24, 74.59
 
 Hindu Kush Range
 
-Hindu Kush Chitral ke maghrib aur shumaal maghrib me phaila hai aur Pakistan ko Afghanistan se alag karta hai. Is ki sab se unchi choti Tirich Mir hai jo Chitral se saaf nazar ati hai aur Chitral ki pehchan hai. Hindu Kush ke daray, jese Lowari aur Dorah, bhi paper me is silsile ke sath juray ate hain. Pehchan ye rakho ke Chitral ka pahar Hindu Kush hai aur us ki choti Tirich Mir.
+Hindu Kush Chitral ke maghrib aur shumaal maghrib me phaila hai aur Pakistan ko Afghanistan se alag karta hai. Is silsile ki lambai taqreeban 800 kilometre hai, jis ka aik hissa Pakistan me hai aur zyada tar hissa Afghanistan ke andar chala jata hai. Is ki sab se unchi choti Tirich Mir hai jo Chitral se saaf nazar ati hai aur Chitral ki pehchan hai. Hindu Kush ke daray, jese Lowari aur Dorah, bhi paper me is silsile ke sath juray ate hain. Pehchan ye rakho ke Chitral ka pahar Hindu Kush hai aur us ki choti Tirich Mir.
 
 Pin: 36.25, 71.84
 
 Sulaiman Range
 
-Ab shumaal se junoob ki taraf ao. Sulaiman silsila Balochistan ke mashriq me aur Khyber Pakhtunkhwa ke junoob maghrib me aik deewar ki tarah khara hai aur Punjab ke maidanon ko Balochistan ke plateau se alag karta hai. Is ki sab se unchi choti Takht-e-Sulaiman hai jis ki unchai taqreeban 3,487 meter hai aur ye Zhob aur Dera Ismail Khan ke darmiyan wale ilaqay me hai. Is silsile ke qareeb hi Gomal aur Waziristan ke ilaqay hain. Paper me Takht-e-Sulaiman aksar is sawal me ata hai ke ye kis silsile ki sab se unchi choti hai.
+Ab shumaal se junoob ki taraf ao. Sulaiman silsila Balochistan ke mashriq me aur Khyber Pakhtunkhwa ke junoob maghrib me aik deewar ki tarah khara hai aur Punjab ke maidanon ko Balochistan ke plateau se alag karta hai. Ye silsila taqreeban 450 kilometre lamba hai, shumaal me Waziristan ke ilaaqe se shuru ho kar junoob me Jacobabad ke qareeb tak jata hai, is liye ye Pakistan ke lambe silsilon me gina jata hai. Is ki sab se unchi choti Takht-e-Sulaiman hai jis ki unchai taqreeban 3,487 meter hai aur ye Zhob aur Dera Ismail Khan ke darmiyan wale ilaqay me hai. Is silsile ke qareeb hi Gomal aur Waziristan ke ilaqay hain. Paper me Takht-e-Sulaiman aksar is sawal me ata hai ke ye kis silsile ki sab se unchi choti hai.
 
 Pin: 31.62, 69.93
 
 Kirthar Range
 
-Kirthar silsila Sindh aur Balochistan ki sarhad par shumaal se junoob tak phaila hai. Ye wo deewar hai jis ke mashriq me Sindh ke maidan hain aur maghrib me Balochistan ki unchaiyan. Dadu ke qareeb is silsile me Gorakh Hill Station hai jo Sindh ka mashhoor thanda maqam hai aur aksar Sindh ka Murree kahlata hai. Kirthar National Park bhi isi silsile me hai jo Pakistan ke bare mahfooz ilaqon me se hai. Pehchan ye hai ke Sindh ki pahari sarhad Kirthar hai.
+Kirthar silsila Sindh aur Balochistan ki sarhad par shumaal se junoob tak phaila hai. Is ki lambai taqreeban 300 kilometre hai, yani ye aik lambi deewar hai jo do soobon ko alag karti hai. Ye wo deewar hai jis ke mashriq me Sindh ke maidan hain aur maghrib me Balochistan ki unchaiyan. Dadu ke qareeb is silsile me Gorakh Hill Station hai jo Sindh ka mashhoor thanda maqam hai aur aksar Sindh ka Murree kahlata hai. Kirthar National Park bhi isi silsile me hai jo Pakistan ke bare mahfooz ilaqon me se hai. Pehchan ye hai ke Sindh ki pahari sarhad Kirthar hai.
 
 Pin: 27.42, 67.13
 
 Safed Koh Range
 
-Safed Koh, jisay Spin Ghar bhi kehte hain, Kurram aur Khyber ke maghrib me Pakistan aur Afghanistan ki sarhad par hai. Is ki sab se unchi choti Sikaram hai jis ki unchai taqreeban 4,755 meter hai aur ye Parachinar ke qareeb se nazar ati hai. Naam ki wajah ye hai ke is ki chotiyan baraf ki wajah se aksar safaid dikhti hain. Paper me Sikaram aur Safed Koh ki jodi ati hai, isay yaad rakh lo.
+Safed Koh, jisay Spin Ghar bhi kehte hain, Kurram aur Khyber ke maghrib me Pakistan aur Afghanistan ki sarhad par hai. Ye silsila taqreeban 350 kilometre lamba hai aur puri lambai me sarhad ke sath sath chalta hai. Is ki sab se unchi choti Sikaram hai jis ki unchai taqreeban 4,755 meter hai aur ye Parachinar ke qareeb se nazar ati hai. Naam ki wajah ye hai ke is ki chotiyan baraf ki wajah se aksar safaid dikhti hain. Paper me Sikaram aur Safed Koh ki jodi ati hai, isay yaad rakh lo.
 
 Pin: 34.03, 69.79
 
@@ -65,7 +65,7 @@ Pin: 36.90, 73.70
 
 Salt Range
 
-Salt Range Punjab ke shumaal me hai, Jhelum, Chakwal, Khushab aur Mianwali ke ilaqon me phaila hai. Naam ki wajah saaf hai, yahan namak ki kaanen hain aur Khewra ki kaan duniya ki mashhoor tareen namak ki kaanon me se hai. Is ki sab se unchi choti Sakesar hai jis ki unchai taqreeban 1,522 meter hai aur wahan aik mashhoor radar aur hill station wala maqam hai. Kallar Kahar bhi isi silsile me hai. Pehchan ye hai ke namak wala silsila Salt Range hai aur us ki choti Sakesar.
+Salt Range Punjab ke shumaal me hai, Jhelum, Chakwal, Khushab aur Mianwali ke ilaqon me phaila hai. Is ki lambai taqreeban 175 kilometre hai, mashriq me Jhelum se shuru ho kar maghrib me Kalabagh ke qareeb Indus tak. Shumaal ke azeem silsilon ke muqable me ye chhota hai, lekin namak ki wajah se is ki pehchan sab se alag hai. Naam ki wajah saaf hai, yahan namak ki kaanen hain aur Khewra ki kaan duniya ki mashhoor tareen namak ki kaanon me se hai. Is ki sab se unchi choti Sakesar hai jis ki unchai taqreeban 1,522 meter hai aur wahan aik mashhoor radar aur hill station wala maqam hai. Kallar Kahar bhi isi silsile me hai. Pehchan ye hai ke namak wala silsila Salt Range hai aur us ki choti Sakesar.
 
 Pin: 32.54, 71.93
 

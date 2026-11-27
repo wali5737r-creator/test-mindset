@@ -21,7 +21,7 @@ Pin: 27.70, 68.86
 
 Darya-e-Jhelum, yani Jhelum River
 
-Jhelum Kashmir se ane wala darya hai. Ye Kashmir ki wadi me Verinag ke chashme se nikalta hai, jo Pir Panjal ke paharon ke daman me hai. Wahan se ye Srinagar se guzarta hai aur mashhoor Wular Lake me se hota hua aage barhta hai. Baramulla ke baad ye pahari ilaaqe me dakhil ho jata hai, Uri ke paas se guzarta hai, aur phir Muzaffarabad ke qareeb is ke sath Neelum River milta hai, jisay Kishanganga bhi kehte hain. Neelum is ka sab se bara madadgar hai, aur dusra aham madadgar Kunhar River hai jo Naran aur Kaghan ki wadi se ata hai.
+Jhelum Kashmir se ane wala darya hai. Ye Kashmir ki wadi me Verinag ke chashme se nikalta hai, jo Pir Panjal ke paharon ke daman me hai. Wahan se ye Srinagar se guzarta hai aur mashhoor Wular Lake me se hota hua aage barhta hai. Baramulla ke baad ye pahari ilaaqe me dakhil ho jata hai, Uri ke paas se guzarta hai, aur phir Muzaffarabad ke qareeb is ke sath Neelum River milta hai, jisay Kishanganga bhi kehte hain. Neelum is ka sab se bara madadgar hai, aur dusra aham madadgar Kunhar River hai jo Naran aur Kaghan ki wadi se ata hai. Jhelum ki kul lambai taqreeban 725 kilometre hai. Kuch kitabon me ye figure thora kam ya zyada bhi milta hai, lekin aam textbook figure yehi hai. Is lambai ka matlab ye hai ke Jhelum Indus aur Chenab ke muqable me chhota darya hai, lekin is ka safar do bilkul mukhtalif ilaaqon se guzarta hai, pehle Kashmir ki sarsabz wadi, phir Pakistan ka medaan.
 
 Pakistan me Jhelum par sab se mashhoor cheez Mangla Dam hai, jo Mirpur ke qareeb bana hai. Ye Pakistan ke bare tareen dams me se hai. Mangla ke baad darya Jhelum sheher ke kinare se guzarta hai, aur Rasul Barrage is par bana hai. Aakhir me Jhelum Trimmu ke maqam par, Jhang ke qareeb, Chenab me mil jata hai. Ye wala sangam paper me bohat ata hai, pakka yaad rakho ke Jhelum khatm kahan hota hai. Trimmu par.
 
@@ -53,7 +53,7 @@ Pin: 31.17, 75.20
 
 Darya-e-Sutlej, yani Sutlej River
 
-Sutlej Punjab ke paanch daryaaon me sab se lamba hai, taqreeban 1,450 kilometre. Ye Tibet me Lake Rakshastal se nikalta hai, jo Lake Mansarovar ke bilkul qareeb hai. Dekho, kitni dilchasp baat hai ke Indus aur Sutlej dono aik hi ilaaqe se nikalte hain, lekin aik maghrib ko jata hai aur dusra mashriq ko. Sutlej Shipki La ke daray se hota hua Himachal Pradesh me dakhil hota hai, jahan is par Bhakra Dam bana hai, jo Bharat ke bare dams me se hai.
+Sutlej Punjab ke paanch daryaaon me sab se lamba hai, taqreeban 1,450 kilometre. Lekin aik baat yahan samajh lo ke is puri lambai ka zyada tar hissa Tibet aur Bharat me hai. Pakistan me Sutlej apne safar ke aakhri hisse me behta hai, is liye lambai sun kar ye mat samajhna ke ye pura ka pura Pakistan me hai. Ye Tibet me Lake Rakshastal se nikalta hai, jo Lake Mansarovar ke bilkul qareeb hai. Dekho, kitni dilchasp baat hai ke Indus aur Sutlej dono aik hi ilaaqe se nikalte hain, lekin aik maghrib ko jata hai aur dusra mashriq ko. Sutlej Shipki La ke daray se hota hua Himachal Pradesh me dakhil hota hai, jahan is par Bhakra Dam bana hai, jo Bharat ke bare dams me se hai.
 
 Pakistan me Sutlej Bahawalpur ke ilaaqe se guzarta hai. Is par Sulemanki Barrage, Islam Barrage aur aakhir me Panjnad ke qareeb ke maqamat hain. Beas Harike par is me pehle hi mil chuka hota hai. Aakhir me Sutlej Panjnad ki surat me, yani baqi daryaaon ke sath mil kar, Mithankot ke qareeb Indus me mil jata hai. Sutlej ke kinare ke mashhoor ilaaqe Kasur, Pakpattan, Bahawalnagar aur Bahawalpur hain. Pakpattan is ke qareeb hone ki wajah se paper me ata hai, kyunke Baba Farid ka sheher hai.
 
@@ -69,7 +69,7 @@ Pin: 34.01, 71.98
 
 Darya-e-Swat, yani Swat River
 
-Swat River Khyber Pakhtunkhwa ke sab se khubsurat ilaaqe ka darya hai. Ye Swat ke shimali paharon me, Kalam ke ilaaqe ke glaciers se banta hai, jahan Ushu aur Utrot ke naale milte hain. Hindu Kush ke barf posh pahar is ka asal zariya hain.
+Swat River Khyber Pakhtunkhwa ke sab se khubsurat ilaaqe ka darya hai. Ye Swat ke shimali paharon me, Kalam ke ilaaqe ke glaciers se banta hai, jahan Ushu aur Utrot ke naale milte hain. Hindu Kush ke barf posh pahar is ka asal zariya hain. Swat River ki lambai taqreeban 240 kilometre hai. Ye koi bohat lamba darya nahi, lekin is ki khaasiyat ye hai ke is ka taqreeban pura safar aik hi mashhoor wadi ke andar tay hota hai, Kalam se shuru ho kar Charsadda tak.
 
 Kalam, Bahrain aur Madyan ke kinare se guzarta hua ye Mingora aur Saidu Sharif ke ilaaqe tak ata hai. Mingora Swat ka sab se bara sheher hai aur darya is ke qareeb se guzarta hai. Panjkora River, jo Dir ki taraf se ata hai, is ka aham madadgar hai. Aakhir me Swat River Charsadda ke qareeb Kabul River me mil jata hai. To is ka safar Indus tak seedha nahi, pehle Kabul River, phir Kabul ke sath Indus. Paper me aksar yehi phansaya jata hai ke Swat seedha Indus me milta hai, aisa nahi hai.
 
@@ -77,7 +77,7 @@ Pin: 34.77, 72.36
 
 Darya-e-Gilgit, yani Gilgit River
 
-Gilgit River Gilgit Baltistan ka aham darya hai. Ye Ghizer ke ilaaqe me Shandur ke qareeb ke pahari naalon aur jheelon se banta hai. Shandur wahi maqam hai jahan har saal mashhoor polo festival hota hai, aur Shandur Lake is ilaaqe ki pehchan hai.
+Gilgit River Gilgit Baltistan ka aham darya hai. Ye Ghizer ke ilaaqe me Shandur ke qareeb ke pahari naalon aur jheelon se banta hai. Shandur wahi maqam hai jahan har saal mashhoor polo festival hota hai, aur Shandur Lake is ilaaqe ki pehchan hai. Gilgit River ki lambai taqreeban 240 kilometre hai, aur is chhote se safar me hi ye Ghizer aur Gilgit ki wadiyon ko sairaab karta hua Indus tak pohanch jata hai.
 
 Gilgit River Gahkuch aur Gilgit sheher ke kinare se guzarta hai. Gilgit sheher is ke kinare abad hai. Is ka sab se aham madadgar Hunza River hai, jo Gilgit sheher ke bilkul qareeb is me milta hai. Phir ye mila hua darya Bunji aur Jaglot ke ilaaqe me Indus me ja milta hai. Jaglot wahi mashhoor jagah hai jahan se teen bare pahari silsile, Himalaya, Karakoram aur Hindu Kush, aik sath nazar ate hain. Darya aur paharon ka ye sangam paper me aksar ata hai.
 
@@ -85,7 +85,7 @@ Pin: 35.92, 74.31
 
 Darya-e-Hunza, yani Hunza River
 
-Hunza River shimal ka mashhoor darya hai. Ye Khunjerab Pass ke qareeb ke glaciers se banta hai, jahan se Pakistan aur China ki sarhad hai aur Karakoram Highway guzarti hai. Khunjerab duniya ki unchi tareen paved sarhadi guzargah me se hai, ye baat paper me alag se bhi ati hai.
+Hunza River shimal ka mashhoor darya hai. Ye Khunjerab Pass ke qareeb ke glaciers se banta hai, jahan se Pakistan aur China ki sarhad hai aur Karakoram Highway guzarti hai. Khunjerab duniya ki unchi tareen paved sarhadi guzargah me se hai, ye baat paper me alag se bhi ati hai. Hunza River ki lambai taqreeban 190 kilometre hai, yani ye aik chhota pahari darya hai, lekin apni wadi ki khubsurti aur Karakoram Highway ke sath sath chalne ki wajah se is ka naam har jagah ata hai.
 
 Hunza River puri Hunza wadi se guzarta hai. Karimabad, Aliabad aur Ganish jaise mashhoor maqamat is ke kinare ya is ke qareeb hain. Rakaposhi ki barf posh choti is wadi se nazar ati hai. Nagar ki taraf se ane wala Hispar ka pani bhi isi ilaaqe me is ke sath milta hai. Aakhir me Hunza River Gilgit sheher ke qareeb Gilgit River me mil jata hai, aur phir Gilgit River ke sath Indus tak pohanchta hai. To tartib ye bani, Hunza pehle Gilgit me, Gilgit phir Indus me.
 
@@ -95,21 +95,21 @@ Darya-e-Chitral, yani Chitral River
 
 Chitral River Hindu Kush ke unche glaciers se nikalta hai. Is ka asal sar chashma Chiantar Glacier hai, jo Broghil aur Darkot ke ilaaqe me hai. Ye Chitral ki wadi se guzarta hai, Chitral sheher aur Drosh is ke kinare ke mashhoor maqamat hain.
 
-Ab is darya ki sab se khaas baat suno, jo paper me bohat ati hai. Chitral River Pakistan se nikal kar Afghanistan me dakhil ho jata hai, aur wahan is ka naam badal kar Kunar River ho jata hai. Kunar phir Jalalabad ke qareeb Kabul River me milta hai, aur Kabul River Attock par Indus me. Yani Chitral ka pani aik lambe safar ke baad aakhir Indus hi me pohanchta hai, lekin teen naam badal kar. Chitral, phir Kunar, phir Kabul, phir Indus. Ye silsila aik line me yaad kar lo.
+Ab is darya ki sab se khaas baat suno, jo paper me bohat ati hai. Chitral River Pakistan se nikal kar Afghanistan me dakhil ho jata hai, aur wahan is ka naam badal kar Kunar River ho jata hai. Kunar phir Jalalabad ke qareeb Kabul River me milta hai, aur Kabul River Attock par Indus me. Yani Chitral ka pani aik lambe safar ke baad aakhir Indus hi me pohanchta hai, lekin teen naam badal kar. Chitral, phir Kunar, phir Kabul, phir Indus. Ye silsila aik line me yaad kar lo. Is poore safar ki kul lambai, Chitral aur Kunar dono hisse mila kar, taqreeban 480 kilometre banti hai. Lambai hamesha dono naamon ko mila kar gini jati hai, kyunke darya aik hi hai, bas sarhad ke us paar naam badal jata hai.
 
 Pin: 35.85, 71.79
 
 Zhob aur Gomal, yani Zhob River aur Gomal River
 
-Ye do darya aksar aik sath parhaye jate hain kyunke Zhob, Gomal ka madadgar hai. Pehle Gomal ko samjho. Gomal River Afghanistan ke ilaaqe Ghazni aur Katawaz se nikalta hai, South Waziristan se hota hua Pakistan me behta hai. Wana is ke ilaaqe ka mashhoor maqam hai. Is par Gomal Zam Dam bana hai, jo South Waziristan me hai. Phir ye Tank ke qareeb se guzarta hai aur Dera Ismail Khan ke ilaaqe me Indus me mil jata hai.
+Ye do darya aksar aik sath parhaye jate hain kyunke Zhob, Gomal ka madadgar hai. Pehle Gomal ko samjho. Gomal River Afghanistan ke ilaaqe Ghazni aur Katawaz se nikalta hai, South Waziristan se hota hua Pakistan me behta hai. Is ki kul lambai taqreeban 400 kilometre hai, jis ka aik hissa Afghanistan me aur baqi Pakistan me hai. Wana is ke ilaaqe ka mashhoor maqam hai. Is par Gomal Zam Dam bana hai, jo South Waziristan me hai. Phir ye Tank ke qareeb se guzarta hai aur Dera Ismail Khan ke ilaaqe me Indus me mil jata hai.
 
-Zhob River Balochistan ke shimal mashriqi ilaaqe se nikalta hai, Toba Kakar ke pahari silsile ke qareeb se. Ye Zhob sheher ke kinare se guzarta hai aur aakhir me Gomal River me mil jata hai. Zhob ka purana naam Fort Sandeman tha, ye baat bhi Pak Studies me ati hai. To tartib ye hai ke Zhob pehle Gomal me, aur Gomal phir Indus me. Dono darya mil kar Dera Ismail Khan aur Zhob ke khushk ilaaqon ke liye pani ka bara zariya hain.
+Zhob River Balochistan ke shimal mashriqi ilaaqe se nikalta hai, Toba Kakar ke pahari silsile ke qareeb se. Ye Zhob sheher ke kinare se guzarta hai aur aakhir me Gomal River me mil jata hai. Zhob ki apni lambai bhi taqreeban 410 kilometre hai, yani ye sirf aik chhota madadgar naala nahi, apni jagah aik lamba darya hai jo Balochistan ke shimaali ilaaqon se pani la kar Gomal ko deta hai. Zhob ka purana naam Fort Sandeman tha, ye baat bhi Pak Studies me ati hai. To tartib ye hai ke Zhob pehle Gomal me, aur Gomal phir Indus me. Dono darya mil kar Dera Ismail Khan aur Zhob ke khushk ilaaqon ke liye pani ka bara zariya hain.
 
 Pin: 31.86, 70.90
 
 Darya-e-Hub, yani Hub River
 
-Ab Balochistan aur Sindh ke saahili daryaaon ki taraf ao. Hub River Kirthar ke pahari silsile se nikalta hai aur Balochistan aur Sindh ke darmiyan aik qisam ki sarhad ka kaam bhi karta hai. Is ki lambai taqreeban 134 kilometre hai, yani ye chhota darya hai, lekin aham bohat hai.
+Ab Balochistan aur Sindh ke saahili daryaaon ki taraf ao. Hub River Kirthar ke pahari silsile se nikalta hai aur Balochistan aur Sindh ke darmiyan aik qisam ki sarhad ka kaam bhi karta hai. Is ki lambai taqreeban 350 kilometre hai, yani ye koi chhota naala nahi, Balochistan ke bare daryaaon me is ka shumar hota hai. Lekin is ki asal pehchan is ki lambai nahi, Karachi se is ka rishta hai.
 
 Hub par Hub Dam bana hai, jo Karachi ke liye peene ke pani ka bara zariya hai. Karachi jaise bare sheher ke qareeb hona hi is darya ki sab se bari pehchan hai. Aakhir me Hub River Karachi ke maghrib me, Cape Monze ke qareeb, Arabian Sea me ja girta hai. Paper me sawal yun ata hai ke Hub Dam kis darya par hai, ya Karachi ko pani dene wala dam kon sa hai. Dono ka jawab isi darya se jura hai.
 

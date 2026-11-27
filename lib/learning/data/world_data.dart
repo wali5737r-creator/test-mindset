@@ -231,6 +231,8 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
     lon: 118.0,
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Indonesia Asia ka wo mulk hai jo hazaron jaziron par phaila hai, is ke jaziron ki tadaad 17 hazar se zyada batayi jati hai, aur yehi duniya ka sab se bara archipelago, yani jaziron ke majmooe wala mulk hai. Ye equator par waaqe hai, is ke bare jazire Sumatra, Java, Borneo aur Sulawesi hain. Abadi ke hisab se ye duniya ke bare mulkon me hai aur sab se zyada Muslim abadi wala mulk bhi yahi hai, ye doosri baat Pak Studies aur GK dono me ati hai. Is ka darul hukumat Jakarta hai, jis ka zikr mulkon wale hisse me ayega."),
+      LessonBlock.heading("Aakhir me puri duniya aik nazar me"),
+      LessonBlock.paragraph("Ab is pure hisse ko chand lineon me bandh lo. Continents ki tartib, Asia, Africa, North America, South America, Antarctica, Europe, Australia. Oceans ki tartib, Pacific, Atlantic, Indian, Southern, Arctic. Sab se lamba darya Nile, sab se zyada pani wala Amazon, Asia ka sab se lamba Yangtze. Sab se unchi choti Everest Nepal me, doosri K2 Pakistan me. Sab se lamba silsila Andes, sab se bara garam registran Sahara. Suez Mediterranean ko Red Sea se, Panama Atlantic ko Pacific se milati hai. Sab se bari jheel Caspian, sab se gehri Baikal, sab se neechi jagah Dead Sea, sab se bara jazira Greenland. Agar ye chand linein tumhe naqsha dekh kar zehen me ane lag jayen to samajh lo duniya ke GK ka khazana tumhare hath lag gaya, aur is topic ke number kahin nahi jayenge."),
     ],
   ),
   WorldFeature(
@@ -394,6 +396,8 @@ const List<WorldFeature> worldFeatures = <WorldFeature>[
     lon: 27.8,
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Turkey ke shumal maghrib me do tang aabnayen hain jo asal me aik hi kahani ke do hisse hain. Pehli Dardanelles hai jo Aegean Sea ko Sea of Marmara se milati hai, phir Marmara ke dusre siray par Bosphorus hai jo Black Sea tak pohanchati hai. In dono se guzar kar hi koi jahaz Mediterranean se Black Sea ja sakta hai, yani Russia, Ukraine, Romania aur Bulgaria jese Black Sea wale mulkon ka ye akela samandari darwaza hai. Istanbul ka sheher Bosphorus ke dono kinaron par basta hai, is ka aik hissa Europe me hai aur dusra Asia me, is liye Istanbul ko do continents par waaqe sheher kaha jata hai. Pehli Jang-e-Azeem me 1915 me Gallipoli ki mashhoor larai Dardanelles par hi hui thi, jahan Usmani fauj ne ittehadiyon ko andar ghusne se roka tha. Sann 1936 ke Montreux Muahide ke tehat in aabnayon se guzarne ke usool tay hain aur in ka intizam Turkey ke paas hai. Paper me ye jora Istanbul, do continents aur Gallipoli ke sath ata hai."),
+      LessonBlock.heading("Aakhri baat"),
+      LessonBlock.paragraph("Ab tum duniya ke pani ke bare darwaze pehchante ho. Har feature ko teen sawalon se parkho, kahan hai, kin ke darmiyan hai, aur kyun aham hai. Teel ka rasta ho to Persian Gulf aur Hormuz zehen me ayenge, Europe Asia ka chhota rasta ho to Suez, Red Sea aur Bab el-Mandeb ki poori zanjeer samne ajayegi, aur tijarat ki sab se masroof naali ka naam Malacca hoga. Ye zanjeerain hi asal pehchan hain, akeli jagah ratne se zyada ye jor yaad rakhna kaam ata hai."),
     ],
   ),
 ];

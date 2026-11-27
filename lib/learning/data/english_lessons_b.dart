@@ -100,8 +100,8 @@ const List<Lesson> englishLessonsB = <Lesson>[
         LessonMcq(
           question: "In the sentence \"She speaks very softly\", the word very is:",
           options: <String>["an adjective", "an adverb", "a preposition", "a conjunction"],
-          correctIndex: 0,
-          explanation: "Nahi, jawab B hai, adverb. Very khud softly ki shiddat bata raha hai. Jo lafz adverb ki khoobi bataye, wo bhi adverb hota hai.",
+          correctIndex: 1,
+          explanation: "Adverb. Very khud softly ki shiddat bata raha hai. Jo lafz adverb ki khoobi bataye, wo bhi adverb hota hai.",
         ),
         LessonMcq(
           question: "In the sentence \"The boys were playing in the garden\", the word in is:",

@@ -168,6 +168,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Hingol Balochistan ka sab se lamba darya hai, taqreeban 560 kilometre. Ye baat hi paper ka sawal hai, kyunke aam taur par students samajhte hain ke Balochistan me koi bara darya hai hi nahi. Hingol Balochistan ke pahari ilaaqon se nikalta hai aur Makran ke saahili silsilon se guzarta hua behta hai."),
       LessonBlock.paragraph("Hingol ka sab se mashhoor ilaaqa Hingol National Park hai, jo Pakistan ke sab se bare national parks me se hai. Darya park ke darmiyan se guzarta hai aur is ke kinare ki ajeeb pahari shaklein door door tak mashhoor hain. Hinglaj ka mashhoor mandir bhi isi darya ke kinare hai, jahan har saal yatra hoti hai. Aakhir me Hingol Arabian Sea me ja girta hai. Yaad rakhne ka tareeqa ye hai ke Balochistan ke teen saahili darya, Hub, Porali aur Hingol, teeno paharon se nikal kar seedha Arabian Sea me girte hain, kisi bare darya me nahi milte. Ye teeno ki mushtarka pehchan hai."),
+      LessonBlock.heading("Aakhir me pura naqsha aik nazar me"),
+      LessonBlock.paragraph("Ab puri kahani ko aik dafa jor kar dekho. Shimal ke paharon se Indus, Jhelum, Chenab, Ravi, Beas aur Sutlej nikalte hain. Punjab ke paanch darya Panjnad par aik hote hain aur Mithankot par Indus me milte hain. Maghrib se Kabul, Swat, Chitral urf Kunar, Gomal aur Zhob ate hain aur Indus ke madadgar bante hain. Shimal me Gilgit aur Hunza bhi Indus hi me milte hain. Aur Balochistan ke Hub, Porali aur Hingol seedha Arabian Sea ka rukh karte hain. Agar ye chaar linein tumhe zehen me saaf nazar ane lag jayen to samajh lo Pakistan ke daryaaon ka pura naqsha tumhe a gaya, aur is topic ke number pakke ho gaye."),
     ],
   ),
   MapFeature(
@@ -421,6 +423,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Gomal Zam Dam Gomal River par bana hai, Khyber Pakhtunkhwa ke district South Waziristan me. Ye 2013 me mukammal hua tha. Gomal River Afghanistan se ata hai aur Dera Ismail Khan ke ilaaqe me Indus me milta hai, ye safar tum daryaaon wale hisse me parh chuke ho."),
       LessonBlock.paragraph("Gomal Zam Dam ka maqsad do hain, aabpashi aur bijli, taqreeban 17 megawatt bijli bhi banti hai. Is se Tank aur Dera Ismail Khan ke ilaaqe ki zameenein sairaab hoti hain. Waziristan jaise ilaaqe me dam banna is liye khaas hai ke ye wahan taraqqi aur pani dono ki buniyad hai. Is ka naam Gomal Zam is liye hai ke zam maqami zuban me chashme ya pani ke zariye ko kehte hain, aur Gomal Zam aik purana mashhoor maqam hai."),
+      LessonBlock.heading("Aakhir me tartib aik nazar me"),
+      LessonBlock.paragraph("Ab puri tasveer jor lo. Indus par dams aur barrages shimal se junub yun hain, Diamer Basha jo ban raha hai, Tarbela, Ghazi Barotha, Jinnah, Chashma, Taunsa, Guddu, Sukkur aur Kotri. Jhelum par Mangla Dam aur Rasul Barrage. Chenab par Qadirabad, Ravi par Balloki. Sutlej par Sulemanki aur Islam. Panjnad par Panjnad Barrage. Kabul par Warsak, Haro par Khanpur, Korang par Rawal, Soan par Simly, Hub par Hub Dam, Dasht par Mirani aur Gomal par Gomal Zam. Agar har dam ke sath us ka darya tumhe foran zehen me ane lag jaye to samajh lo ye topic pakka ho gaya, kyunke paper ka sawal hamesha yahi hota hai, dam kis darya par hai."),
     ],
   ),
   MapFeature(
@@ -471,6 +475,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 75.58,
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Aakhri doab hai Bist, jo darya-e-Beas aur darya-e-Sutlej ke darmiyan hai. Isay Jalandhar Doab bhi kehte hain kyunke is ka sab se mashhoor sheher Jalandhar hai. Is ke dusre sheher Hoshiarpur aur Kapurthala hain. Aik baat saaf kar dun taake paper me dhoka na ho. Bist Doab ka zyada tar hissa aaj Bharat ke Punjab me hai, Pakistan ke andar nahi. Lekin PPSC aur doosre one paper me ye is liye poocha jata hai kyunke Punjab ke paanchon doab aik mukammal silsila hain aur examiner poori list par sawal banata hai. To isay ye keh kar na chhoro ke ye hamara nahi hai. Naam, darya aur Jalandhar, bas itna yaad kar lo."),
+      LessonBlock.heading("Aakhir me poori tasveer aik nazar me"),
+      LessonBlock.paragraph("Ab zehen me naqsha banao. Maghrib se mashriq ki taraf chalo. Sab se pehle Indus aur Jhelum ke darmiyan Sindh Sagar, phir Jhelum aur Chenab ke darmiyan Chaj, phir Chenab aur Ravi ke darmiyan Rachna, phir Ravi aur Beas ke darmiyan Bari, aur aakhir me Beas aur Sutlej ke darmiyan Bist. Dekha, tartib bhi daryaaon ki tartib hi hai. Jo student ye safar aik dafa naqshay par kar le, us ke liye doab ka sawal zindagi bhar ghalat nahi hota."),
     ],
   ),
   MapFeature(
@@ -631,6 +637,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 70.97,
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Dorah Chitral ko Afghanistan ke Badakhshan se milata hai. Is ki unchai taqreeban 4,300 meter hai aur ye Chitral ke unche daron me se hai. Zebak ki taraf jane wala purana rasta yahi hai. Iski pehchan ye hai ke ye Chitral ko seedha Badakhshan se jorta hai, jabke Broghil Wakhan ki taraf khulta hai. Chitral ke daray aksar aik sath pooche jate hain, is liye Lowari, Shandur, Broghil aur Dorah, ye chaaron ko Chitral ke naam par aik khane me rakh lo."),
+      LessonBlock.heading("Aakhir me yaad rakhne ki tarkeeb"),
+      LessonBlock.paragraph("Sattrah daray ratne ki cheez nahi hain. Har daray ko us ke sheher ya us ki pehchan se bandh lo. Peshawar se Khyber, Quetta se Bolan, China se Khunjerab, polo se Shandur, tunnel se Lowari, Chitral se chaar daray, aur Swat se Malakand aur Shangla. Pehchan yaad rahi to naam kabhi nahi bhoolega, aur paper me number bhi pakka hoga."),
     ],
   ),
   MapFeature(
@@ -811,6 +819,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 71.84,
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Tirich Mir ki unchai 7,708 meter hai aur ye Hindu Kush ki sab se unchi choti hai. Ye Chitral me hai aur poore sheher se nazar ati hai. Jab paper me Hindu Kush ki sab se unchi choti poochi jaye to jawab Tirich Mir hai. Iski jodi Chitral ke sath pakki kar lo."),
+      LessonBlock.heading("Aakhir me yaad rakhne ki tarkeeb"),
+      LessonBlock.paragraph("Chotiyon ko unchai ke hisab se aik seedhi me rakho. Sab se upar K2 8,611, phir Nanga Parbat 8,126, phir Gasherbrum I 8,080, phir Broad Peak 8,047, phir Gasherbrum II 8,035. Ye paanchon 8,000 se unchi hain aur paanchon Pakistan se jurri hain. In ke baad Rakaposhi 7,788 aur Tirich Mir 7,708 ajati hain. Aur silsilon ki pehchan ye hai ke Karakoram glaciers wala, Himalaya Nanga Parbat wala, Hindu Kush Chitral wala, aur Bam-e-Dunya Pamir hai. Bas, paharon ka poora khana tayyar hai."),
     ],
   ),
   MapFeature(
@@ -871,6 +881,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     lon: 66.99,
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Balochistan ka plateau poore soobay par phaila hai aur Pakistan ka sab se uncha aur sab se wasee plateau hai. Balochistan ka kul raqba taqreeban 347,190 murabba kilometre hai, jo Pakistan ke kul raqbe ka taqreeban 44 feesad banta hai, aur is soobay ka zyada tar hissa yehi plateau hai. Is liye is plateau ko samajhna asal me poore soobay ko samajhna hai. Is ki unchai aam tor par 600 se 3,000 meter ke darmiyan rehti hai. Is ke mashriq me Sulaiman aur Kirthar ke silsile khare hain aur maghrib me khushk pahariyan aur registan hain. Quetta isi plateau par waqe hai, is liye wahan ka mosam baqi Balochistan ke medani ilaqon se thanda hota hai. Ye plateau Iran ke plateau ka hi aik hissa samjha jata hai. Paper me jab Pakistan ke sab se bare plateau ka sawal aye to jawab Balochistan Plateau hai."),
+      LessonBlock.heading("Aakhir me har aik ki aik pehchan"),
+      LessonBlock.paragraph("Aakhir me sab ko aik aik line me bandh lo. Thar Sindh ka hai aur Nagarparkar us ki pehchan hai. Cholistan Punjab ka hai, usay Rohi kehte hain aur Derawar Fort us ki nishani hai. Thal do daryaaon ke darmiyan Punjab ke maghrib me hai aur Sindh Sagar Doab ka hissa hai. Kharan Balochistan ka khushk registan hai. Pothohar shumaali Punjab ki unchi zameen hai aur Balochistan Plateau poore mulk ka sab se uncha aur bara plateau hai. Ye paanch linein pakki kar lo, registanon wala sawal kabhi ghalat nahi hoga."),
     ],
   ),
   MapFeature(
@@ -947,6 +959,20 @@ const List<MapFeature> mapFeatures = <MapFeature>[
       LessonBlock.paragraph("Junoob me Pakistan ki koi zameeni sarhad nahi. Wahan Arabian Sea hai, aur Pakistan ki sahel patti ki kul lambai 1,046 kilometre hai. Ye bhi paper ka bohat mashhoor number hai, isay alag se yaad rakho."),
       LessonBlock.paragraph("Is 1,046 kilometre me taqreeban 750 kilometre sahel Balochistan ke sath hai aur taqreeban 296 kilometre Sindh ke sath. Balochistan wala hissa lamba, khushk aur pahari hai, use Makran coast kehte hain. Sindh wala hissa Indus delta ki wajah se kichar, mangrove janglaat aur chhoti khaadion se bhara hua hai. Sahel ki tafseel, bandargahen aur jazeeray is series ki teesri file me hain, yahan bas ye number pakka kar lo ke kul sahel 1,046 kilometre hai aur us ka bara hissa Balochistan ka hai."),
       LessonBlock.paragraph("Is sahel ka pin Karachi par hai, kyunke ye Pakistan ka sab se bara saheli sheher hai."),
+      LessonBlock.heading("Sawal numa baatein aik nazar me"),
+      LessonBlock.paragraph("Ab wo tamaam baatein jo paper me seedha sawal bankar ati hain. Inhen aik aik karke bol kar parho."),
+      LessonBlock.example("Sab se lambi zameeni sarhad India ke sath hai, 2,912 kilometre."),
+      LessonBlock.example("Dusri lambi sarhad Afghanistan ke sath hai, 2,430 kilometre, aur us ka naam Durand Line hai."),
+      LessonBlock.example("Durand Line 1893 me bani, muahida Sir Mortimer Durand aur Amir Abdur Rahman Khan ke darmiyan hua."),
+      LessonBlock.example("Iran ki sarhad 909 kilometre hai aur us ki mashhoor guzargah Taftan hai."),
+      LessonBlock.example("Sab se chhoti zameeni sarhad China ke sath hai, sirf 595 kilometre, aur sarhadi muahida 1963 me hua."),
+      LessonBlock.example("Khunjerab Pass duniya ki buland tareen paved international guzargah hai, unchai taqreeban 4,693 metre."),
+      LessonBlock.example("India wali sarhad ko Radcliffe Line kehte hain, 1947 me Sir Cyril Radcliffe ne banayi, aur us ki mashhoor guzargah Wagah hai."),
+      LessonBlock.example("Line of Control ki lambai taqreeban 740 kilometre hai, aur ye 1972 ke Simla muahide ke baad is naam se bani. Ye international sarhad nahi hai."),
+      LessonBlock.example("Pakistan ki kul sahel patti 1,046 kilometre hai, jis me taqreeban 750 kilometre Balochistan aur 296 kilometre Sindh ka hai."),
+      LessonBlock.example("Pakistan aur Tajikistan ke darmiyan sarhad nahi lagti, darmiyan me Afghanistan ka Wakhan Corridor hai."),
+      LessonBlock.heading("Yaad rakhne ki trick"),
+      LessonBlock.paragraph("Lambaiyon ko yaad karne ka sab se asaan tareeqa tartib hai. Bare se chhote ki taraf ao. India sab se bara, 2,912. Phir Afghanistan, 2,430. Phir Iran, 909. Aur aakhir me China, 595. Bas ye jumla zehen me bitha lo: bara bhai India, darmiyan me Afghan, phir Iran, aur sab se chhota China. Aur sahel ko in se alag rakho, wo zameen nahi pani hai, 1,046. Jab bhi paper me koi lambai poochi jaye, pehle ye tartib dimagh me chalao, jawab khud nikal ayega."),
     ],
   ),
   MapFeature(
@@ -1187,6 +1213,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
       LessonBlock.paragraph("Mohatta Palace Karachi ke ilaqe Clifton me hai. Ise 1927 me aik ameer Hindu tajir Shivratan Mohatta ne apni rehaish ke liye banwaya tha. Is ke designer Ahmed Hussein Agha the. Ye gulabi rang ke Jodhpur wale pathar se bana hai, is liye Karachi ki zyada tar imaraton se mukhtalif nazar ata hai."),
       LessonBlock.paragraph("Taqseem ke baad ye imarat mukhtalif hathion me rahi. Aik zamane me ye Fatima Jinnah ki rehaishgah rahi aur ise Qasr e Fatima kaha gaya. 1999 se yahan Mohatta Palace Museum hai jahan namayishen hoti hain."),
       LessonBlock.paragraph("Ye UNESCO ki World Heritage list me nahi hai."),
+      LessonBlock.heading("Aakhir me UNESCO wali che jagahen aik sath yaad kar lo"),
+      LessonBlock.paragraph("Pakistan ki jo che jagahen UNESCO ki World Heritage list me hain, un me se is file me paanch shamil hain. Mohenjo-daro 1980, Taxila 1980, Lahore Fort aur Shalimar Gardens 1981, Makli Thatta 1981, aur Rohtas Fort 1997. Chetti jagah is file me nahi hai, wo Khyber Pakhtunkhwa me Takht i Bahi ke badh mut aasaar hain jo 1980 me shamil hue the. Ye che naam saal ke sath bol kar yaad kar lo, kyunke one paper me ye sawal seedha ata hai ke konsi jagah World Heritage hai aur konsi nahi. Jo jagah is list me nahi, use tentative ya ghair fehrist kehna hi sahi jawab hota hai."),
     ],
   ),
   MapFeature(
@@ -1362,6 +1390,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
       LessonBlock.paragraph("Indus Delta Thatta aur Sujawal ke junoob me phaila hai. Is me 17 bari khaadian, jinhen creek kehte hain, aur wasee mangrove janglaat hain. Ye mangrove duniya ke bare khushk ilaqaati mangrove janglat me se hain. Ye janglaat machliyon aur jheengon ki afzaish ki jagah hain aur saheli aabadi ko toofani leharoon se bachate hain. Indus Delta ko Ramsar list me shamil kiya gaya hai, jo aalmi ahemiyat wali aabi jagahon ki list hai."),
       LessonBlock.paragraph("Aik pareshan kun baat bhi yaad rakho jo paper me sawal banti hai. Darya ka pani kam honay ki wajah se delta tak meetha pani bohat kam pohanchta hai. Is se samandar ki khaari leharen zameen ke andar ghus rahi hain, mangrove kam ho rahe hain aur delta sikur raha hai. Ise seawater intrusion kehte hain."),
       LessonBlock.paragraph("Is ka pin delta ke darmiyan me hai, Keti Bandar ke junoob mashriq me."),
+      LessonBlock.heading("Aakhir me sahel ki tartib yaad kar lo"),
+      LessonBlock.paragraph("Agar naqshay par Karachi se maghrib ki taraf ungli chalao to tartib ye banti hai. Karachi, phir Hub ke baad Balochistan shuru, phir Ormara, phir Pasni, phir Gwadar, aur aakhir me Jiwani jahan Iran ki sarhad hai. Aur Karachi se mashriq ki taraf jao to Port Qasim, phir Keti Bandar aur phir Indus Delta. Ye tartib aik dafa naqshay par dekh lo to koi saheli sheher kabhi ghalat jagah par nahi rakho ge. Aur teen number hamesha tayyar rakho. Kul sahel 1,046 kilometre, sab se bari bandargah Karachi, aur sab se bara jazeera Astola."),
     ],
   ),
   MapFeature(
@@ -1571,6 +1601,8 @@ const List<MapFeature> mapFeatures = <MapFeature>[
     blocks: <LessonBlock>[
       LessonBlock.paragraph("Karambar Jheel Chitral ke shimal me Broghil ki wadi me hai, jahan se aage Wakhan ka ilaqa shuru hota hai. Ye samandar ki satah se taqreeban 4,272 metre unchai par hai, yani Rush ke baad Pakistan ki unchi tareen jheelon me is ka naam ata hai. Is ki lambai taqreeban 3.9 kilometre hai aur raqba taqreeban 2.6 murabba kilometre hai."),
       LessonBlock.paragraph("Ise pani aas paas ke glacieron ke pighalne se milta hai aur is ka pani nahayat saaf aur neela hai. Ye ilaqa itna door aur uncha hai ke yahan sirf garmiyon ke chand maheenon me jaya ja sakta hai, aur safar bhi paidal ya jeep ke track se hota hai. Paper me Karambar unchai aur Broghil ke hawale se ati hai, aur aksar Rush ke sath options me rakh kar confuse kiya jata hai. Farq yaad rakho, Rush Nagar me hai aur sab se unchi hai, Karambar Broghil, Chitral me hai aur us ke baad hai."),
+      LessonBlock.heading("Aakhir me wo number jo hamesha tayyar rakho"),
+      LessonBlock.paragraph("Ab is file ke sawal numa number aik jaga jama kar lo. Sab se bari meethay pani ki jheel Manchar hai aur wo Sindh me hai. Karachi ko pani Keenjhar se milta hai, jo Darya e Sindh se KB Feeder ke zariye bharti hai. Parindon ki sab se mashhoor jheel Haleji hai. Khaari jheelon me Soon Valley ki Uchhali aur Khabikki Ramsar ki wajah se aham hain. Islamabad ki do jheelon me Rawal Korang par aur Simly Soan par hai, aur Simly darul hukumat ko sab se zyada pani deti hai. Balochistan ki pehchan Hanna hai jo Quetta ke qareeb hai. Shimal me sab se unchi Rush hai, landslide se bani hui Attabad hai jis ki kahani 2010 ki hai, aur Shangrila ka naam Lower Kachura ka dusra naam hai. Ye chand linein pakki kar lo to jheelon wala koi sawal tumhe pareshan nahi karega."),
     ],
   ),
 ];

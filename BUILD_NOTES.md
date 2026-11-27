@@ -435,6 +435,36 @@ content.
 - The solar-system sizes/colours are a teaching visual, not a
   scale model; the doc text says so where it matters.
 
+## v1.3.1 (2026-11-27) — audit fixes (content + generator only)
+
+An independent audit of v1.3 (210 sampled MCQs, all facts, pins, style
+and structure) found exactly three defects; all three are fixed here:
+
+1. Wrong answer key, grammar-25 MCQ 8 ("She speaks very softly" —
+   very = ?). The doc's key line read "Jawab A nahi, jawab B hai...",
+   and the generator took the rejected first letter (A, adjective);
+   the correct answer is B (adverb). Fixed at both layers: the doc
+   line now uses the standard format ("8. Jawab B hai, adverb. ..."),
+   and `parse_key` in tools/generate_learning_data.py is hardened —
+   when a key line contains a "nahi" rejection between two "jawab"
+   mentions, the letter after the LAST "jawab" wins. Verified: Q8 now
+   generates correctIndex 1, and no other MCQ key changed anywhere
+   (all 550 English + Maths keys diffed against the v1.3 output).
+2. Missing closing recaps. `parse_features` dropped each feature
+   file's closing recap section (the text after the last feature's
+   Pin) — e.g. the dams north-to-south order line and the borders
+   length trick never reached students. The generator now appends
+   that trailing content to the last feature's body. Affected files:
+   geography rivers, dams-barrages, borders, coast-ports,
+   deserts-plains, doabs, heritage, lakes, mountains, passes, and
+   world world-features + gulfs-straits. Feature/pin counts are
+   unchanged (Pakistan 143, World 39) and no "Pin:" text leaks.
+3. History order. docs/history/wars-712-1947.md presented the Third
+   Battle of Panipat (1761) before Plassey (1757). The Plassey
+   section now comes first (1757 → 1761 → Buxar 1764), moved
+   unchanged; the closing recap's warning about this exact order
+   trap is kept.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing

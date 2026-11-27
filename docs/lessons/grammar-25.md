@@ -181,7 +181,7 @@ Jawab aur un ki wajah
 5. Jawab C hai, interjection. Alas achanak afsos ka izhar hai. Yehi interjection ki pehchan hai.
 6. Jawab B hai, conjunction. Because wajah bata kar do jumlo ko jor raha hai. Monday wale since se isay mat milana, wahan wo preposition tha.
 7. Jawab D hai, adjective. Beloved country ki khoobi hai.
-8. Jawab A nahi, jawab B hai, adverb. Very khud softly ki shiddat bata raha hai. Jo lafz adverb ki khoobi bataye, wo bhi adverb hota hai.
+8. Jawab B hai, adverb. Very khud softly ki shiddat bata raha hai. Jo lafz adverb ki khoobi bataye, wo bhi adverb hota hai.
 9. Jawab C hai, preposition. In garden aur playing ka rishta jor raha hai.
 10. Jawab B hai, verb. Books yahan ticket karwane ka kaam hai. Lafz book hai, lekin kaam verb ka hai. Yehi is lesson ka asal usool hai.
 

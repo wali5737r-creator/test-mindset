@@ -387,6 +387,15 @@ def parse_key(lines):
             cur_num = int(m.group(1))
             letter = m.group(2)
             rest = m.group(3).strip()
+            # Negation guard: a line like '8. Jawab A nahi, jawab B hai'
+            # REJECTS its first letter; the real answer follows the LAST
+            # 'jawab' in the line. Without this, the rejected letter wins.
+            jawabs = list(re.finditer(r"[Jj]awab\s+([A-D])\b", ln))
+            if len(jawabs) > 1 and "nahi" in ln[
+                jawabs[0].end() : jawabs[-1].start()
+            ]:
+                letter = jawabs[-1].group(1)
+                rest = ln[jawabs[-1].end() :].strip()
             expl = re.sub(r"^hai\b[.,]?\s*", "", rest).strip()
             if expl:
                 expl = expl[0].upper() + expl[1:]
@@ -533,6 +542,12 @@ def parse_features(path, category, section_categories=None, category_fn=None):
                 }
             )
             buffer = [after] if after else []
+    # Closing recap: content after the final feature's Pin (a summary
+    # heading plus paragraphs/lists, e.g. the dams north-to-south order
+    # line or the borders length trick) belongs to the LAST feature's
+    # body, so students actually see it instead of it being dropped.
+    if features and any(block_text(b).strip() for b in buffer):
+        features[-1]["blocks"].extend(body_blocks(buffer))
     return features
 
 

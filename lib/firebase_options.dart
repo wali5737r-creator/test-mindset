@@ -3,9 +3,9 @@
 // ANDROID: configured 2026-11-27 from the owner's google-services.json
 // (project test-mindset-4c595). The same values live in android/app/google-services.json.
 //
-// WEB: still TODO - the owner registers the Web app in the Firebase console
-// next; paste its values into [web] below (or run `flutterfire configure`).
-// Until then [isConfigured] is false on web and the app shows the friendly
+// WEB: configured 2026-11-27 from the owner-registered Web app.
+// (values below; measurementId is not used by Flutter).
+// While a platform is unconfigured, [isConfigured] is false there and the app shows the friendly
 // "setup pending" screen there instead of crashing.
 
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
@@ -41,15 +41,15 @@ class DefaultFirebaseOptions {
     }
   }
 
-  // TODO(owner): replace with the Web app values from the Firebase console
-  // (Project settings -> Your apps -> Web app).
+  // Web app values: filled 2026-11-27 from the owner's Firebase console
+  // config (app Test Mindset Web).
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'TODO-paste-web-apiKey',
-    appId: 'TODO-paste-web-appId',
-    messagingSenderId: 'TODO-paste-messagingSenderId',
-    projectId: 'TODO-paste-projectId',
-    authDomain: 'TODO-paste-projectId.firebaseapp.com',
-    storageBucket: 'TODO-paste-projectId.appspot.com',
+    apiKey: 'AIzaSyC8BkF_K5d3QJMjoX-k54dH-Cz-KcbYISM',
+    appId: '1:679331143087:web:8b872db5d6c4873743235a',
+    messagingSenderId: '679331143087',
+    projectId: 'test-mindset-4c595',
+    authDomain: 'test-mindset-4c595.firebaseapp.com',
+    storageBucket: 'test-mindset-4c595.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(

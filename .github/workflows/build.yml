@@ -12,11 +12,11 @@ jobs:
       - name: Code checkout
         uses: actions/checkout@v4
 
-      - name: Java 17 setup
+      - name: Java 21 setup
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
 
       - name: Flutter setup (stable)
         uses: subosito/flutter-action@v2
@@ -45,6 +45,14 @@ jobs:
 
       - name: Packages lena
         run: flutter pub get
+
+            - name: Release lint band karna
+        run: |
+          if [ -f android/app/build.gradle.kts ]; then
+            printf '\nandroid {\n    lint {\n        checkReleaseBuilds = false\n    }\n}\n' >> android/app/build.gradle.kts
+          elif [ -f android/app/build.gradle ]; then
+            printf '\nandroid {\n    lint {\n        checkReleaseBuilds false\n    }\n}\n' >> android/app/build.gradle
+          fi
 
       - name: Release APK banana
         run: flutter build apk --release

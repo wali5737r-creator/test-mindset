@@ -27,17 +27,21 @@ jobs:
       - name: Platform files banana (android + web)
         run: |
           cp android/app/src/main/AndroidManifest.xml /tmp/AndroidManifest.xml
-          cp android/app/build.gradle /tmp/app-build.gradle 2>/dev/null || cp android/app/build.gradle.kts /tmp/app-build.gradle.kts 2>/dev/null || true
           cp android/app/src/main/kotlin/com/muhammad/mindset/MainActivity.kt /tmp/MainActivity.kt
           cp -r android/app/src/main/res /tmp/res-backup
+          rm -f android/settings.gradle android/settings.gradle.kts android/build.gradle android/build.gradle.kts android/app/build.gradle android/app/build.gradle.kts android/gradle.properties android/gradle/wrapper/gradle-wrapper.properties
           flutter create --org com.muhammad --project-name test_mindset --platforms android,web .
           cp /tmp/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
-          if [ -f /tmp/app-build.gradle ]; then cp /tmp/app-build.gradle android/app/build.gradle; fi
-          if [ -f /tmp/app-build.gradle.kts ]; then cp /tmp/app-build.gradle.kts android/app/build.gradle.kts; fi
           mkdir -p android/app/src/main/kotlin/com/muhammad/mindset
           cp /tmp/MainActivity.kt android/app/src/main/kotlin/com/muhammad/mindset/MainActivity.kt
           rm -rf android/app/src/main/kotlin/com/muhammad/test_mindset
           cp -r /tmp/res-backup/. android/app/src/main/res/
+          sed -i 's/com.muhammad.test_mindset/com.muhammad.mindset/g' android/app/build.gradle.kts 2>/dev/null || true
+          sed -i 's/com.muhammad.test_mindset/com.muhammad.mindset/g' android/app/build.gradle 2>/dev/null || true
+          sed -i '/com.android.application/a\    id("com.google.gms.google-services") version "4.4.2" apply false' android/settings.gradle.kts 2>/dev/null || true
+          sed -i '/com.android.application/a\    id "com.google.gms.google-services" version "4.4.2" apply false' android/settings.gradle 2>/dev/null || true
+          sed -i '/com.android.application/a\    id("com.google.gms.google-services")' android/app/build.gradle.kts 2>/dev/null || true
+          sed -i '/com.android.application/a\    id "com.google.gms.google-services"' android/app/build.gradle 2>/dev/null || true
 
       - name: Packages lena
         run: flutter pub get

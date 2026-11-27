@@ -98,7 +98,7 @@ class Lesson {
   });
 }
 
-/// One pin on the Pakistan relief map, with its full detail body.
+/// One pin on the Pakistan map, with its full detail body.
 class MapFeature {
   final String id; // e.g. 'rivers-01'
   final String name;
@@ -116,8 +116,9 @@ class MapFeature {
     required this.blocks,
   });
 
-  /// Position on the relief image as fractions of its size.
-  /// The bundled relief map spans lon 60.5..80.5 and lat 37.3..23.4.
+  /// Legacy position fractions from the v1.2/v1.3 static relief
+  /// image (lon 60.5..80.5, lat 37.3..23.4). Unused since v1.4 —
+  /// the real map places pins by [lat]/[lon] directly.
   double get xFraction => (lon - 60.5) / 20.0;
   double get yFraction => (37.3 - lat) / 13.9;
 }
@@ -167,10 +168,9 @@ class WorldFeature {
     required this.blocks,
   });
 
-  /// Position on the bundled world map as fractions of its size.
-  /// The map is a full equirectangular (plate carrée) image spanning
-  /// lon -180..180 and lat 90..-90 (NASA Blue Marble Next Generation,
-  /// public domain, via Wikimedia Commons).
+  /// Legacy position fractions from the v1.3 static world image
+  /// (full equirectangular, lon -180..180, lat 90..-90). Unused
+  /// since v1.4 — the real map places pins by [lat]/[lon] directly.
   double get xFraction => (lon + 180.0) / 360.0;
   double get yFraction => (90.0 - lat) / 180.0;
 }

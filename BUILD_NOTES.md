@@ -465,6 +465,66 @@ and structure) found exactly three defects; all three are fixed here:
    unchanged; the closing recap's warning about this exact order
    trap is kept.
 
+## v1.4 (2026-11-27) — real interactive maps (owner feedback on v1.3.1)
+
+The owner rejected the static relief-image maps outright: "fazul"
+(worthless), all 143 pins mixed together, nothing understandable.
+He pointed at mapcarta.com and asked for a map like that — "3d".
+Both maps are now REAL slippy maps.
+
+- Library: flutter_map 8.3.2 (+ latlong2 0.9.1) — the one new
+  dependency. Its API was verified against the published package
+  source before writing any code (MapOptions.initialCameraFit /
+  cameraConstraint, TileLayer, MarkerLayer, RichAttributionWidget).
+- Tiles: OpenTopoMap (https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png,
+  subdomains a/b/c, maxNativeZoom 15). Its hill-shaded relief and
+  contour lines are what makes mountains/valleys look raised —
+  the closest free tile style to Mapcarta's terrain view. The map
+  carries the required attribution on the map itself
+  (RichAttributionWidget, bottom-left): © OpenStreetMap
+  contributors, © OpenTopoMap (CC-BY-SA), SRTM data.
+- Pins sit at their real lat/lon as flutter_map Markers (the old
+  image-calibration fractions are gone from the screens; the model
+  getters remain, marked legacy). Pins are category-coloured
+  teardrops with the place's first letter in a white circle.
+- THE MIX FIX: no category is selected by default, so the map
+  opens CLEAN — just terrain and a hint bar ("Upar se aik qisam
+  chunein"). Tapping a category chip shows ONLY that category's
+  pins; tapping it again clears back to none. 'Sab' still exists
+  as a chip but is never the default. Rotation is disabled so
+  north stays up and labels stay readable.
+- Pakistan: opens fitted to the country (lat 23.4–37.3,
+  lon 60.5–80.5), camera contained to Pakistan + margin
+  (CameraConstraint.contain), zoom 4–16. World: opens on the
+  whole world (zoom from 2), no bounds constraint.
+- Map Quiz works on the real map: MapOptions.onTap gives the
+  tapped LatLng; correct = within 120 km (Pakistan) / 900 km
+  (world) of the target, judged by haversine distance. After each
+  answer the correct pin is revealed AND the camera moves to it,
+  so the student sees where the place actually is. Best-score
+  keys unchanged (learn_best_map_quiz / learn_best_world_map_quiz).
+- Caching / offline: FMTC 10.1.1 was evaluated (it pairs with
+  flutter_map ^8.1.1) but NOT integrated: flutter_map 8.3's
+  NetworkTileProvider already ships a built-in disk caching
+  provider (enabled by default, ~1 GB cap in the platform cache
+  dir), which gives exactly the wanted behaviour — an area viewed
+  once reopens offline — with zero native dependencies. FMTC's
+  ObjectBox backend would have added native libraries and an
+  init step in main() for no user-visible gain. If tiles fail
+  (offline, area never viewed), an amber banner says in plain
+  Roman Urdu: "Naqsha load karne ke liye internet chahiye — aik
+  dafa khul jaye to save ho jata hai." Already-cached areas keep
+  working silently.
+- Removed: assets/learning/pakistan_relief.jpg and
+  assets/learning/world_map.jpg plus the pubspec assets block —
+  nothing else referenced them (the whole Learning Mode is now
+  asset-free; content is bundled Dart data).
+- Honest limit: a real-time 3D globe like Google Earth (tilt,
+  orbit, extruded terrain in the hand) is NOT possible in this
+  stack — flutter_map is a 2D slippy map. What the student gets
+  is the Mapcarta experience: real pan/zoom over shaded relief
+  where the mountain ranges visibly rise out of the map.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing
@@ -513,7 +573,8 @@ Pinned to stable majors known to coexist: `get ^4.7.2`,
 `cloud_firestore ^5.4.4`, `google_sign_in ^6.2.2` (v1.1.4; classic
 6.x API, not 7.x), `file_picker ^13.4.0` (same major as the
 owner's PDF editor app), `csv ^6.0.0`, `share_plus ^13.3.1`
-(`SharePlus.instance.share(ShareParams(...))` API), `intl ^0.19.0`.
+(`SharePlus.instance.share(ShareParams(...))` API), `intl ^0.19.0`,
+`flutter_map ^8.3.2` + `latlong2 ^0.9.1` (v1.4; real maps).
 If a future `pub get` conflicts, prefer bumping the Firebase trio
 together (core/auth/firestore majors move in lockstep).
 

@@ -36,7 +36,7 @@ const List<Lesson> everyLesson = <Lesson>[
   ...allMathsLessons,
 ];
 
-/// All map pins for the Pakistan relief map.
+/// All map pins for the Pakistan map.
 const List<MapFeature> allMapFeatures = mapFeatures;
 
 /// Reading topics of the Pakistan portion: geography terms and

@@ -1,0 +1,49 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+    // NOTE: when Firebase is configured for Android, also add:
+    //   id "com.google.gms.google-services"
+    // here, plus the matching plugin entry in android/settings.gradle,
+    // and drop google-services.json into this folder (android/app/).
+    // See README.md "Firebase setup".
+}
+
+android {
+    namespace = "com.muhammad.quizwala"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    defaultConfig {
+        applicationId = "com.muhammad.quizwala"
+        // Firebase Auth/Firestore need at least 21; 23 keeps a good
+        // balance of device coverage and modern APIs.
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // v1 ships debug-signed release builds (same approach as the
+            // owner's other apps). Switch to a real keystore before any
+            // Play Store upload.
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}

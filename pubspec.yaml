@@ -1,0 +1,27 @@
+name: quizwala
+description: "QuizWala - a free online quiz maker for teachers and students. Create a test, share one link, students take it with no login."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.7.2
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+  file_picker: ^13.4.0
+  csv: ^6.0.0
+  share_plus: ^13.3.1
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

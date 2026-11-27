@@ -46,7 +46,7 @@ jobs:
       - name: Packages lena
         run: flutter pub get
 
-            - name: Release lint band karna
+      - name: Release lint band karna
         run: |
           if [ -f android/app/build.gradle.kts ]; then
             printf '\nandroid {\n    lint {\n        checkReleaseBuilds = false\n    }\n}\n' >> android/app/build.gradle.kts

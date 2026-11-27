@@ -1,4 +1,4 @@
-package com.muhammad.testmindset
+package com.muhammad.mindset
 
 import io.flutter.embedding.android.FlutterActivity
 

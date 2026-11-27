@@ -70,7 +70,7 @@ lib/
     question_review_card.dart    Correct/wrong/skipped review card, shared
                                  by student result + teacher attempt detail.
 android/                         Minimal Flutter 3.x template skeleton
-                                 (applicationId com.muhammad.testmindset,
+                                 (applicationId com.muhammad.mindset,
                                  label Test Mindset, INTERNET permission,
                                  MainActivity in the right package,
                                  minSdk 23, release = debug signing).
@@ -179,10 +179,10 @@ Practical route used by the owner's other projects: in the Actions
 workflow (or once locally), run
 `flutter create --project-name test_mindset --org com.muhammad --platforms android,web .`
 in the repo root, then verify the three customizations survived:
-`applicationId = "com.muhammad.testmindset"` in `android/app/build.gradle`,
+`applicationId = "com.muhammad.mindset"` in `android/app/build.gradle`,
 `android:label="Test Mindset"` + the INTERNET permission in
 `AndroidManifest.xml`, and `MainActivity.kt` under
-`kotlin/com/muhammad/testmindset/`. Commit the generated wrapper jar and
+`kotlin/com/muhammad/mindset/`. Commit the generated wrapper jar and
 `web/` folder with the repo (workflow files need the owner's `workflow`
 token scope workaround — push code first, add the workflow via the
 GitHub web UI, as with his other repos).
@@ -193,7 +193,7 @@ GitHub web UI, as with his other repos).
   placeholder with `isConfigured = false`, so the app currently starts
   on the setup-pending screen by design. Full steps: README
   "Firebase setup" (create project, add Android app
-  `com.muhammad.testmindset`, add Web app, paste config, enable
+  `com.muhammad.mindset`, add Web app, paste config, enable
   Email/Password auth, create Firestore, paste the suggested rules).
 - `AppConfig.webBaseUrl` is the placeholder
   `https://testmindset.pages.dev` — update it to the real deployed domain
@@ -232,5 +232,5 @@ Name note (updated 2026-11-27): the original working name was dropped after
 a namesake check found earn-money trivia apps using it. The owner chose
 **Test Mindset** as the FINAL name on 2026-11-27 (checked the same day: no
 exact-match app on Play; a near-namesake "Test Minds" exam-prep app exists —
-different name, no block). Package id is com.muhammad.testmindset, Dart
+different name, no block). Package id is com.muhammad.mindset, Dart
 package name test_mindset, repo renamed to test-mindset.

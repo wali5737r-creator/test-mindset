@@ -49,7 +49,7 @@ class SetupPendingScreen extends StatelessWidget {
                         SizedBox(height: 8),
                         Text('1. Create a free Firebase project.'),
                         Text('2. Register the Android app (package '
-                            'com.muhammad.testmindset) and the Web app.'),
+                            'com.muhammad.mindset) and the Web app.'),
                         Text('3. Paste the project values into '
                             'lib/firebase_options.dart and set '
                             'isConfigured to true.'),

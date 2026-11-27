@@ -15,7 +15,7 @@ one dashboard.
 Name: **Test Mindset** — FINAL, decided by the owner 2026-11-27 (the earlier
 working name was dropped after a namesake check; name lives in one
 place, `lib/config/app_config.dart`).
-Package: `com.muhammad.testmindset`. Project: `~/workspace/test-mindset-app/`.
+Package: `com.muhammad.mindset`. Project: `~/workspace/test-mindset-app/`.
 This project is COMPLETELY SEPARATE from WolfTyping and Pakistan Finance
 Calculators (separate repo, separate Firebase project, separate deploy).
 

@@ -1,23 +1,12 @@
-// ===========================================================================
-//  PLACEHOLDER - Firebase is NOT configured for this project yet.
+// Firebase options for Test Mindset.
 //
-//  The values below are DUMMIES. Do not try to use them against a real
-//  Firebase project - they will not work.
+// ANDROID: configured 2026-11-27 from the owner's google-services.json
+// (project test-mindset-4c595). The same values live in android/app/google-services.json.
 //
-//  TO CONFIGURE (see README.md "Firebase setup" for the full walkthrough):
-//    1. Create a Firebase project at https://console.firebase.google.com
-//    2. Register the Android app with package id  com.muhammad.testmindset
-//       and the Web app in that project.
-//    3. Paste the real values into [web] and [android] below
-//       (or run `flutterfire configure`, which rewrites this whole file).
-//    4. Set [isConfigured] to true.
-//    5. For Android, also drop the downloaded google-services.json into
-//       android/app/ and add the google-services Gradle plugin
-//       (steps are in README.md).
-//
-//  Until [isConfigured] is true, main.dart skips Firebase initialization
-//  and the app shows a friendly "setup pending" screen instead of crashing.
-// ===========================================================================
+// WEB: still TODO - the owner registers the Web app in the Firebase console
+// next; paste its values into [web] below (or run `flutterfire configure`).
+// Until then [isConfigured] is false on web and the app shows the friendly
+// "setup pending" screen there instead of crashing.
 
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
@@ -26,8 +15,16 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   DefaultFirebaseOptions._();
 
-  /// Flip to `true` ONLY after the real values below have been pasted in.
-  static const bool isConfigured = false;
+  /// True when the CURRENT platform has real (non-TODO) values filled in.
+  static bool get isConfigured {
+    if (kIsWeb) {
+      return !web.appId.startsWith('TODO');
+    }
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      return !android.appId.startsWith('TODO');
+    }
+    return false;
+  }
 
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -44,8 +41,8 @@ class DefaultFirebaseOptions {
     }
   }
 
-  // TODO(owner): replace every value below with the real one from the
-  // Firebase console (Project settings -> Your apps -> Web app).
+  // TODO(owner): replace with the Web app values from the Firebase console
+  // (Project settings -> Your apps -> Web app).
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'TODO-paste-web-apiKey',
     appId: 'TODO-paste-web-appId',
@@ -55,13 +52,11 @@ class DefaultFirebaseOptions {
     storageBucket: 'TODO-paste-projectId.appspot.com',
   );
 
-  // TODO(owner): replace every value below with the real one from the
-  // Firebase console (Project settings -> Your apps -> Android app).
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'TODO-paste-android-apiKey',
-    appId: 'TODO-paste-android-appId',
-    messagingSenderId: 'TODO-paste-messagingSenderId',
-    projectId: 'TODO-paste-projectId',
-    storageBucket: 'TODO-paste-projectId.appspot.com',
+    apiKey: 'AIzaSyClygtN-YXo3yRi1RHGJltKXTD1pOdJu5M',
+    appId: '1:679331143087:android:03387a6467654e8343235a',
+    messagingSenderId: '679331143087',
+    projectId: 'test-mindset-4c595',
+    storageBucket: 'test-mindset-4c595.firebasestorage.app',
   );
 }

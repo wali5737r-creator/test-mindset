@@ -8,7 +8,7 @@ and shares **one link**. Students open the link — **no app install, no
 login** — enter their name, take the timed test, and see their result
 instantly. The teacher sees all results in one dashboard.
 
-- **Package id:** `com.muhammad.testmindset`
+- **Package id:** `com.muhammad.mindset`
 - **Stack:** Flutter (Android APK + Web from one codebase) · Firebase
   (Auth + Cloud Firestore, free Spark plan) · GetX
 - **App name** lives in one place: `lib/config/app_config.dart`
@@ -91,7 +91,7 @@ the owner's Google account); Glint can guide screen by screen.
 
 2. **Register the Android app**
    - In the project, click the Android icon → package name:
-     `com.muhammad.testmindset` → Register app.
+     `com.muhammad.mindset` → Register app.
    - Download **google-services.json** and put it in `android/app/`.
    - Add the google-services Gradle plugin (the exact lines are marked
      with a NOTE comment in `android/app/build.gradle` and

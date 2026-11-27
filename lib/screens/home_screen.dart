@@ -176,6 +176,38 @@ class HomeScreen extends GetView<HomeController> {
                     onPressed: () => Get.toNamed(AppRoutes.register),
                     child: const Text('Create a free teacher account'),
                   ),
+                  const SizedBox(height: 28),
+                  const Row(
+                    children: [
+                      Expanded(child: Divider()),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text('Learning Mode'),
+                      ),
+                      Expanded(child: Divider()),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  Card(
+                    clipBehavior: Clip.antiAlias,
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.menu_book,
+                        color: theme.colorScheme.primary,
+                        size: 30,
+                      ),
+                      title: const Text(
+                        'Seekhna shuru karo',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      subtitle: const Text(
+                        'PPSC ki tayyari: English Grammar aur Pakistan '
+                        'Studies. Bina login, bina internet.',
+                      ),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () => Get.toNamed(AppRoutes.learn),
+                    ),
+                  ),
                 ],
               ),
             ),

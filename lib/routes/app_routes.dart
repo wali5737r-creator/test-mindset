@@ -30,5 +30,14 @@ class AppRoutes {
   static const String takeTest = '/take-test';
   static const String studentResult = '/student-result';
 
+  // Learning Mode (no login, fully offline, bundled content)
+  static const String learn = '/learn';
+  static const String learnEnglish = '/learn/english';
+  static const String learnPakistan = '/learn/pakistan';
+  static const String learnLesson = '/learn/lesson';
+  static const String learnTopic = '/learn/topic';
+  static const String learnQuiz = '/learn/quiz';
+  static const String learnMap = '/learn/map';
+
   static String studentIntroPath(String code) => '/t/$code';
 }

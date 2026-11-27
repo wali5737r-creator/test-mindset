@@ -1,6 +1,13 @@
 import 'package:get/get.dart';
 
 import '../controllers/dashboard_controller.dart';
+import '../learning/screens/english_subject_screen.dart';
+import '../learning/screens/learn_home_screen.dart';
+import '../learning/screens/lesson_screen.dart';
+import '../learning/screens/map_screen.dart';
+import '../learning/screens/pakistan_subject_screen.dart';
+import '../learning/screens/practice_quiz_screen.dart';
+import '../learning/screens/topic_screen.dart';
 import '../controllers/question_editor_controller.dart';
 import '../controllers/results_controller.dart';
 import '../controllers/take_test_controller.dart';
@@ -70,6 +77,55 @@ class TakeTestBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<TakeTestController>(() => TakeTestController());
+  }
+}
+
+class LearnHomeBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<LearnHomeController>(() => LearnHomeController());
+  }
+}
+
+class EnglishSubjectBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<EnglishSubjectController>(() => EnglishSubjectController());
+  }
+}
+
+class PakistanSubjectBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PakistanSubjectController>(() => PakistanSubjectController());
+  }
+}
+
+class LessonBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<LessonController>(() => LessonController());
+  }
+}
+
+class TopicBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<TopicController>(() => TopicController());
+  }
+}
+
+class PracticeQuizBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PracticeQuizController>(() => PracticeQuizController());
+  }
+}
+
+class MapBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<MapController>(() => MapController());
   }
 }
 
@@ -156,6 +212,43 @@ class AppPages {
     GetPage(
       name: AppRoutes.studentResult,
       page: () => const StudentResultScreen(),
+    ),
+    // Learning Mode pages deliberately carry NO AuthMiddleware -
+    // learning works with no login, like the student flow.
+    GetPage(
+      name: AppRoutes.learn,
+      page: () => const LearnHomeScreen(),
+      binding: LearnHomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnEnglish,
+      page: () => const EnglishSubjectScreen(),
+      binding: EnglishSubjectBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnPakistan,
+      page: () => const PakistanSubjectScreen(),
+      binding: PakistanSubjectBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnLesson,
+      page: () => const LessonScreen(),
+      binding: LessonBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnTopic,
+      page: () => const TopicScreen(),
+      binding: TopicBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnQuiz,
+      page: () => const PracticeQuizScreen(),
+      binding: PracticeQuizBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnMap,
+      page: () => const MapScreen(),
+      binding: MapBinding(),
     ),
   ];
 }

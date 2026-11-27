@@ -7,7 +7,7 @@
 library;
 
 /// One block of lesson / topic / feature body text, in reading order.
-enum LessonBlockType { heading, paragraph, example, rule, trap, visual }
+enum LessonBlockType { heading, paragraph, example, rule, trap, visual, image }
 
 class LessonBlock {
   final LessonBlockType type;
@@ -53,6 +53,12 @@ class LessonBlock {
   /// islamiat, history, space). Rendered as a highlighted card.
   const LessonBlock.visual(String text)
       : this._(LessonBlockType.visual, text: text);
+
+  /// A bundled map snapshot image (v1.5): [text] holds the asset
+  /// path, [note] the optional caption shown under the image.
+  /// Rendered full-width with rounded corners.
+  const LessonBlock.image(String asset, {String caption = ''})
+      : this._(LessonBlockType.image, text: asset, note: caption);
 }
 
 /// One practice MCQ attached to a lesson. Exactly 10 per lesson.
@@ -105,6 +111,10 @@ class MapFeature {
   final String category; // Darya, Bandh/Barrage, Daray, ...
   final double lat;
   final double lon;
+
+  /// Bundled OpenTopoMap snapshot centred on this feature (v1.5),
+  /// shown at the top of the detail sheet. '' when none.
+  final String imageAsset;
   final List<LessonBlock> blocks;
 
   const MapFeature({
@@ -113,6 +123,7 @@ class MapFeature {
     required this.category,
     required this.lat,
     required this.lon,
+    this.imageAsset = '',
     required this.blocks,
   });
 
@@ -157,6 +168,10 @@ class WorldFeature {
   final String category; // Darya, Pahar, Khaleej, Aabnaye, ...
   final double lat;
   final double lon;
+
+  /// Bundled OpenTopoMap snapshot centred on this feature (v1.5),
+  /// shown at the top of the detail sheet. '' when none.
+  final String imageAsset;
   final List<LessonBlock> blocks;
 
   const WorldFeature({
@@ -165,6 +180,7 @@ class WorldFeature {
     required this.category,
     required this.lat,
     required this.lon,
+    this.imageAsset = '',
     required this.blocks,
   });
 

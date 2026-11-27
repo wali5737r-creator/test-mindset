@@ -165,6 +165,33 @@ class _BlockWidget extends StatelessWidget {
             ],
           ),
         );
+      case LessonBlockType.image:
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  block.text,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              if (block.note.isNotEmpty) ...<Widget>[
+                const SizedBox(height: 6),
+                Text(
+                  block.note,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ],
+          ),
+        );
       case LessonBlockType.trap:
         return Card(
           margin: const EdgeInsets.only(bottom: 12),

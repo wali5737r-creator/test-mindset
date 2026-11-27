@@ -30,10 +30,7 @@ Widget mapAttribution() {
     showFlutterMapAttribution: false,
     attributions: <SourceAttribution>[
       TextSourceAttribution('OpenStreetMap contributors'),
-      TextSourceAttribution(
-        'OpenTopoMap (CC-BY-SA)',
-        prependCopyright: false,
-      ),
+      TextSourceAttribution('OpenTopoMap (CC-BY-SA)'),
       TextSourceAttribution('SRTM', prependCopyright: false),
     ],
   );

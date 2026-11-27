@@ -67,6 +67,7 @@ void showFeatureSheet(BuildContext context, MapFeature feature) {
     title: feature.name,
     category: feature.category,
     color: categoryColor(feature.category),
+    imageAsset: feature.imageAsset,
     blocks: feature.blocks,
   );
 }
@@ -78,18 +79,21 @@ void showWorldFeatureSheet(BuildContext context, WorldFeature feature) {
     title: feature.name,
     category: feature.category,
     color: worldCategoryColor(feature.category),
+    imageAsset: feature.imageAsset,
     blocks: feature.blocks,
   );
 }
 
-/// Shared bottom sheet: a title, an optional category chip and a full
-/// block body (map features, planet sections).
+/// Shared bottom sheet: a title, an optional category chip, an
+/// optional map snapshot image at the top (v1.5) and a full block
+/// body (map features, planet sections).
 void showBlocksSheet(
   BuildContext context, {
   required String title,
   String? category,
   Color? color,
   IconData icon = Icons.location_on,
+  String imageAsset = '',
   required List<LessonBlock> blocks,
 }) {
   final chipColor = color ?? Colors.blueGrey.shade700;
@@ -135,6 +139,16 @@ void showBlocksSheet(
                     label: Text(category),
                     backgroundColor: chipColor.withValues(alpha: 0.14),
                     side: BorderSide.none,
+                  ),
+                ),
+              ],
+              if (imageAsset.isNotEmpty) ...<Widget>[
+                const SizedBox(height: 10),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    imageAsset,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ],

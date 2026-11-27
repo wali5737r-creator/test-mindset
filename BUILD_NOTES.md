@@ -525,6 +525,62 @@ Both maps are now REAL slippy maps.
   is the Mapcarta experience: real pan/zoom over shaded relief
   where the mountain ranges visibly rise out of the map.
 
+## v1.5 (2026-11-27) — a map image inside every point's detail
+
+Owner feedback on v1.4: the details are still text-only and boring —
+"jo details hain uski bhi map ki images add krna hr point ki... konsy
+country hain... sirf static text bore krdy ga". Every map point now
+carries its own map picture, showing where it is and what surrounds it.
+
+- Snapshot pipeline: tools/generate_map_snapshots.py (new; Python +
+  Pillow, venv in tools/.venv) stitches OpenTopoMap tiles — the same
+  source as the live maps — into one JPEG per place, centred on the
+  feature with an orange teardrop marker at its exact position.
+  Tiles are fetched politely (User-Agent identifying the app,
+  ~4 requests/second max) into a disk cache at ~/workspace/tile-cache/,
+  so rebuilds run offline-fast (the shipped set: 2,191 tile reads,
+  0 new fetches). Tile data (c) OpenStreetMap contributors,
+  (c) OpenTopoMap (CC-BY-SA), SRTM.
+- Zoom per category, tuned so the surroundings show: Pakistan —
+  Darya 7, Bandh/Barrage 8, Daray 8, Pahar 7, Doab 8, Heritage 9,
+  Sarhad 6, Sahel 7, Registran/Maidan 7, Jheelain 8. World —
+  seas/gulfs/bays 3, straits/canals 6, rivers 4, mountains 5,
+  deserts 4, lakes 5, islands 5.
+- Coverage: all 143 Pakistan features + all 39 world features get a
+  snapshot at assets/learning/maps/pakistan|world/<feature-id>.jpg.
+  MapFeature / WorldFeature gained an imageAsset field, filled by
+  tools/generate_learning_data.py from the path pattern — and the
+  generator now FAILS (exit 1) if any referenced snapshot file is
+  missing, so a data build can never ship a dangling image path.
+  Both detail sheets show the snapshot full-width at the top, with
+  the text body below it.
+- Reading topics: new LessonBlockType.image (asset path in text,
+  caption in note), rendered full-width with rounded corners by
+  LessonBlocksView. The countries topic gets each country's own
+  snapshot (all 30 countries in countries.md; centroid table in the
+  generator, zoom 3 for the giants, 4 default, 5 for small
+  countries) at the start of that country's section. The five ocean
+  snapshots (zoom 2–3, centres picked so the surrounding continents
+  show — the Indian Ocean is centred at -15/75 so India and
+  Pakistan's coast are in frame) sit together, in ocean order, in
+  the world-terms topic's "Ocean aur Sea ka farq" section. Why
+  there: the oceans' prose sections in world-features.md sit before
+  that file's first pin and parse into map features only — they
+  never reach a topic; ocean-vs-sea is actually taught in
+  world-terms, so the ocean pictures live with that lesson.
+- Size watch: at 720x520 / quality 78 the 217 snapshots totalled
+  23.66 MB (projected APK ~86 MB, over the ~85 MB line), so the
+  shipped set was regenerated at 640x470 / quality 72 = 16.83 MB
+  total (projected APK ~79 MB; v1.4 APK was 62.2 MB). Regenerate
+  with other dimensions via the script's --width/--height/--quality
+  flags if a future build needs it.
+- Folded in: the v1.4 pre-delivery check's one cosmetic nit — the
+  on-map attribution now renders "(c) OpenTopoMap (CC-BY-SA)"
+  exactly as these notes claim (prependCopyright: false removed
+  in topo_map.dart).
+- Untouched: every content text, all progress keys, the live maps
+  themselves, and all teacher/student flows.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing

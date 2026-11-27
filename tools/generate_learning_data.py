@@ -111,6 +111,90 @@ def gulfs_category(name):
     return "Aabnaye"  # Bab el-Mandeb, Dardanelles/Bosphorus
 
 
+# ---------------------------------------------------------------------------
+# v1.5 map snapshots. The images themselves are built by
+# tools/generate_map_snapshots.py (OpenTopoMap tiles stitched offline);
+# this generator only REFERENCES them and fails loudly if any file is
+# missing, so a data build can never ship a dangling image path.
+# ---------------------------------------------------------------------------
+
+def feature_asset(portion, feature_id):
+    return f"assets/learning/maps/{portion}/{feature_id}.jpg"
+
+
+# The five oceans: (slug, display name, centre lat, centre lon, zoom).
+# Centres chosen so the surrounding continents/countries are visible.
+OCEAN_SNAPSHOTS = [
+    ("pacific", "Pacific Ocean", -5.0, -150.0, 2),
+    ("atlantic", "Atlantic Ocean", 15.0, -30.0, 3),
+    ("indian", "Indian Ocean", -15.0, 75.0, 3),
+    ("southern", "Southern Ocean", -65.0, -90.0, 2),
+    ("arctic", "Arctic Ocean", 80.0, 0.0, 2),
+]
+
+
+def ocean_asset(slug):
+    return f"assets/learning/maps/world/ocean-{slug}.jpg"
+
+
+# countries.md heading -> (centre lat, centre lon, snapshot zoom).
+# Zoom 4 by default, 3 for the giant countries, 5 for small ones.
+COUNTRY_SNAPSHOTS = {
+    "China": (35.0, 105.0, 4),
+    "India": (22.5, 79.0, 4),
+    "Japan": (37.5, 138.0, 5),
+    "Saudi Arabia": (24.0, 45.0, 4),
+    "Iran": (32.4, 53.7, 4),
+    "United Arab Emirates": (24.2, 54.4, 5),
+    "Bangladesh": (23.7, 90.4, 5),
+    "Sri Lanka": (7.9, 80.8, 5),
+    "Nepal": (28.2, 84.1, 5),
+    "Afghanistan": (33.9, 67.7, 4),
+    "Indonesia": (-2.2, 118.0, 4),
+    "Malaysia": (4.2, 102.0, 4),
+    "Thailand": (15.9, 101.0, 5),
+    "South Korea": (36.5, 128.0, 5),
+    "Turkey": (39.0, 35.2, 4),
+    "Russia": (62.0, 105.0, 3),
+    "Egypt": (26.8, 30.8, 4),
+    "United Kingdom": (54.0, -2.5, 5),
+    "France": (46.6, 2.5, 5),
+    "Germany": (51.1, 10.4, 5),
+    "Italy": (42.8, 12.8, 5),
+    "Spain": (40.2, -3.6, 5),
+    "Greece": (39.0, 22.0, 5),
+    "USA": (39.8, -98.6, 3),
+    "Canada": (57.0, -101.0, 3),
+    "Brazil": (-10.8, -52.9, 3),
+    "Argentina": (-38.4, -63.6, 4),
+    "Nigeria": (9.6, 8.0, 5),
+    "Australia": (-25.3, 133.8, 3),
+    "New Zealand": (-41.8, 172.8, 5),
+}
+
+
+def country_slug(name):
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def country_asset(name):
+    return f"assets/learning/maps/world/country-{country_slug(name)}.jpg"
+
+
+# Snapshot asset paths referenced by the generated data but missing on
+# disk. Any entry here fails the whole generation (see main()).
+map_image_missing = []
+
+
+def require_map_image(asset):
+    if not (ROOT / asset).exists():
+        map_image_missing.append(asset)
+        problems.append(
+            f"map snapshot missing: {asset} "
+            f"(run tools/generate_map_snapshots.py first)"
+        )
+
+
 # Solar system sections: (id, heading needle). Sun matches by prefix.
 PLANETS = [
     ("sun", "Suraj"),
@@ -608,6 +692,13 @@ def emit_block(b):
         return f"LessonBlock.rule({ds(b['text'])})"
     if t == "visual":
         return f"LessonBlock.visual({ds(b['text'])})"
+    if t == "image":
+        if b.get("note"):
+            return (
+                f"LessonBlock.image({ds(b['text'])}, "
+                f"caption: {ds(b['note'])})"
+            )
+        return f"LessonBlock.image({ds(b['text'])})"
     if t == "trap":
         return (
             f"LessonBlock.trap({ds(b['wrong'])}, {ds(b['right'])}, "
@@ -673,9 +764,75 @@ def emit_world_feature(f):
         f"    category: {ds(f['category'])},\n"
         f"    lat: {f['lat']},\n"
         f"    lon: {f['lon']},\n"
+        f"    imageAsset: {ds(feature_asset('world', f['id']))},\n"
         f"    blocks: {emit_blocks(f['blocks'], 4)},\n"
         "  )"
     )
+
+
+def insert_country_images(topic):
+    """v1.5: an image block with the country's map snapshot goes at
+    the start of each country's section in the countries topic,
+    right after its heading. Every COUNTRY_SNAPSHOTS heading must be
+    found, otherwise the miss is reported as a problem."""
+    out = []
+    found = set()
+    for b in topic["blocks"]:
+        out.append(b)
+        if b["type"] == "heading" and b["text"] in COUNTRY_SNAPSHOTS:
+            found.add(b["text"])
+            out.append(
+                {
+                    "type": "image",
+                    "text": country_asset(b["text"]),
+                    "note": (
+                        f"Naqsha — {b['text']} aur us ke aas paas "
+                        f"ke mulk"
+                    ),
+                }
+            )
+    for name in sorted(set(COUNTRY_SNAPSHOTS) - found):
+        problems.append(
+            f"countries: heading '{name}' not found for its map image"
+        )
+    topic["blocks"] = out
+    return len(found)
+
+
+def insert_ocean_images(topic):
+    """v1.5: the five ocean snapshots go together, in ocean order,
+    inside the world-terms topic's 'Ocean aur Sea ka farq' section,
+    right after its heading — the oceans are explained there (the
+    world-features prose sections never reach a topic: that file
+    parses into map features only)."""
+    out = []
+    done = False
+    for b in topic["blocks"]:
+        out.append(b)
+        if (
+            not done
+            and b["type"] == "heading"
+            and b["text"] == "Ocean aur Sea ka farq"
+        ):
+            for slug, name, _lat, _lon, _zoom in OCEAN_SNAPSHOTS:
+                out.append(
+                    {
+                        "type": "image",
+                        "text": ocean_asset(slug),
+                        "note": (
+                            f"Naqsha — {name} aur us ke aas paas "
+                            f"ke continents"
+                        ),
+                    }
+                )
+            done = True
+    if not done:
+        problems.append(
+            "world-terms: 'Ocean aur Sea ka farq' section not found "
+            "for the ocean images"
+        )
+    topic["blocks"] = out
+    return done
 
 
 def emit_planet(p):
@@ -777,6 +934,8 @@ def gen_geography():
     for t in topics:
         leak_check(t["blocks"], f"topic/{t['id']}")
 
+    for f in all_features:
+        require_map_image(feature_asset("pakistan", f["id"]))
     feat_src = ",\n".join(
         "  MapFeature(\n"
         f"    id: {ds(f['id'])},\n"
@@ -784,6 +943,7 @@ def gen_geography():
         f"    category: {ds(f['category'])},\n"
         f"    lat: {f['lat']},\n"
         f"    lon: {f['lon']},\n"
+        f"    imageAsset: {ds(feature_asset('pakistan', f['id']))},\n"
         f"    blocks: {emit_blocks(f['blocks'], 4)},\n"
         "  )"
         for f in all_features
@@ -827,6 +987,12 @@ def gen_world():
             continue
         topic = parse_topic(path, portion="world")
         if topic:
+            if stem == "countries":
+                n = insert_country_images(topic)
+                print(f"world/countries.md: {n} country map images inserted")
+            if stem == "world-terms":
+                insert_ocean_images(topic)
+                print("world/world-terms.md: 5 ocean map images inserted")
             topics.append(topic)
             print(
                 f"world/{stem}.md: topic '{topic['title']}' "
@@ -840,6 +1006,12 @@ def gen_world():
         problems.append(
             f"world: {len(features)} map features parsed, expected 39"
         )
+    for f in features:
+        require_map_image(feature_asset("world", f["id"]))
+    for slug, _name, _lat, _lon, _zoom in OCEAN_SNAPSHOTS:
+        require_map_image(ocean_asset(slug))
+    for name in COUNTRY_SNAPSHOTS:
+        require_map_image(country_asset(name))
     feat_src = ",\n".join(emit_world_feature(f) for f in features)
     topic_src = ",\n".join(emit_topic(t) for t in topics)
     write_file(
@@ -1042,6 +1214,12 @@ def main():
             print(" -", p)
     else:
         print("\nNo parse problems.")
+    if map_image_missing:
+        print(
+            f"\nFATAL: {len(map_image_missing)} map snapshot(s) missing — "
+            "refusing to ship dangling image paths."
+        )
+        return 1
     return 0
 
 

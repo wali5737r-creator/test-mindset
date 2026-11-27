@@ -1,0 +1,61 @@
+name: Build Test Mindset
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v4
+
+      - name: Java 17 setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Flutter setup (stable)
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Platform files banana (android + web)
+        run: |
+          cp android/app/src/main/AndroidManifest.xml /tmp/AndroidManifest.xml
+          cp android/app/build.gradle /tmp/app-build.gradle 2>/dev/null || cp android/app/build.gradle.kts /tmp/app-build.gradle.kts 2>/dev/null || true
+          cp android/app/src/main/kotlin/com/muhammad/mindset/MainActivity.kt /tmp/MainActivity.kt
+          cp -r android/app/src/main/res /tmp/res-backup
+          flutter create --org com.muhammad --project-name test_mindset --platforms android,web .
+          cp /tmp/AndroidManifest.xml android/app/src/main/AndroidManifest.xml
+          if [ -f /tmp/app-build.gradle ]; then cp /tmp/app-build.gradle android/app/build.gradle; fi
+          if [ -f /tmp/app-build.gradle.kts ]; then cp /tmp/app-build.gradle.kts android/app/build.gradle.kts; fi
+          mkdir -p android/app/src/main/kotlin/com/muhammad/mindset
+          cp /tmp/MainActivity.kt android/app/src/main/kotlin/com/muhammad/mindset/MainActivity.kt
+          rm -rf android/app/src/main/kotlin/com/muhammad/test_mindset
+          cp -r /tmp/res-backup/. android/app/src/main/res/
+
+      - name: Packages lena
+        run: flutter pub get
+
+      - name: Release APK banana
+        run: flutter build apk --release
+
+      - name: APK save karna (download ke liye)
+        uses: actions/upload-artifact@v4
+        with:
+          name: testmindset-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Web build banana
+        run: flutter build web --release
+
+      - name: Web build save karna
+        uses: actions/upload-artifact@v4
+        with:
+          name: testmindset-web
+          path: build/web

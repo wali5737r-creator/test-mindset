@@ -4,10 +4,13 @@ import '../controllers/dashboard_controller.dart';
 import '../learning/screens/english_subject_screen.dart';
 import '../learning/screens/learn_home_screen.dart';
 import '../learning/screens/lesson_screen.dart';
+import '../learning/screens/lessons_list_screen.dart';
 import '../learning/screens/map_screen.dart';
 import '../learning/screens/pakistan_subject_screen.dart';
+import '../learning/screens/portion_screen.dart';
 import '../learning/screens/practice_quiz_screen.dart';
 import '../learning/screens/topic_screen.dart';
+import '../learning/screens/world_map_screen.dart';
 import '../controllers/question_editor_controller.dart';
 import '../controllers/results_controller.dart';
 import '../controllers/take_test_controller.dart';
@@ -126,6 +129,27 @@ class MapBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<MapController>(() => MapController());
+  }
+}
+
+class PortionBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<PortionController>(() => PortionController());
+  }
+}
+
+class LessonsListBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<LessonsListController>(() => LessonsListController());
+  }
+}
+
+class WorldMapBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut<WorldMapController>(() => WorldMapController());
   }
 }
 
@@ -249,6 +273,21 @@ class AppPages {
       name: AppRoutes.learnMap,
       page: () => const MapScreen(),
       binding: MapBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnPortion,
+      page: () => const PortionScreen(),
+      binding: PortionBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnLessons,
+      page: () => const LessonsListScreen(),
+      binding: LessonsListBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.learnWorldMap,
+      page: () => const WorldMapScreen(),
+      binding: WorldMapBinding(),
     ),
   ];
 }

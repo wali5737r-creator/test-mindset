@@ -3,11 +3,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Local, offline progress for Learning Mode (SharedPreferences).
 ///
 /// Keys:
-///  - learn_done_<id>     bool  lesson/topic complete
+///  - learn_done_<id>     bool  lesson/topic complete. The <id> is the
+///                        lesson id, or a topic's progressId: plain id
+///                        for the Pakistan portion (v1.2 keys, kept),
+///                        '<portion>:<id>' for every other portion.
 ///  - learn_best_<id>     int   best practice-quiz score (0-10)
-///  - learn_last_lesson   String  last opened lesson/topic id
-///  - learn_last_subject  String  'english' or 'pakistan'
-///  - learn_best_map_quiz int   best map-quiz score (0-10)
+///  - learn_last_lesson   String  last opened lesson/topic progress id
+///  - learn_last_subject  String  portion id ('english', 'pakistan',
+///                        'maths', 'world', ...)
+///  - learn_best_map_quiz int   best Pakistan map-quiz score (0-10)
+///  - learn_best_world_map_quiz int  best world map-quiz score (0-10)
 ///
 /// Progress lives only on this device; uninstalling the app clears it.
 /// Learning Mode accounts do not exist, by design.
@@ -80,6 +85,19 @@ class ProgressService {
     final current = prefs.getInt('learn_best_map_quiz');
     if (current == null || score > current) {
       await prefs.setInt('learn_best_map_quiz', score);
+      return score;
+    }
+    return current;
+  }
+
+  Future<int?> worldMapQuizBest() async =>
+      (await _sp).getInt('learn_best_world_map_quiz');
+
+  Future<int> saveWorldMapQuizBest(int score) async {
+    final prefs = await _sp;
+    final current = prefs.getInt('learn_best_world_map_quiz');
+    if (current == null || score > current) {
+      await prefs.setInt('learn_best_world_map_quiz', score);
       return score;
     }
     return current;

@@ -7,8 +7,9 @@ import '../models/learning_models.dart';
 import '../services/progress_service.dart';
 
 /// GK & Pakistan Studies portion: the interactive map first, then the
-/// reading topics (geography terms, provinces & districts) — each with
-/// its full detail text.
+/// reading topics (geography terms, provinces & districts, and the
+/// Pak Studies topics — movement, leaders, constitutions, symbols) —
+/// each with its full detail text.
 class PakistanSubjectController extends GetxController {
   final ProgressService _progress = ProgressService.instance;
 
@@ -119,8 +120,9 @@ class PakistanSubjectScreen extends GetView<PakistanSubjectController> {
             ),
             const SizedBox(height: 6),
             Text(
-              'Har topic mukammal tafseel ke sath — pehle matlab samjho, '
-              'phir naqsha khud bolne lagega.',
+              'Har topic mukammal tafseel ke sath — geography ki '
+              'istilahaat aur sobay, aur phir Pak Studies: tehreek, '
+              'rehnuma, aaeen aur qaumi nishanaat.',
               style: theme.textTheme.bodyMedium,
             ),
             const SizedBox(height: 10),

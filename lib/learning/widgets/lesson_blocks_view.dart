@@ -123,6 +123,48 @@ class _BlockWidget extends StatelessWidget {
             ],
           ),
         );
+      case LessonBlockType.visual:
+        return Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.tertiaryContainer,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: theme.colorScheme.tertiary.withValues(alpha: 0.45),
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.image_search,
+                    size: 18,
+                    color: theme.colorScheme.onTertiaryContainer,
+                  ),
+                  const SizedBox(width: 6),
+                  Text(
+                    'Tasveer me dekho — Visual',
+                    style: theme.textTheme.labelLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: theme.colorScheme.onTertiaryContainer,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 6),
+              Text(
+                block.text,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  color: theme.colorScheme.onTertiaryContainer,
+                  height: 1.5,
+                ),
+              ),
+            ],
+          ),
+        );
       case LessonBlockType.trap:
         return Card(
           margin: const EdgeInsets.only(bottom: 12),

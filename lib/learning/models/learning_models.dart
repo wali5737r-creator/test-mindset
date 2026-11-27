@@ -7,7 +7,7 @@
 library;
 
 /// One block of lesson / topic / feature body text, in reading order.
-enum LessonBlockType { heading, paragraph, example, rule, trap }
+enum LessonBlockType { heading, paragraph, example, rule, trap, visual }
 
 class LessonBlock {
   final LessonBlockType type;
@@ -47,6 +47,12 @@ class LessonBlock {
 
   const LessonBlock.trap(String wrong, String right, String note)
       : this._(LessonBlockType.trap, wrong: wrong, right: right, note: note);
+
+  /// A described-diagram card: the docs' "Tasveer ka khayal" text for
+  /// portions where visuals matter (computer, everyday science,
+  /// islamiat, history, space). Rendered as a highlighted card.
+  const LessonBlock.visual(String text)
+      : this._(LessonBlockType.visual, text: text);
 }
 
 /// One practice MCQ attached to a lesson. Exactly 10 per lesson.
@@ -64,14 +70,18 @@ class LessonMcq {
   });
 }
 
-/// One English grammar lesson (46 in total, grouped into named parts).
+/// One lesson with practice MCQs (English grammar: 46, grouped into
+/// named parts; Maths: 9, one flat list). [portion] says which
+/// Learning Mode portion the lesson belongs to ('english' / 'maths')
+/// and drives its progress keys and resume entry.
 class Lesson {
-  final String id; // 'grammar-01'
-  final int number; // 1..46
+  final String id; // 'grammar-01' / 'percentage'
+  final int number; // 1..46 (english) / 1..9 (maths)
   final String title;
   final String subtitle;
-  final int partIndex; // 0..12
+  final int partIndex; // 0..12 (english parts; 0 for maths)
   final String partName;
+  final String portion;
   final List<LessonBlock> blocks;
   final List<LessonMcq> mcqs;
 
@@ -82,6 +92,7 @@ class Lesson {
     required this.subtitle,
     required this.partIndex,
     required this.partName,
+    this.portion = 'english',
     required this.blocks,
     required this.mcqs,
   });
@@ -111,18 +122,73 @@ class MapFeature {
   double get yFraction => (37.3 - lat) / 13.9;
 }
 
-/// A reading topic in the GK / Pakistan Studies portion
-/// (e.g. geography terms, provinces and districts).
+/// A reading topic in any Learning Mode portion (geography terms,
+/// provinces, Pak Studies, world, space, computer, urdu, islamiat,
+/// history, organisations, everyday science).
 class GeoTopic {
-  final String id; // 'terms' / 'provinces'
+  final String id; // 'terms' / 'provinces' / 'quran' / ...
   final String title;
   final String subtitle;
+
+  /// Portion id ('pakistan', 'world', 'space', 'computer', 'urdu',
+  /// 'islamiat', 'history', 'orgs', 'eds'). Pakistan topics keep the
+  /// v1.2 progress keys (their plain id); every other portion prefixes
+  /// its progress keys with the portion id so nothing collides.
+  final String portion;
   final List<LessonBlock> blocks;
 
   const GeoTopic({
     required this.id,
     required this.title,
     required this.subtitle,
+    this.portion = 'pakistan',
     required this.blocks,
   });
+
+  /// Key used for done/best progress storage.
+  String get progressId => portion == 'pakistan' ? id : '$portion:$id';
+}
+
+/// One pin on the world map, with its full detail body.
+class WorldFeature {
+  final String id; // e.g. 'world-features-01'
+  final String name;
+  final String category; // Darya, Pahar, Khaleej, Aabnaye, ...
+  final double lat;
+  final double lon;
+  final List<LessonBlock> blocks;
+
+  const WorldFeature({
+    required this.id,
+    required this.name,
+    required this.category,
+    required this.lat,
+    required this.lon,
+    required this.blocks,
+  });
+
+  /// Position on the bundled world map as fractions of its size.
+  /// The map is a full equirectangular (plate carrée) image spanning
+  /// lon -180..180 and lat 90..-90 (NASA Blue Marble Next Generation,
+  /// public domain, via Wikimedia Commons).
+  double get xFraction => (lon + 180.0) / 360.0;
+  double get yFraction => (90.0 - lat) / 180.0;
+}
+
+/// One section of the solar-system topic (the Sun or one planet),
+/// opened from the Space portion's solar-system visual.
+class PlanetSection {
+  final String id; // 'sun', 'mercury', ...
+  final String name; // 'Mercury'
+  final String urduName; // 'Utarid' ('' when the doc gives none)
+  final List<LessonBlock> blocks;
+
+  const PlanetSection({
+    required this.id,
+    required this.name,
+    required this.urduName,
+    required this.blocks,
+  });
+
+  String get label => urduName.isEmpty ? name : '$name — $urduName';
 }

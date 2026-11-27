@@ -311,6 +311,130 @@ email form, separated by an "or" divider):
   installing v1.1.4 (account and tests are in the cloud; nothing is
   lost).
 
+## v1.3 (2026-11-27) — Learning Mode: all portions
+
+Version `1.3.0+8`. Learning Mode grows from 2 portions to 11. The
+v1.2 pattern is extended, not redesigned: same generator
+(`tools/generate_learning_data.py`, new modes `world|topics|maths`,
+`all` runs everything), same LessonScreen / TopicScreen /
+PracticeQuizScreen (now parametrized by portion), same
+ProgressService key scheme. Teacher/student/auth flows untouched.
+
+### Portions and where their content lives
+
+| Portion | Kind | Data file | Source docs |
+|---|---|---|---|
+| English | 46 lessons, 13 parts | english_lessons_a/b/c.dart | docs/lessons/ |
+| Pakistan | map (143 pins) + 6 topics | geography_data.dart | docs/geography/ + docs/pakstudy/ |
+| World | map (39 pins) + 2 topics | world_data.dart | docs/world/ |
+| Space | 3 topics + solar-system visual | space_data.dart | docs/space/ |
+| Computer | 8 topics (5 course + 3 practical) | computer_data.dart | docs/computer/ |
+| Maths | 9 lessons with 10 MCQs each | maths_lessons.dart | docs/maths/ |
+| Urdu | 5 topics | urdu_data.dart | docs/urdu/ |
+| Islamiat | 6 topics | islamiat_data.dart | docs/islamiat/ |
+| History | 4 topics | history_data.dart | docs/history/ |
+| Tanzeemain aur Muahide | 2 topics | orgs_data.dart | docs/orgs/ |
+| Everyday Science | 4 topics | eds_data.dart | docs/eds/ |
+
+- **Pak Studies** topics (movement, leaders, constitutions-govt,
+  symbols-firsts) are emitted into the SAME `geoTopics` list, after
+  the geography topics — one Pakistan portion, one progress counter.
+- **Generic screens:** `PortionScreen` (arguments: portion id) serves
+  every topic portion; `LessonsListScreen` (arguments: portion id)
+  serves Maths. New routes: `/learn/portion`, `/learn/lessons`,
+  `/learn/world-map` — all without AuthMiddleware, like the rest of
+  Learning Mode.
+- **Progress keys:** lessons/topics keep `learn_done_<id>` /
+  `learn_best_<id>`. The id for a topic is its `progressId`: the
+  plain doc id for the Pakistan portion (v1.2 keys preserved, no
+  progress lost on upgrade) and `'<portion>:<id>'` for every other
+  portion, so portions can never collide. `learn_last_subject` now
+  stores the portion id; the home resume chip resolves lessons
+  (English/Maths) and topics (any portion) from it. The world map
+  quiz has its own best key, `learn_best_world_map_quiz` (the
+  Pakistan one stays `learn_best_map_quiz`).
+
+### World map
+
+- Asset: `assets/learning/world_map.jpg` — 2000×1000 JPEG, 262 KB.
+  Source: Wikimedia Commons file "Blue Marble Next Generation +
+  topography + bathymetry.jpg" (3600×1800), NASA Earth Observatory
+  data produced by Reto Stöckli; the file description states
+  "Equirectangular projection" and the image is public domain.
+  Downscaled to 2000 px wide at JPEG quality 80.
+- Calibration: the image is a full plate carrée — edges are exactly
+  lon −180..180 and lat 90..−90 (2:1 aspect, no latitude cropping),
+  so pins use x = (lon + 180) / 360, y = (90 − lat) / 180
+  (`WorldFeature.xFraction/yFraction`). Calibration was verified by
+  plotting known pins (Everest, Nile mouth, Panama, Greenland,
+  Baikal, Bering, Sahara, Amazon, Indonesia) onto the image — all
+  landed on the right landforms.
+- Pins: 39 (23 from world-features.md, 16 from gulfs-straits.md).
+  Categories: for world-features.md the generator maps the doc's own
+  section headings to chips (Darya, Registran, Pahar, Canal/Aabnaye,
+  Jheelain, Jazire); for gulfs-straits.md the category comes from the
+  feature name (Strait/Channel → Aabnaye, Gulf → Khaleej, Bay → Bay,
+  Sea → Samandar). `WorldMapScreen` reuses the Pakistan MapScreen
+  pattern (InteractiveViewer, chips, bottom-sheet detail, 10-round
+  Map Quiz) with its own controller and quiz-best key.
+
+### Solar-system visual (Space portion)
+
+`lib/learning/widgets/solar_system_visual.dart` — drawn entirely
+with Flutter widgets (no images): a dark card with a horizontally
+scrollable row, Sun + 8 planets as coloured circles in correct
+order and roughly relative sizes (compressed — true ratios would
+make Mercury invisible). Real colours: Mercury grey, Venus
+yellowish, Earth blue, Mars red-orange, Jupiter banded tan (striped
+ClipOval), Saturn pale gold with an elliptical ring, Uranus pale
+cyan, Neptune deep blue. Tapping a body opens a bottom sheet with
+that body's full section text: the generator splits
+docs/space/solar-system.md by its planet headings into
+`planetSections` (Sun + 8). The full solar-system text also remains
+a normal reading topic; the asteroid-belt and Pluto sections exist
+only in the topic, not as tappable bodies.
+
+### Visual-note cards ("Tasveer ka khayal")
+
+For the computer, everyday-science, islamiat, history and space
+portions, the generator's topic parser runs in tasveer 'card' mode:
+a "Tasveer ka khayal" line (own block, bare heading + description
+block, mid-block line, or the closing "Aakhir me tasveer..." section)
+becomes a `LessonBlock.visual` — rendered by LessonBlocksView as a
+highlighted tertiary card with an image icon and the full
+description text. English lessons keep the v1.2 behaviour (the
+section is not part of the body); orgs topics run in 'strip' mode
+(their two tasveer blocks are dropped); urdu/world/pakstudy docs
+contain none. Counts in v1.3: computer 60, eds 36, history 17,
+islamiat 5, space 2 visual cards. These are DESCRIBED diagrams, not
+drawn images — producing real diagram artwork per card is future
+work; the card text is the full doc description, nothing is hidden.
+
+### Generator discipline (kept from v1.2)
+
+Parse report prints per-file block/MCQ/pin counts; problems are
+collected, not silently passed: maths lessons must have exactly 10
+MCQs with 4 options and a full answer key, world pins must total
+39, and a leak check asserts no 'Pin:' text survives into any
+rendered body. v1.3 run: no parse problems; the regenerated English
+data files are byte-identical to v1.2 and geography_data.dart only
+gained the 4 Pak Studies topics (309 insertions, 0 deletions).
+Parser issues are fixed in the parser, never in the master docs —
+including docs/computer/practical-excel.md, whose real Excel
+formulas contain asterisks (=F2/300*100) that pass through as
+content.
+
+### Honest limits
+
+- No local Flutter SDK: this build was hand-checked (brace balance
+  across all lib files, API consistency against the v1.2 code) and
+  CI is the compile proof, same as v1.1–v1.2.
+- Urdu portion text mixes Roman Urdu with Urdu-script words/verses;
+  it renders with the platform's default fonts (Android handles
+  Urdu script natively). No bundled Urdu font is shipped.
+- The solar-system sizes/colours are a teaching visual, not a
+  scale model; the doc text says so where it matters.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing

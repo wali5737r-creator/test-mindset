@@ -74,7 +74,11 @@ class PracticeQuizScreen extends GetView<PracticeQuizController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Practice — Lesson ${controller.lesson.number}'),
+        title: Text(
+          controller.lesson.portion == 'maths'
+              ? 'Practice — ${controller.lesson.title}'
+              : 'Practice — Lesson ${controller.lesson.number}',
+        ),
       ),
       body: Obx(() {
         if (controller.finished.value) return _resultView(context);

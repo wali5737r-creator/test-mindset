@@ -5,7 +5,9 @@ import '../models/learning_models.dart';
 import '../services/progress_service.dart';
 import '../widgets/lesson_blocks_view.dart';
 
-/// One GK / Pakistan Studies reading topic, full detail body.
+/// One reading topic from any portion, full detail body. Progress is
+/// stored under the topic's progressId (plain id for the Pakistan
+/// portion — the v1.2 keys — '<portion>:<id>' everywhere else).
 class TopicController extends GetxController {
   final ProgressService _progress = ProgressService.instance;
 
@@ -16,17 +18,17 @@ class TopicController extends GetxController {
   void onInit() {
     super.onInit();
     topic = Get.arguments as GeoTopic;
-    _progress.setLast('pakistan', topic.id);
+    _progress.setLast(topic.portion, topic.progressId);
     load();
   }
 
   Future<void> load() async {
-    done.value = await _progress.isDone(topic.id);
+    done.value = await _progress.isDone(topic.progressId);
   }
 
   Future<void> toggleDone() async {
     final value = !done.value;
-    await _progress.setDone(topic.id, value);
+    await _progress.setDone(topic.progressId, value);
     done.value = value;
   }
 }

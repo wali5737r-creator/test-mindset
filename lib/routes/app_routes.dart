@@ -39,5 +39,16 @@ class AppRoutes {
   static const String learnQuiz = '/learn/quiz';
   static const String learnMap = '/learn/map';
 
+  /// Generic topic portion (arguments: portion id string — 'world',
+  /// 'space', 'computer', 'urdu', 'islamiat', 'history', 'orgs',
+  /// 'eds').
+  static const String learnPortion = '/learn/portion';
+
+  /// Generic lesson-list portion (arguments: portion id — 'maths').
+  static const String learnLessons = '/learn/lessons';
+
+  /// World map (pins + Map Quiz, equirectangular world image).
+  static const String learnWorldMap = '/learn/world-map';
+
   static String studentIntroPath(String code) => '/t/$code';
 }

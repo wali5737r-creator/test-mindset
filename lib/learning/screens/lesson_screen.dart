@@ -6,8 +6,8 @@ import '../models/learning_models.dart';
 import '../services/progress_service.dart';
 import '../widgets/lesson_blocks_view.dart';
 
-/// One English lesson: full body in styled blocks, then the practice
-/// quiz button and the mark-complete button.
+/// One lesson (English or Maths): full body in styled blocks, then
+/// the practice quiz button and the mark-complete button.
 class LessonController extends GetxController {
   final ProgressService _progress = ProgressService.instance;
 
@@ -19,7 +19,7 @@ class LessonController extends GetxController {
   void onInit() {
     super.onInit();
     lesson = Get.arguments as Lesson;
-    _progress.setLast('english', lesson.id);
+    _progress.setLast(lesson.portion, lesson.id);
     load();
   }
 
@@ -43,7 +43,13 @@ class LessonScreen extends GetView<LessonController> {
     final theme = Theme.of(context);
     final lesson = controller.lesson;
     return Scaffold(
-      appBar: AppBar(title: Text('Lesson ${lesson.number}')),
+      appBar: AppBar(
+        title: Text(
+          lesson.portion == 'maths'
+              ? lesson.title
+              : 'Lesson ${lesson.number}',
+        ),
+      ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(20, 16, 20, 28),
         children: <Widget>[

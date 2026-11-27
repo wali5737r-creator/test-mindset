@@ -1,5 +1,5 @@
-name: quizwala
-description: "QuizWala - a free online quiz maker for teachers and students. Create a test, share one link, students take it with no login."
+name: test_mindset
+description: "Test Mindset - a free online quiz maker for teachers and students. Create a test, share one link, students take it with no login."
 publish_to: "none"
 version: 1.0.0+1
 

@@ -1,4 +1,4 @@
-# QuizWala — Build Notes
+# Test Mindset — Build Notes
 
 Notes for whoever builds/maintains this app next (Glint or the owner).
 The product contract is `docs/SRS.md`; user-facing setup is in `README.md`.
@@ -70,8 +70,8 @@ lib/
     question_review_card.dart    Correct/wrong/skipped review card, shared
                                  by student result + teacher attempt detail.
 android/                         Minimal Flutter 3.x template skeleton
-                                 (applicationId com.muhammad.quizwala,
-                                 label QuizWala, INTERNET permission,
+                                 (applicationId com.muhammad.testmindset,
+                                 label Test Mindset, INTERNET permission,
                                  MainActivity in the right package,
                                  minSdk 23, release = debug signing).
 ```
@@ -129,7 +129,7 @@ android/                         Minimal Flutter 3.x template skeleton
   so CI can produce an installable APK with no keystore secrets.
 - **Launcher icon is a generated placeholder** (teal square design,
   all densities). Replace with a designed icon before any public
-  release; the manifest label "QuizWala" must be renamed together with
+  release; the manifest label "Test Mindset" must be renamed together with
   `AppConfig.appName` if the app is renamed.
 
 ## Known v1 limitation (from SRS §6) — answers ship to the student client
@@ -177,12 +177,12 @@ regeneration is safe if the customizations are re-checked afterwards:
 
 Practical route used by the owner's other projects: in the Actions
 workflow (or once locally), run
-`flutter create --project-name quizwala --org com.muhammad --platforms android,web .`
+`flutter create --project-name test_mindset --org com.muhammad --platforms android,web .`
 in the repo root, then verify the three customizations survived:
-`applicationId = "com.muhammad.quizwala"` in `android/app/build.gradle`,
-`android:label="QuizWala"` + the INTERNET permission in
+`applicationId = "com.muhammad.testmindset"` in `android/app/build.gradle`,
+`android:label="Test Mindset"` + the INTERNET permission in
 `AndroidManifest.xml`, and `MainActivity.kt` under
-`kotlin/com/muhammad/quizwala/`. Commit the generated wrapper jar and
+`kotlin/com/muhammad/testmindset/`. Commit the generated wrapper jar and
 `web/` folder with the repo (workflow files need the owner's `workflow`
 token scope workaround — push code first, add the workflow via the
 GitHub web UI, as with his other repos).
@@ -193,10 +193,10 @@ GitHub web UI, as with his other repos).
   placeholder with `isConfigured = false`, so the app currently starts
   on the setup-pending screen by design. Full steps: README
   "Firebase setup" (create project, add Android app
-  `com.muhammad.quizwala`, add Web app, paste config, enable
+  `com.muhammad.testmindset`, add Web app, paste config, enable
   Email/Password auth, create Firestore, paste the suggested rules).
 - `AppConfig.webBaseUrl` is the placeholder
-  `https://quizwala.pages.dev` — update it to the real deployed domain
+  `https://testmindset.pages.dev` — update it to the real deployed domain
   before sharing links, or the links on the Share screen will point at
   a domain that does not exist yet.
 - The google-services Gradle plugin is intentionally NOT wired in the
@@ -213,3 +213,24 @@ owner's PDF editor app), `csv ^6.0.0`, `share_plus ^13.3.1`
 (`SharePlus.instance.share(ShareParams(...))` API), `intl ^0.19.0`.
 If a future `pub get` conflicts, prefer bumping the Firebase trio
 together (core/auth/firestore majors move in lockstep).
+
+
+## Addendum 2026-11-27 — Firebase Spark quota note (verified from Firebase pricing summaries)
+
+Spark (free) tier: $0, no card, hard stop at quota. Firestore: 1 GiB stored,
+50,000 reads/day, 20,000 writes/day, 20,000 deletes/day, 10 GiB egress/month.
+Auth: 50,000 MAU. Fits the owner's FREE-ONLY rule.
+
+Consequence of the §6 data model (each question = its own document): a
+100-question test costs ~100 reads per student attempt → roughly 500 full
+100-question attempts/day before the daily read quota stops the app (plus
+teacher reads/writes). Accepted as a known v1 limit — plenty to start.
+If usage ever approaches it, the fix is bundling a test's questions into a
+few larger documents (fewer reads per attempt), not a paid plan.
+
+Name note (updated 2026-11-27): the original working name was dropped after
+a namesake check found earn-money trivia apps using it. The owner chose
+**Test Mindset** as the FINAL name on 2026-11-27 (checked the same day: no
+exact-match app on Play; a near-namesake "Test Minds" exam-prep app exists —
+different name, no block). Package id is com.muhammad.testmindset, Dart
+package name test_mindset, repo renamed to test-mindset.

@@ -33,13 +33,13 @@ Future<void> main() async {
     Get.put<AuthController>(AuthController(), permanent: true);
   }
 
-  runApp(QuizWalaApp(firebaseReady: firebaseReady));
+  runApp(Test MindsetApp(firebaseReady: firebaseReady));
 }
 
-class QuizWalaApp extends StatelessWidget {
+class Test MindsetApp extends StatelessWidget {
   final bool firebaseReady;
 
-  const QuizWalaApp({super.key, required this.firebaseReady});
+  const Test MindsetApp({super.key, required this.firebaseReady});
 
   @override
   Widget build(BuildContext context) {

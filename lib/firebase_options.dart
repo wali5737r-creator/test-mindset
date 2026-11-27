@@ -6,7 +6,7 @@
 //
 //  TO CONFIGURE (see README.md "Firebase setup" for the full walkthrough):
 //    1. Create a Firebase project at https://console.firebase.google.com
-//    2. Register the Android app with package id  com.muhammad.quizwala
+//    2. Register the Android app with package id  com.muhammad.testmindset
 //       and the Web app in that project.
 //    3. Paste the real values into [web] and [android] below
 //       (or run `flutterfire configure`, which rewrites this whole file).
@@ -38,7 +38,7 @@ class DefaultFirebaseOptions {
         return android;
       default:
         throw UnsupportedError(
-          'QuizWala v1 targets Android and Web only. '
+          'Test Mindset v1 targets Android and Web only. '
           'This platform has no Firebase options configured.',
         );
     }

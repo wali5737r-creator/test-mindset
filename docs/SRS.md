@@ -1,4 +1,4 @@
-# QuizWala — Online Quiz Maker (SRS v1.0, 2026-11-27)
+# Test Mindset — Online Quiz Maker (SRS v1.0, 2026-11-27)
 
 Owner: Muhammad. Built by Glint. Reference product studied 2026-11-26: rayvila.com
 (features matched, design and text original — nothing copied).
@@ -12,9 +12,10 @@ Students open the link (no app install, no login), enter their name, take the
 timed test, and see their result instantly. The teacher sees all results in
 one dashboard.
 
-Working name: **QuizWala** (owner can rename anytime — name lives in one
+Name: **Test Mindset** — FINAL, decided by the owner 2026-11-27 (the earlier
+working name was dropped after a namesake check; name lives in one
 place, `lib/config/app_config.dart`).
-Package: `com.muhammad.quizwala`. Project: `~/workspace/quiz-maker-app/`.
+Package: `com.muhammad.testmindset`. Project: `~/workspace/test-mindset-app/`.
 This project is COMPLETELY SEPARATE from WolfTyping and Pakistan Finance
 Calculators (separate repo, separate Firebase project, separate deploy).
 
@@ -98,5 +99,5 @@ proctoring. No paid service of any kind (owner's FREE-ONLY rule).
 
 1. Create the Firebase project (free, ~5 min, Glint guides screen by screen)
    under his Google account; Glint then wires the config files.
-2. Final name/branding decision if he wants a different name than QuizWala.
+2. Logo/branding approval when a logo is proposed (name is final: Test Mindset).
 3. Own-device test of the APK and the student link.

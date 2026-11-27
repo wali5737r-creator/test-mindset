@@ -1,4 +1,4 @@
-# QuizWala — Online Quiz Maker
+# Test Mindset — Online Quiz Maker
 
 A free online quiz maker for Pakistani teachers, academies and students
 (PPSC / FPSC / NTS / CSS / board-exam preparation).
@@ -8,7 +8,7 @@ and shares **one link**. Students open the link — **no app install, no
 login** — enter their name, take the timed test, and see their result
 instantly. The teacher sees all results in one dashboard.
 
-- **Package id:** `com.muhammad.quizwala`
+- **Package id:** `com.muhammad.testmindset`
 - **Stack:** Flutter (Android APK + Web from one codebase) · Firebase
   (Auth + Cloud Firestore, free Spark plan) · GetX
 - **App name** lives in one place: `lib/config/app_config.dart`
@@ -86,12 +86,12 @@ the owner's Google account); Glint can guide screen by screen.
 
 1. **Create the project**
    - Go to https://console.firebase.google.com → *Add project* →
-     name it (e.g. `quizwala`) → continue. Google Analytics can be
+     name it (e.g. `test_mindset`) → continue. Google Analytics can be
      skipped/off. Create project.
 
 2. **Register the Android app**
    - In the project, click the Android icon → package name:
-     `com.muhammad.quizwala` → Register app.
+     `com.muhammad.testmindset` → Register app.
    - Download **google-services.json** and put it in `android/app/`.
    - Add the google-services Gradle plugin (the exact lines are marked
      with a NOTE comment in `android/app/build.gradle` and
@@ -103,7 +103,7 @@ the owner's Google account); Glint can guide screen by screen.
 
 3. **Register the Web app**
    - Project settings (gear icon) → *Your apps* → Web icon (`</>`) →
-     nickname `QuizWala Web` → Register app.
+     nickname `Test Mindset Web` → Register app.
    - Copy the shown `firebaseConfig` values into
      `lib/firebase_options.dart` (the `web` and `android` constants —
      the Android values are in Project settings → the Android app),
@@ -164,7 +164,7 @@ service cloud.firestore {
 
 6. **Set the real web domain** (after the web build is deployed):
    in `lib/config/app_config.dart`, set `AppConfig.webBaseUrl` to the
-   deployed address (e.g. `https://quizwala.pages.dev`) so the share
+   deployed address (e.g. `https://testmindset.pages.dev`) so the share
    links point to the right place.
 
 ## Building

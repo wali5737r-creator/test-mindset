@@ -109,13 +109,14 @@ class QuestionEditorController extends GetxController {
     final picked = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: const <String>['csv', 'txt'],
-      withData: true,
     );
-    if (picked == null || picked.files.isEmpty) {
+    if (picked.isEmpty) {
       return; // teacher cancelled the picker - not an error
     }
-    final bytes = picked.files.single.bytes;
-    if (bytes == null) {
+    final List<int> bytes;
+    try {
+      bytes = await picked.single.readAsBytes();
+    } catch (_) {
       Get.snackbar(
         'Import failed',
         'Could not read that file. Please try again.',

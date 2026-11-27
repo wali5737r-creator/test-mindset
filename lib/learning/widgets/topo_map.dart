@@ -2,37 +2,95 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 
 /// Shared pieces for the two Learning Mode maps (Pakistan + World).
 ///
-/// Both maps are REAL slippy maps since v1.4: OpenTopoMap tiles via
-/// flutter_map — pinch zoom, pan, and relief shading that makes
-/// mountains and valleys look raised, Mapcarta-style. Tiles are
-/// cached on disk by flutter_map's built-in caching provider, so an
-/// area viewed once keeps opening offline afterwards.
+/// Both maps are REAL slippy maps since v1.4 (flutter_map). Since
+/// v1.7 the tiles are the standard OpenStreetMap Carto style — the
+/// clean, light Mapcarta look the owner asked for (the old relief
+/// tiles made the map look heavy and crowded). Tiles are cached on
+/// disk by flutter_map's built-in caching provider, so an area
+/// viewed once keeps opening offline afterwards. Browse-mode pins
+/// are clustered (see [clusteredPinsLayer]) so even 'All' stays
+/// readable instead of 143 pins stacked on each other.
 
-/// The OpenTopoMap tile layer (relief / contour style).
+/// The standard OpenStreetMap (Carto) tile layer.
 TileLayer topoTileLayer({required VoidCallback onTileError}) {
   return TileLayer(
-    urlTemplate: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-    subdomains: const <String>['a', 'b', 'c'],
-    maxNativeZoom: 15,
+    urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    maxNativeZoom: 18,
     userAgentPackageName: 'com.muhammad.mindset',
     errorTileCallback: (_, __, ___) => onTileError(),
   );
 }
 
 /// Required attribution for the map data, shown on the map itself:
-/// OpenStreetMap contributors, OpenTopoMap (CC-BY-SA), SRTM data.
+/// © OpenStreetMap contributors.
 Widget mapAttribution() {
   return const RichAttributionWidget(
     alignment: AttributionAlignment.bottomLeft,
     showFlutterMapAttribution: false,
     attributions: <SourceAttribution>[
       TextSourceAttribution('OpenStreetMap contributors'),
-      TextSourceAttribution('OpenTopoMap (CC-BY-SA)'),
-      TextSourceAttribution('SRTM', prependCopyright: false),
     ],
+  );
+}
+
+/// Cluster bubble shown in place of a group of nearby pins: a navy
+/// circle with a thin white ring and the pin count in bold white.
+class ClusterBubble extends StatelessWidget {
+  final int count;
+
+  const ClusterBubble({super.key, required this.count});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFF0B2A4A),
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.white, width: 2),
+        boxShadow: const <BoxShadow>[
+          BoxShadow(
+            color: Color(0x40000000),
+            blurRadius: 6,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      alignment: Alignment.center,
+      child: Text(
+        '$count',
+        style: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          fontSize: 15,
+        ),
+      ),
+    );
+  }
+}
+
+/// Browse-mode pin layer WITH clustering (flutter_map_marker_cluster
+/// 8.2.2, API verified against the published package source): nearby
+/// pins collapse into a [ClusterBubble]; tapping a bubble zooms to
+/// its pins' bounds. `markerChildBehavior: true` keeps each pin's
+/// own tap (open the detail sheet) working exactly as it did under
+/// the plain MarkerLayer — the layer adds no tap handling of its own
+/// on individual pins.
+Widget clusteredPinsLayer({required List<Marker> markers}) {
+  return MarkerClusterLayerWidget(
+    options: MarkerClusterLayerOptions(
+      markers: markers,
+      maxClusterRadius: 60,
+      size: const Size(42, 42),
+      padding: const EdgeInsets.all(40),
+      zoomToBoundsOnClick: true,
+      markerChildBehavior: true,
+      builder: (BuildContext context, List<Marker> clustered) =>
+          ClusterBubble(count: clustered.length),
+    ),
   );
 }
 
@@ -54,11 +112,11 @@ class MapPin extends StatelessWidget {
   });
 
   /// Edge length of the square box the pin is drawn in.
-  double get boxSize => (big ? 46.0 : 32.0) + 10;
+  double get boxSize => (big ? 46.0 : 26.0) + 10;
 
   @override
   Widget build(BuildContext context) {
-    final glyph = big ? 46.0 : 32.0;
+    final glyph = big ? 46.0 : 26.0;
     final pin = Stack(
       alignment: Alignment.center,
       children: <Widget>[

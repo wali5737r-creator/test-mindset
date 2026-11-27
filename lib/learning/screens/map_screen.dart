@@ -9,12 +9,13 @@ import '../services/progress_service.dart';
 import '../widgets/feature_sheet.dart';
 import '../widgets/topo_map.dart';
 
-/// Pakistan on a REAL interactive map (v1.4): OpenTopoMap tiles —
-/// relief shading makes the mountains look raised, Mapcarta-style.
+/// Pakistan on a REAL interactive map (v1.4): standard
+/// OpenStreetMap Carto tiles since v1.7 — the clean Mapcarta look.
 /// Pins are grouped by category and NOTHING is shown until the
 /// student picks one category (the old static image showed all 143
-/// pins at once and nothing was understandable — owner's words).
-/// Tap a pin for its full detail.
+/// pins at once and nothing was understandable — owner's words),
+/// and browse-mode pins are clustered into count bubbles so even
+/// 'All' stays readable. Tap a pin for its full detail.
 /// Map Quiz mode: "Where is X?" — tap the right place on the map.
 class MapController extends GetxController {
   final ProgressService _progress = ProgressService.instance;
@@ -131,11 +132,17 @@ class MapScreen extends GetView<MapController> {
             () => controller.quizMode.value
                 ? TextButton.icon(
                     onPressed: controller.exitQuiz,
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                    ),
                     icon: const Icon(Icons.close),
                     label: const Text('Close Quiz'),
                   )
                 : TextButton.icon(
                     onPressed: controller.startQuiz,
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                    ),
                     icon: const Icon(Icons.quiz),
                     label: const Text('Map Quiz'),
                   ),
@@ -213,7 +220,10 @@ class MapScreen extends GetView<MapController> {
       ),
       children: <Widget>[
         topoTileLayer(onTileError: controller.markTilesFailed),
-        fm.MarkerLayer(markers: _markers(context)),
+        if (controller.quizMode.value)
+          fm.MarkerLayer(markers: _markers(context))
+        else
+          clusteredPinsLayer(markers: _markers(context)),
         mapAttribution(),
       ],
     );

@@ -9,12 +9,14 @@ import '../services/progress_service.dart';
 import '../widgets/feature_sheet.dart';
 import '../widgets/topo_map.dart';
 
-/// The world on a REAL interactive map (v1.4): OpenTopoMap tiles —
-/// pinch zoom and pan across the whole world, relief shading on the
-/// mountain ranges, Mapcarta-style. Pins are grouped by category and
-/// NOTHING is shown until the student picks one category (the old
-/// static image showed all 39 pins at once — owner's complaint).
-/// Tap a pin for its full detail.
+/// The world on a REAL interactive map (v1.4): standard
+/// OpenStreetMap Carto tiles since v1.7 — the clean Mapcarta look;
+/// pinch zoom and pan across the whole world. Pins are grouped by
+/// category and NOTHING is shown until the student picks one
+/// category (the old static image showed all 39 pins at once —
+/// owner's complaint), and browse-mode pins are clustered into
+/// count bubbles so they never stack into a mess. Tap a pin for
+/// its full detail.
 /// Map Quiz mode: "Where is X?" — tap the right place on the map.
 class WorldMapController extends GetxController {
   final ProgressService _progress = ProgressService.instance;
@@ -131,11 +133,17 @@ class WorldMapScreen extends GetView<WorldMapController> {
             () => controller.quizMode.value
                 ? TextButton.icon(
                     onPressed: controller.exitQuiz,
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                    ),
                     icon: const Icon(Icons.close),
                     label: const Text('Close Quiz'),
                   )
                 : TextButton.icon(
                     onPressed: controller.startQuiz,
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                    ),
                     icon: const Icon(Icons.quiz),
                     label: const Text('Map Quiz'),
                   ),
@@ -207,7 +215,10 @@ class WorldMapScreen extends GetView<WorldMapController> {
       ),
       children: <Widget>[
         topoTileLayer(onTileError: controller.markTilesFailed),
-        fm.MarkerLayer(markers: _markers(context)),
+        if (controller.quizMode.value)
+          fm.MarkerLayer(markers: _markers(context))
+        else
+          clusteredPinsLayer(markers: _markers(context)),
         mapAttribution(),
       ],
     );

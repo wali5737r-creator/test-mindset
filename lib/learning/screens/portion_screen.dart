@@ -242,7 +242,7 @@ class PortionScreen extends GetView<PortionController> {
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: done
-              ? Colors.green.shade600
+              ? const Color(0xFFF97316)
               : theme.colorScheme.primaryContainer,
           child: done
               ? const Icon(Icons.check, color: Colors.white, size: 20)

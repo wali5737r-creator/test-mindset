@@ -666,6 +666,84 @@ MCQs, feature detail bodies) stays Roman Urdu. App name/label
   category lines (geography_data, world_data) and the
   gulfs-straits-01 entry; every other data file is byte-identical.
 
+## v1.7 (2026-11-27) — premium navy + orange theme, map declutter
+
+Owner's verdict on v1.6: design "basic", theme green AGAIN (he is
+done with green in apps — this rule is for the APP; the websites
+keep their green/teal), and the Pakistan map with 'All' selected
+was 143 overlapping pins — unreadable. He wants Mapcarta-like
+cleanliness. No content, ID or progress-key changes in this
+version — presentation only.
+
+- THEME (app-wide, lib/main.dart): the seed colour is no longer
+  the old teal-green 0xFF0E7C66. One ThemeData now carries the
+  premium palette matching the app icon: primary deep navy
+  #0B2A4A, accent orange #F97316, amber #F59E0B for small
+  highlights, scaffold #F7F8FA, cards white with radius 18,
+  navy AppBars with white text/icons, filled + elevated buttons
+  navy (radius 14), outlined buttons navy, FAB orange, progress
+  indicators orange (navy-tinted track), inputs filled white
+  with radius 14 and a navy focus border, bottom sheets and
+  dialogs with 20-radius corners, navy snackbars. Teacher,
+  student and auth screens inherit all of it (they use theme
+  colours throughout — verified by grep, no hardcoded primaries
+  there). The two map screens' AppBar TextButton actions
+  ("Map Quiz" / "Close Quiz") got an explicit white style so
+  they stay readable on the navy AppBar.
+- Green/teal sweep (grep over lib/ excluding lib/learning/data/):
+  the four learning list screens' completed-tick circles
+  (portion_screen, lessons_list_screen, english_subject_screen,
+  pakistan_subject_screen) changed Colors.green.shade600 →
+  orange #F97316. LEFT ON PURPOSE, with reasons: category pin
+  colours in feature_sheet.dart (data colour-coding, per
+  instruction); planet colours in solar_system_visual.dart
+  (illustration); the Google "G" brand blue in
+  google_sign_in_button.dart; and the semantic right/wrong +
+  status greens (correct-answer feedback in practice_quiz,
+  question_review_card, lesson_blocks_view's correct-example
+  card, map quiz bars, palette_grid's answered state,
+  question_editor / question_list correct marks, dashboard's
+  published-status colour, student_result's Correct chip,
+  take_test's timer) — green = correct / red = wrong is a
+  meaning, not the theme, and recolouring it orange would teach
+  students the wrong signal.
+- LEARN HOME polish (learn_home_screen.dart): a navy header
+  band (bottom corners radius 24) carries "Learning Mode", the
+  PPSC tagline, and the TOTAL progress as one thick (10px)
+  orange bar with a % readout; portion cards redesigned — white
+  card (global radius 18), the portion icon inside a navy-tinted
+  rounded square (52px, radius 14, navy icon), bold title, the
+  same subtitle/counts, orange per-portion progress bar with
+  "done / total complete" + percentage. Navigation, counts and
+  progress logic are byte-for-byte the same calls as before.
+  Portion/lesson list rows keep their exact navigation; their
+  completed ticks are now orange (above).
+- MAP DECLUTTER (map_screen, world_map_screen, topo_map):
+  tiles switched from OpenTopoMap relief to the standard
+  OpenStreetMap Carto layer (https://tile.openstreetmap.org/
+  {z}/{x}/{y}.png, maxNativeZoom 18) — the clean, light Mapcarta
+  look. Attribution is now just "© OpenStreetMap contributors".
+  The offline snapshot IMAGES inside detail sheets are unchanged
+  (they are bundled files, not the live tiles).
+  Clustering: flutter_map_marker_cluster ^8.2.2 added (its
+  pubspec requires flutter_map ^8.2.2, satisfied by our 8.3.2;
+  version + API verified against the published package source
+  before use — MarkerClusterLayerWidget + MarkerClusterLayerOptions).
+  Browse mode on both maps now renders through
+  clusteredPinsLayer() (topo_map.dart): maxClusterRadius 60,
+  cluster = navy circle (42px) with a 2px white ring and the
+  count in bold white, zoomToBoundsOnClick zooms a tapped
+  cluster to its pins, and markerChildBehavior: true keeps each
+  pin's own tap (open detail sheet) behaving exactly as under
+  the plain MarkerLayer — the package renders pin children bare
+  in that mode (verified in marker_widget.dart of the package).
+  Pins shrunk: normal pin glyph 32 → 26px (quiz reveal pin stays
+  46px). Clustering applies to every category selection
+  INCLUDING 'All'; category default NONE, chips and hint bar
+  unchanged; quiz mode is untouched — it still uses the plain
+  MarkerLayer and shows no pins until the reveal, exactly as
+  before.
+
 ## First build — files the Flutter SDK must generate
 
 This scaffold was written by hand (no Flutter SDK on the writing
@@ -715,7 +793,9 @@ Pinned to stable majors known to coexist: `get ^4.7.2`,
 6.x API, not 7.x), `file_picker ^13.4.0` (same major as the
 owner's PDF editor app), `csv ^6.0.0`, `share_plus ^13.3.1`
 (`SharePlus.instance.share(ShareParams(...))` API), `intl ^0.19.0`,
-`flutter_map ^8.3.2` + `latlong2 ^0.9.1` (v1.4; real maps).
+`flutter_map ^8.3.2` + `latlong2 ^0.9.1` (v1.4; real maps),
+`flutter_map_marker_cluster ^8.2.2` (v1.7; pin clustering —
+requires flutter_map ^8.2.2, satisfied by 8.3.2).
 If a future `pub get` conflicts, prefer bumping the Firebase trio
 together (core/auth/firestore majors move in lockstep).
 

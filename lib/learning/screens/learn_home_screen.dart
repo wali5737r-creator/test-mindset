@@ -143,38 +143,21 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
         final lastLesson = controller.lastLesson;
         final lastTopic = controller.lastTopic;
         return ListView(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.zero,
           children: <Widget>[
-            Text(
-              'PPSC Preparation — at Your Own Pace',
-              style: theme.textTheme.titleLarge
-                  ?.copyWith(fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              'No login and no internet needed. Read, practise, and your '
-              'progress stays saved on this phone. Every subject is '
-              'kept separate — open only what you want to study.',
-              style: theme.textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 14),
-            Row(
-              children: <Widget>[
-                const Icon(Icons.emoji_events, size: 18),
-                const SizedBox(width: 6),
-                Text(
-                  'Total progress: $totalDone / $totalAll complete',
-                  style: theme.textTheme.titleSmall
-                      ?.copyWith(fontWeight: FontWeight.w600),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            LinearProgressIndicator(
-              value: totalAll == 0 ? 0 : totalDone / totalAll,
-              minHeight: 8,
-              borderRadius: BorderRadius.circular(4),
-            ),
+            _headerBand(context, totalDone, totalAll),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'No login and no internet needed. Read, practise, and '
+                    'your progress stays saved on this phone. Every '
+                    'subject is kept separate — open only what you want '
+                    'to study.',
+                    style: theme.textTheme.bodyMedium,
+                  ),
             if (lastLesson != null &&
                 lastLesson.portion == controller.lastSubject.value) ...<Widget>[
               const SizedBox(height: 14),
@@ -337,9 +320,81 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
                   'everyday physics and chemistry',
               onTap: () => _openPortion('eds'),
             ),
+                ],
+              ),
+            ),
           ],
         );
       }),
+    );
+  }
+
+  /// Navy header band: title, tagline and the TOTAL learning
+  /// progress as one thick orange bar (v1.7 premium polish).
+  Widget _headerBand(BuildContext context, int totalDone, int totalAll) {
+    final theme = Theme.of(context);
+    final fraction = totalAll == 0 ? 0.0 : totalDone / totalAll;
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        color: Color(0xFF0B2A4A),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(24)),
+      ),
+      padding: const EdgeInsets.fromLTRB(20, 6, 20, 22),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Learning Mode',
+            style: theme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'PPSC Preparation — at Your Own Pace',
+            style: theme.textTheme.bodyMedium
+                ?.copyWith(color: Colors.white70),
+          ),
+          const SizedBox(height: 16),
+          Row(
+            children: <Widget>[
+              const Icon(
+                Icons.emoji_events,
+                size: 18,
+                color: Color(0xFFF59E0B),
+              ),
+              const SizedBox(width: 6),
+              Expanded(
+                child: Text(
+                  'Total progress: $totalDone / $totalAll complete',
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${(fraction * 100).round()}%',
+                style: theme.textTheme.titleSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: const Color(0xFFF97316),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          LinearProgressIndicator(
+            value: fraction,
+            minHeight: 10,
+            borderRadius: BorderRadius.circular(5),
+            backgroundColor: Colors.white24,
+            valueColor:
+                const AlwaysStoppedAnimation<Color>(Color(0xFFF97316)),
+          ),
+        ],
+      ),
     );
   }
 
@@ -380,36 +435,46 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
           orElse: () => const PortionProgress(id: '', done: 0, total: 0),
         )
         .total;
+    final percent = total == 0 ? 0 : (done * 100 / total).round();
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.only(bottom: 14),
       child: Card(
         clipBehavior: Clip.antiAlias,
         child: InkWell(
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.all(18),
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    CircleAvatar(
-                      radius: 24,
-                      backgroundColor: theme.colorScheme.primaryContainer,
+                    Container(
+                      width: 52,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF0B2A4A)
+                            .withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
                       child: Icon(
                         icon,
-                        color: theme.colorScheme.onPrimaryContainer,
+                        color: const Color(0xFF0B2A4A),
+                        size: 26,
                       ),
                     ),
                     const SizedBox(width: 14),
                     Expanded(
                       child: Text(
                         title,
-                        style: theme.textTheme.titleLarge
+                        style: theme.textTheme.titleMedium
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
-                    const Icon(Icons.chevron_right),
+                    const Icon(
+                      Icons.chevron_right,
+                      color: Color(0xFF9AA7B5),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -421,9 +486,19 @@ class LearnHomeScreen extends GetView<LearnHomeController> {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 const SizedBox(height: 6),
-                Text(
-                  '$done / $total complete',
-                  style: theme.textTheme.bodySmall,
+                Row(
+                  children: <Widget>[
+                    Text(
+                      '$done / $total complete',
+                      style: theme.textTheme.bodySmall
+                          ?.copyWith(fontWeight: FontWeight.w600),
+                    ),
+                    const Spacer(),
+                    Text(
+                      '$percent%',
+                      style: theme.textTheme.bodySmall,
+                    ),
+                  ],
                 ),
                 if (extra != null) ...<Widget>[
                   const SizedBox(height: 4),

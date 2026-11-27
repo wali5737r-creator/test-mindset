@@ -19,7 +19,10 @@ lib/
                                  webBaseUrl for share links.
   models/
     quiz_test.dart               TestModel + TestStatus enum.
-    question.dart                Question (4 options, correctIndex).
+    question.dart                Question (4 options, correctIndex;
+                                 -1 = answer not loaded, see v1.1).
+    question_answer.dart         QuestionAnswer: the answer half of a
+                                 question (answers/{qid}, since v1.1).
     attempt.dart                 Attempt (+ percent getter: raw score
                                  floored at 0 for display only).
   services/
@@ -134,9 +137,14 @@ android/                         Minimal Flutter 3.x template skeleton
 
 ## Known v1 limitation (from SRS §6) — answers ship to the student client
 
-`TakeTestController` fetches the questions subcollection once at start,
-and those documents include `correctIndex`. Scoring therefore happens
-on the student's device. Consequences:
+> Status: addressed in v1.1 at the practical level (split collections;
+> answers fetched only at submit). See the "v1.1" section below. The
+> strict server-side version (step 3 of the fix path) remains future
+> work because it needs the paid Blaze plan.
+
+In v1, `TakeTestController` fetched the questions subcollection once at
+start, and those documents included `correctIndex`. Scoring therefore
+happened on the student's device. Consequences:
 
 - A technical student can inspect the network/storage and see correct
   answers before submitting.
@@ -162,6 +170,85 @@ Functions on the Spark plan's student path, no extra collections).
    and writes the attempt. This is the only fully tamper-proof option;
    it is out of v1 scope because of the free-only rule.
 4. Update rules in README accordingly (answers: owner-only read).
+
+## v1.1 (2026-11-27) — result card, class report, answers split
+
+Version `1.1.0+2`. Three changes; no image-in-questions feature (the
+owner explicitly declined it).
+
+### 1. Shareable student result card
+
+`student_result_screen.dart` is now a StatefulWidget. The score card
+was redesigned as a plain **result card** (never called a certificate):
+app name, "Student Result Card" label, test title, student name (+roll),
+big %, score/total, correct/wrong/skipped/time chips, and a footer with
+the test code and the submission date. The card sits inside a
+`RepaintBoundary`; the **Share result** button renders it to a PNG
+(`RenderRepaintBoundary.toImage(pixelRatio: 3)` → `toByteData` PNG) and
+shares it with share_plus as `XFile.fromData(...)` — chosen because it
+works on Android AND web with no extra dependency (no path_provider /
+temp files). If capture or the image share fails, it falls back to
+sharing the same result as a text summary.
+
+### 2. Class report (teacher analytics)
+
+`ResultsController` additionally loads the test's questions WITH
+answers once (`reportQuestions`) and exposes `totalAttempts`,
+`averagePercent` (mean of the attempts' display percents),
+`topAttempt` (highest percent, raw score breaks ties) and
+`questionStats` — per question, how many attempts answered it correctly
+out of how many attempted it (skips don't count as attempts), computed
+from the attempts' stored `questionIds`/`answers` pairs.
+`teacher_results_screen.dart` shows a "Class Report" card with those
+totals plus a per-question breakdown (text, "X of Y correct", progress
+bar) above the attempts list. With zero attempts the screen keeps its
+existing empty state, so the report never renders empty numbers.
+
+### 3. Security fix — answers split out of the student payload
+
+Implements steps 1+2 of the documented fix path above:
+
+- **Writes** (`TestService.addQuestion` / `updateQuestion` /
+  `deleteQuestion`, all batched): each question is now TWO docs —
+  `tests/{id}/questions/{qid}` via `Question.toPublicMap()` (text,
+  options, order — NO correctIndex, NO explanation) and
+  `tests/{id}/answers/{qid}` via `Question.toAnswerMap()`
+  (correctIndex, explanation). `updateQuestion` also deletes any answer
+  fields still embedded in the question doc, so editing a legacy
+  question migrates it to the split layout. `deleteTest` deletes the
+  answers collection too.
+- **Student flow** (`TakeTestController`): questions are fetched at
+  start exactly as before, but for v1.1 tests they contain no answers
+  (`Question.fromMap` now yields `correctIndex == -1` when the field is
+  absent — never a fake 0). `submit()` FIRST fetches the answers
+  collection once (`fetchAnswersOnce`); if that fetch fails it shows an
+  error snackbar and does NOT submit (the student keeps their answers
+  and can retry; the timer auto-submit also retries on later ticks).
+  On success it merges the answers into the questions, scores locally
+  as before, writes the complete attempt in ONE write (same fields as
+  v1), and passes the merged ("graded") questions to the result screen
+  for the review.
+- **Teacher flows** read answers from the answers collection through
+  `TestService.fetchQuestionsWithAnswersOnce` (attempt detail, class
+  report) and `questionsWithAnswersStream` (question list/editor — a
+  small two-stream combiner in TestService; the plain `questionsStream`
+  still exists and now returns the public payload).
+- **Backward compatibility:** v1 tests in Firestore have `correctIndex`
+  embedded in the question docs and no answers collection. Everywhere
+  answers are merged, a question with no answers doc keeps its own
+  embedded `correctIndex`/`explanation`, so old tests keep working end
+  to end (student scoring, review, teacher screens). `fetchAnswersOnce`
+  on a legacy test simply returns an empty map.
+
+**Honest limitation of this level:** the Firestore rules (README) allow
+public read of `answers`, like `questions` — the protection is that the
+app only REQUESTS the answers at submit time, so they are no longer
+part of the payload a student receives when a test starts, and casual
+inspection no longer reveals them. A modified client could still fetch
+the answers collection early or submit a fake score. Full
+tamper-proofing requires server-side scoring (Cloud Function, paid
+Blaze plan) — step 3 of the fix path — and stays out of scope under
+the owner's free-only rule.
 
 ## First build — files the Flutter SDK must generate
 

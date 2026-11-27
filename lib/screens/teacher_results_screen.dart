@@ -63,13 +63,14 @@ class TeacherResultsScreen extends GetView<ResultsController> {
             ),
           );
         }
-        return ListView.builder(
+        return ListView(
           padding: const EdgeInsets.all(12),
-          itemCount: controller.attempts.length,
-          itemBuilder: (context, index) {
-            final attempt = controller.attempts[index];
-            return _AttemptTile(attempt: attempt, controller: controller);
-          },
+          children: [
+            _ClassReport(controller: controller),
+            const SizedBox(height: 4),
+            for (final attempt in controller.attempts)
+              _AttemptTile(attempt: attempt, controller: controller),
+          ],
         );
       }),
     );
@@ -94,6 +95,131 @@ class TeacherResultsScreen extends GetView<ResultsController> {
               controller.clearAll();
             },
             child: const Text('Clear All'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Class report shown above the attempts list: totals, class average,
+/// highest scorer, and a per-question correct/attempted breakdown.
+/// Only built when there is at least one attempt (the screen's empty
+/// state covers the zero-attempts case).
+class _ClassReport extends StatelessWidget {
+  final ResultsController controller;
+
+  const _ClassReport({required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final top = controller.topAttempt;
+    final stats = controller.questionStats;
+    return Card(
+      color: theme.colorScheme.primaryContainer,
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Icon(Icons.assessment_outlined, size: 20),
+                const SizedBox(width: 8),
+                Text(
+                  'Class Report',
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Wrap(
+              spacing: 18,
+              runSpacing: 8,
+              children: [
+                _stat(context, 'Attempts', '${controller.totalAttempts}'),
+                _stat(
+                  context,
+                  'Class average',
+                  '${controller.averagePercent.toStringAsFixed(1)}%',
+                ),
+                if (top != null)
+                  _stat(
+                    context,
+                    'Highest scorer',
+                    '${top.studentName} '
+                        '(${formatScore(top.score)}/${formatScore(top.total)}, '
+                        '${top.percent.toStringAsFixed(1)}%)',
+                  ),
+              ],
+            ),
+            if (stats.isNotEmpty) ...[
+              const SizedBox(height: 16),
+              Text(
+                'Per-question results',
+                style: theme.textTheme.titleSmall
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              for (var i = 0; i < stats.length; i++)
+                _questionRow(context, i, stats[i]),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _stat(BuildContext context, String label, String value) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(label, style: theme.textTheme.bodySmall),
+        Text(
+          value,
+          style: theme.textTheme.titleMedium
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
+  }
+
+  Widget _questionRow(BuildContext context, int index, QuestionStat stat) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Text(
+                  'Q${index + 1}. ${stat.question.text}',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.bodyMedium,
+                ),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                '${stat.correct} of ${stat.attempted} correct',
+                style: theme.textTheme.bodySmall
+                    ?.copyWith(fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4),
+          LinearProgressIndicator(
+            value: stat.correctRatio,
+            minHeight: 6,
+            borderRadius: BorderRadius.circular(3),
           ),
         ],
       ),

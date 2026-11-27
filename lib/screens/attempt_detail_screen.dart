@@ -30,7 +30,7 @@ class AttemptDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(attempt.studentName)),
       body: FutureBuilder<List<Question>>(
-        future: Get.find<TestService>().fetchQuestionsOnce(test.id),
+        future: Get.find<TestService>().fetchQuestionsWithAnswersOnce(test.id),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());

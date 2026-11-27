@@ -60,7 +60,10 @@ class QuestionEditorController extends GetxController {
     final args = Get.arguments;
     if (args is Map && args['test'] is TestModel) {
       _test = args['test'] as TestModel;
-      _subscription = _testService.questionsStream(test.id).listen(
+      // Teacher flow: the list shows the correct answer per question, so
+      // it uses the merged stream (public questions + answers collection,
+      // with the legacy embedded-answer fallback inside TestService).
+      _subscription = _testService.questionsWithAnswersStream(test.id).listen(
         (list) {
           questions.assignAll(list);
           isLoading.value = false;

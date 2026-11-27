@@ -143,6 +143,21 @@ service cloud.firestore {
                     && resource.data.ownerId == request.auth.uid;
 
       match /questions/{qid} {
+        // Public half of a question (text, options, order) - no answers.
+        allow read: if true;
+        allow write: if request.auth != null
+          && get(/databases/$(database)/documents/tests/$(testId)).data.ownerId
+             == request.auth.uid;
+      }
+
+      match /answers/{qid} {
+        // The answer half (correctIndex, explanation). Readable by anyone,
+        // like questions - BUT the app only requests this collection at
+        // submit time, so answers are never part of the payload a student
+        // receives when a test starts. Honest limit: a modified client
+        // could still fetch these early; fully tamper-proof scoring needs
+        // a server-side Cloud Function (paid Blaze plan) - see
+        // BUILD_NOTES.md.
         allow read: if true;
         allow write: if request.auth != null
           && get(/databases/$(database)/documents/tests/$(testId)).data.ownerId
@@ -179,11 +194,34 @@ Before the first CI build, the Flutter-SDK-generated files that cannot
 be written by hand must exist — see **BUILD_NOTES.md** ("First build"
 section).
 
-## Known v1 limitation
+## Answer privacy (v1.1)
 
-In v1, a test's questions are fetched by the student's device **with**
-their correct answers, and scoring happens on the device (this keeps the
-free-tier build simple). A technical student could in theory inspect the
-answers before submitting. The v1.1 fix (split public/private question
-docs, answers fetched only after submit) is documented in
-`docs/SRS.md` §6 and `BUILD_NOTES.md`.
+Since v1.1, each question is stored as **two** documents: the public
+question (`questions/{qid}` — text, options, order) and its answer
+(`answers/{qid}` — correct index, explanation). A student's device
+receives **no answers when a test starts**; it fetches the answers
+collection once, at submit time, scores locally, and then writes the
+complete attempt. Tests created with v1 keep working: their answers are
+embedded in the question documents and are used as a fallback wherever
+an answers document is missing.
+
+Honest limit: scoring still happens on the student's device and the
+answers collection is readable under the free-tier rules above, so a
+*modified* client could in theory fetch answers early or fake a score.
+Fully tamper-proof scoring needs a server-side Cloud Function (paid
+Blaze plan) and is out of scope under the free-only rule — see
+`BUILD_NOTES.md`.
+
+## What is new in v1.1
+
+- **Shareable student result card** — after a test, the student sees a
+  result card (app name, their name, test title, score, %, correct /
+  wrong / skipped, date, test code) and can share it as an image with
+  the **Share result** button (it falls back to a text share if the
+  image cannot be created). It is a result card, not a certificate.
+- **Class report for teachers** — the results screen now opens with
+  total attempts, class average %, the highest scorer, and a
+  per-question breakdown (how many students answered each question
+  correctly, out of how many attempted it).
+- **Answers split out of the student payload** — see "Answer privacy"
+  above.

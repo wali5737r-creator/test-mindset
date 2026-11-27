@@ -18,6 +18,7 @@ class AppConfig {
   static const String teachersCollection = 'teachers';
   static const String testsCollection = 'tests';
   static const String questionsSubcollection = 'questions';
+  static const String answersSubcollection = 'answers';
   static const String attemptsSubcollection = 'attempts';
 
   // ---------------------------------------------------------------------------

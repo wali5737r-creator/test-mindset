@@ -141,8 +141,10 @@ class _QuestionTile extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         subtitle: Text(
-          'Answer: ${'ABCD'[question.correctIndex]}. '
-          '${question.correctOptionText}',
+          question.correctIndex >= 0 && question.correctIndex < 4
+              ? 'Answer: ${'ABCD'[question.correctIndex]}. '
+                  '${question.correctOptionText}'
+              : 'Answer not loaded',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(color: Colors.green.shade700),

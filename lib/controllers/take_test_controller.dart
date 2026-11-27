@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../models/attempt.dart';
 import '../models/question.dart';
+import '../models/question_answer.dart';
 import '../models/quiz_test.dart';
 import '../routes/app_routes.dart';
 import '../services/test_service.dart';
@@ -15,9 +16,12 @@ import '../services/test_service.dart';
 ///
 /// Arguments: {'test': TestModel, 'name': String, 'roll': String}.
 ///
-/// NOTE (known v1 limitation, SRS section 6): the questions fetched here
-/// include correctIndex, so scoring happens on the client. See
-/// BUILD_NOTES.md for the documented v1.1 fix.
+/// v1.1 (SRS section 6 fix): the questions loaded at start are the PUBLIC
+/// payload — no correct answers. The answers collection is fetched ONCE,
+/// here at submit time, the score is computed locally, and the complete
+/// attempt is then written in a single write. Scoring still happens on
+/// the client (full server-side scoring needs a paid Cloud Function);
+/// see BUILD_NOTES.md for the honest limits of this level.
 class TakeTestController extends GetxController {
   final TestService _testService = Get.find<TestService>();
 
@@ -150,20 +154,50 @@ class TakeTestController extends GetxController {
 
   /// Scores the attempt and saves it. Called by the submit button
   /// (after a confirm dialog) and automatically when the timer hits zero.
+  ///
+  /// First the answers collection is fetched (once); if that fetch fails
+  /// the attempt is NOT submitted — the student keeps their answers and
+  /// can submit again. Only after scoring is the complete attempt
+  /// written, in one write, exactly as in v1.
   Future<void> submit({bool auto = false}) async {
-    if (_submitted) return;
+    if (_submitted || isSubmitting.value) return;
+    isSubmitting.value = true;
+
+    final Map<String, QuestionAnswer> answersById;
+    try {
+      answersById = await _testService.fetchAnswersOnce(test.id);
+    } catch (_) {
+      isSubmitting.value = false;
+      Get.snackbar(
+        'Could not submit',
+        'Your result could not be checked. Please check your internet '
+            'and submit again - your answers are still here.',
+      );
+      return;
+    }
+
     _submitted = true;
     _timer?.cancel();
-    isSubmitting.value = true;
+
+    // Merge the fetched answers into the questions for scoring and for
+    // the post-submit review. Legacy v1 tests have no answers collection;
+    // their questions already carry the answers, so they pass through
+    // unchanged (the fallback in TestService._mergeAnswers' contract).
+    final gradedQuestions = questions
+        .map((q) {
+          final answer = answersById[q.id];
+          return answer == null ? q : q.withAnswer(answer);
+        })
+        .toList(growable: false);
 
     var correct = 0;
     var wrong = 0;
     var skipped = 0;
-    for (var i = 0; i < questions.length; i++) {
+    for (var i = 0; i < gradedQuestions.length; i++) {
       final answer = answers[i];
       if (answer == -1) {
         skipped++;
-      } else if (answer == questions[i].correctIndex) {
+      } else if (answer == gradedQuestions[i].correctIndex) {
         correct++;
       } else {
         wrong++;
@@ -217,7 +251,9 @@ class TakeTestController extends GetxController {
       arguments: <String, dynamic>{
         'test': test,
         'attempt': attempt,
-        'questions': List<Question>.of(questions),
+        // The review needs the answers, so it gets the graded questions
+        // (public questions + the answers fetched at submit).
+        'questions': gradedQuestions,
       },
     );
   }

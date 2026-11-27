@@ -106,7 +106,7 @@ class QuestionEditorController extends GetxController {
       );
       return;
     }
-    final picked = await FilePicker.platform.pickFiles(
+    final picked = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: const <String>['csv', 'txt'],
       withData: true,
